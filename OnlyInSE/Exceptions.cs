@@ -63,7 +63,7 @@ public partial class Exceptions
 
     public static string WrongExtension(string before, string path, string ext)
     {
-        return Path.GetExtension(path) != ext ? before + path + "don't have " + ext + " extension" : null;
+        return System.IO.Path.GetExtension(path) != ext ? before + path + "don't have " + ext + " extension" : null;
     }
 
 
@@ -634,6 +634,8 @@ public partial class Exceptions
 
     public static StringBuilder sbAdditionalInfoInner = new();
     public static StringBuilder sbAdditionalInfo = new();
+
+    public static object FS { get; private set; }
 
     private static string AddParams()
     {

@@ -1,3 +1,5 @@
+using SunamoDelegates;
+
 namespace SunamoExceptions.OnlyInSE;
 
 public class Types
