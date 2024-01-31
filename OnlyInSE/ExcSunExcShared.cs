@@ -80,7 +80,7 @@ namespace SunamoExceptions.OnlyInSE;
 //    public static void TypeAndMethodName(string l, out string type, out string methodName)
 //    {
 //        var s = SH.TrimStart(l, "   at ");
-//        s = SH.RemoveAfterFirst(s, AllChars.lb);
+//        s = SHParts.RemoveAfterFirst(s, AllChars.lb);
 //        var p = SHSplit.SplitChar(s, AllChars.dot);
 
 //        methodName = p[p.Count - 1];
