@@ -1,22 +1,22 @@
 namespace SunamoExceptions._sunamo;
 
-public class XlfKeys
+internal class XlfKeys
 {
-    public static string StringHasNotBeenInPathFormat = "";
-    public static string DoesnTExists = "";
-    public static string ElementOf = "";
-    public static string wasNotIKeysHandler = "";
-    public static string ElementWasntRemovedDuring = "";
-    public static string NoPassedFolderInto = "";
-    public static string DifferentCountElementsInCollection = "";
-    public static string isNotExistsInDictionary = "";
-    public static string doesntHaveSettedName = "";
-    public static string NotFound = "";
-    public static string BadFormatOfElement = "";
-    public static string Directory = "";
-    public static string isNotInWindowsPathFormat = "";
-    public static string Test = "";
-    public static string CanTDeleteFolder = "";
-    public static string DoesnTHaveRequiredType = "";
-    public static string NotSupported = "";
+    internal static string StringHasNotBeenInPathFormat = "";
+    internal static string DoesnTExists = "";
+    internal static string ElementOf = "";
+    internal static string wasNotIKeysHandler = "";
+    internal static string ElementWasntRemovedDuring = "";
+    internal static string NoPassedFolderInto = "";
+    internal static string DifferentCountElementsInCollection = "";
+    internal static string isNotExistsInDictionary = "";
+    internal static string doesntHaveSettedName = "";
+    internal static string NotFound = "";
+    internal static string BadFormatOfElement = "";
+    internal static string Directory = "";
+    internal static string isNotInWindowsPathFormat = "";
+    internal static string Test = "";
+    internal static string CanTDeleteFolder = "";
+    internal static string DoesnTHaveRequiredType = "";
+    internal static string NotSupported = "";
 }

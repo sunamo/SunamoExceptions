@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <WarningLevel>5</WarningLevel>
-    <Version>24.1.24.1</Version>
+    <Version>24.2.1.2</Version>
     <Description>Library with templates for throwing exceptions</Description>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -12,8 +12,8 @@
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoDelegates" Version="24.1.14.1" />
-    <PackageReference Include="SunamoValues" Version="24.1.23.1" />
+    <PackageReference Include="SunamoDelegates" Version="24.2.1.1" />
+    <PackageReference Include="SunamoValues" Version="24.2.1.1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />

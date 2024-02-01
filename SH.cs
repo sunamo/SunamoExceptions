@@ -96,7 +96,7 @@ public class SHSE
     /// <returns></returns>
     public static string NullToStringOrDefault(object n, string v)
     {
-        ThrowEx.Custom(
+        throw new Exception(
         "Tahle metoda vypadala jinak ale jak idiot jsem ji změnil. Tím jak jsem poté přesouval metody tam zpět už je těžké se k tomu dostat.");
         return null;
         //return n == null ? " " + ConstsSE.nulled : AllStringsSE.space + v.ToString();

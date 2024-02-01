@@ -74,7 +74,7 @@ namespace SunamoExceptions.OnlyInSE;
 
 //        }
 
-//        return new Tuple<string, string, string>(type, methodName, SHJoin.JoinNL(l));
+//        return new Tuple<string, string, string>(type, methodName, string.Join(Environment.NewLine, l));
 //    }
 
 //    public static void TypeAndMethodName(string l, out string type, out string methodName)

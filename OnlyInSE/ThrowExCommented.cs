@@ -170,7 +170,7 @@ namespace SunamoExceptions.OnlyInSE;
 //    //    if (exception != null)
 //    //    {
 
-//    //        ThrowEx.Custom(exception, cm);
+//    //        throw new Exception(exception, cm);
 //    //        return false;
 //    //    }
 //    //    return true;
