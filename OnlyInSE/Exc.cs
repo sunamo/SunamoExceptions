@@ -112,7 +112,7 @@ public class Exc
         StackTrace stackTrace = new();
         var methodBase = stackTrace.GetFrame(v).GetMethod();
         var methodName = methodBase.Name;
-        if (_trimTestOnEnd) methodName = SHSE.TrimEnd(methodName, XlfKeys.Test);
+        if (_trimTestOnEnd) methodName = SHSE.TrimEnd(methodName, "Test");
 
         return methodName;
     }

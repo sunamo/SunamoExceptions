@@ -52,7 +52,7 @@ public partial class Exceptions
 
     public static string BadFormatOfElementInList(string before, object elVal, string listName)
     {
-        return before + TranslateAble.i18n(XlfKeys.BadFormatOfElement) + " " + SHSE.NullToStringOrDefault(elVal) +
+        return before + TranslateAble.i18n("BadFormatOfElement") + " " + SHSE.NullToStringOrDefault(elVal) +
         " in list " + listName;
     }
 
@@ -78,7 +78,7 @@ public partial class Exceptions
     public static string DirectoryWasntFound(string before, string directory)
     {
         return !Directory.Exists(directory)
-        ? CheckBefore(before) + TranslateAble.i18n(XlfKeys.Directory) + " " + directory +
+        ? CheckBefore(before) + TranslateAble.i18n("Directory") + " " + directory +
         " wasn't found."
         : null;
     }
@@ -186,7 +186,7 @@ public partial class Exceptions
     {
         return Directory.Exists(fulLPath)
         ? null
-        : CheckBefore(before) + " " + TranslateAble.i18n(XlfKeys.DoesnTExists) + ": " + fulLPath;
+        : CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
 
     public static string FileExists(string before, string fulLPath)
@@ -195,14 +195,14 @@ public partial class Exceptions
         //{
         //    return null;
         //}
-        return CheckBefore(before) + " " + TranslateAble.i18n(XlfKeys.DoesnTExists) + ": " + fulLPath;
+        return CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
 
     public static string CheckBackslashEnd(string before, string r)
     {
         if (r.Length != 0)
             if (r[r.Length - 1] != AllCharsSE.bs)
-                return CheckBefore(before) + TranslateAble.i18n(XlfKeys.StringHasNotBeenInPathFormat) + "!";
+                return CheckBefore(before) + TranslateAble.i18n("StringHasNotBeenInPathFormat") + "!";
 
         return null;
     }
@@ -210,13 +210,13 @@ public partial class Exceptions
 
     public static string FileWasntFoundInDirectory(string before, string path)
     {
-        return CheckBefore(before) + XlfKeys.NotFound + ": " + path;
+        return CheckBefore(before) + "NotFound" + ": " + path;
     }
 
 
     public static string NotSupported(string v)
     {
-        return CheckBefore(v) + TranslateAble.i18n(XlfKeys.NotSupported);
+        return CheckBefore(v) + TranslateAble.i18n("NotSupported");
     }
 
 
@@ -235,7 +235,7 @@ public partial class Exceptions
     {
         var foundedUnallowed = unallowedStrings.Where(d => valueElement.Contains(d)).ToList();
         return foundedUnallowed.Count != 0
-        ? CheckBefore(before) + " " + TranslateAble.i18n(XlfKeys.ElementOf) + " " + arrayName + " on index " + dex +
+        ? CheckBefore(before) + " " + TranslateAble.i18n("ElementOf") + " " + arrayName + " on index " + dex +
         " with value " + valueElement + " contains unallowed string(" + foundedUnallowed.Count + "): " +
         string.Join(AllCharsSE.comma, unallowedStrings)
         : null;
@@ -249,14 +249,14 @@ public partial class Exceptions
     public static string WasNotKeysHandler(string before, string name, object keysHandler)
     {
         return keysHandler == null
-        ? CheckBefore(before) + name + " " + TranslateAble.i18n(XlfKeys.wasNotIKeysHandler)
+        ? CheckBefore(before) + name + " " + TranslateAble.i18n("wasNotIKeysHandler")
         : null;
     }
 
 
     public static string FolderCantBeRemoved(string v, string folder)
     {
-        return CheckBefore(v) + TranslateAble.i18n(XlfKeys.CanTDeleteFolder) + ": " + folder;
+        return CheckBefore(v) + TranslateAble.i18n("CanTDeleteFolder") + ": " + folder;
     }
 
     /// <summary>
@@ -269,7 +269,7 @@ public partial class Exceptions
     public static string ElementWasntRemoved(string before, string detailLocation, int before2, int after)
     {
         return before2 == after
-        ? CheckBefore(before) + TranslateAble.i18n(XlfKeys.ElementWasntRemovedDuring) + ": " +
+        ? CheckBefore(before) + TranslateAble.i18n("ElementWasntRemovedDuring") + ": " +
         detailLocation
         : null;
     }
@@ -282,7 +282,7 @@ public partial class Exceptions
     /// <returns></returns>
     public static string NoPassedFolders(string before, ICollection folders)
     {
-        return folders.Count == 0 ? CheckBefore(before) + TranslateAble.i18n(XlfKeys.NoPassedFolderInto) : null;
+        return folders.Count == 0 ? CheckBefore(before) + TranslateAble.i18n("NoPassedFolderInto") : null;
     }
 
     public static string FileSystemException(string v, Exception ex)
@@ -339,7 +339,7 @@ public partial class Exceptions
     public static string NameIsNotSetted(string before, string nameControl, string nameFromProperty)
     {
         return string.IsNullOrWhiteSpace(nameFromProperty)
-        ? CheckBefore(before) + nameControl + " " + TranslateAble.i18n(XlfKeys.doesntHaveSettedName)
+        ? CheckBefore(before) + nameControl + " " + TranslateAble.i18n("doesntHaveSettedName")
         : null;
     }
 
@@ -365,7 +365,7 @@ public partial class Exceptions
 
     public static string DoesntHaveRequiredType(string before, string variableName)
     {
-        return before + variableName + TranslateAble.i18n(XlfKeys.DoesnTHaveRequiredType) + ".";
+        return before + variableName + TranslateAble.i18n("DoesnTHaveRequiredType") + ".";
     }
 
     #endregion
@@ -601,7 +601,7 @@ public partial class Exceptions
             var badFormat = !IsWindowsPathFormat(argValue);
 
             if (badFormat)
-                return CheckBefore(before) + " " + argName + " " + TranslateAble.i18n(XlfKeys.isNotInWindowsPathFormat);
+                return CheckBefore(before) + " " + argName + " " + TranslateAble.i18n("isNotInWindowsPathFormat");
         }
 
         return null;
@@ -661,7 +661,7 @@ public partial class Exceptions
         if (countfc != countsc)
             // sess and SunamoPageHelperSunamo have the i18n method. Sess calculates that the text translation is in dictionaries, while SunamoPageHelperSunamo needs to have a method set for this. If this doesn't work, replace it with SunamoPageHelperSunamo
             // coz SunamoPageHelperSunamo is not in SunamoExceptions available
-            return CheckBefore(before) + " " + TranslateAble.i18n(XlfKeys.DifferentCountElementsInCollection) + " " +
+            return CheckBefore(before) + " " + TranslateAble.i18n("DifferentCountElementsInCollection") + " " +
             string.Concat(namefc + AllStringsSE.swda + countfc) + " vs. " +
             string.Concat(namesc + AllStringsSE.swda + countsc);
 
@@ -677,7 +677,7 @@ public partial class Exceptions
     public static string KeyNotFound<T, U>(string before, IDictionary<T, U> en, string dictName, T key)
     {
         return !en.ContainsKey(key)
-        ? before + key + " " + TranslateAble.i18n(XlfKeys.isNotExistsInDictionary) + " " + dictName
+        ? before + key + " " + TranslateAble.i18n("isNotExistsInDictionary") + " " + dictName
         : null;
     }
 
