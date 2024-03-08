@@ -18,7 +18,7 @@ public class OutRef<T, U>
     public U Item2 { get; set; }
 }
 
-public class OutRef<T, U, V> : OutRef<T, U>
+public class OutRef3<T, U, V> : OutRef<T, U>
 {
     public OutRef(T t, U u, V v) : base(t, u)
     {
@@ -28,7 +28,7 @@ public class OutRef<T, U, V> : OutRef<T, U>
     public V Item3 { get; set; }
 }
 
-public class OutRef<T, U, V, W> : OutRef<T, U, V>
+public class OutRef4<T, U, V, W> : OutRef<T, U, V>
 {
     public OutRef(T t, U u, V v, W w) : base(t, u, v)
     {
