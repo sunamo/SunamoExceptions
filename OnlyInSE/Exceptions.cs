@@ -2,7 +2,7 @@ namespace SunamoExceptions.OnlyInSE;
 
 
 
-public partial class Exceptions
+public class Exceptions
 {
     public static string UseRlc(string before)
     {

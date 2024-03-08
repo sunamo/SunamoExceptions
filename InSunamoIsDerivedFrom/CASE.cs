@@ -1,7 +1,7 @@
 namespace SunamoExceptions.InSunamoIsDerivedFrom;
 
 
-public partial class CASE
+public class CASE
 {
     [NotUsedInSunExc]
     public static void InitFillWith(List<string> datas, int pocet, string initWith = Consts.stringEmpty)

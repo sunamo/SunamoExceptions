@@ -1,7 +1,71 @@
 namespace SunamoExceptions.InSunamoIsDerivedFrom;
 
-public partial class TFSE
+public class TFSE
 {
+    public static string ReadAllTextSync(string path)
+    {
+        return ReadAllTextSync(path, false);
+    }
+
+    public static string ReadAllTextSync(string path, bool createEmptyIfWasNotExists = false)
+    {
+        if (createEmptyIfWasNotExists)
+            if (!File.Exists(path))
+            {
+                WriteAllTextSync(path, string.Empty);
+                return string.Empty;
+            }
+
+        return File.ReadAllText(path);
+    }
+
+    public static void WriteAllTextSync(string path, string content)
+    {
+        File.WriteAllText(path, content);
+    }
+
+    public static void AppendAllTextSync(string path, string content)
+    {
+        File.AppendAllText(path, content);
+    }
+
+    public static List<string> ReadAllLinesSync(string path)
+    {
+        return ReadAllLinesSync(path, false);
+    }
+
+    public static List<string> ReadAllLinesSync(string path, bool createEmptyIfWasNotExists = false)
+    {
+        if (createEmptyIfWasNotExists)
+            if (!File.Exists(path))
+            {
+                WriteAllTextSync(path, string.Empty);
+                return new List<string>();
+            }
+
+        return File.ReadAllLines(path).ToList();
+    }
+
+    public static void WriteAllLinesSync(string path, List<string> content)
+    {
+        File.WriteAllLines(path, content.ToArray());
+    }
+
+    public static void AppendAllLinesSync(string path, List<string> content)
+    {
+        File.AppendAllLines(path, content.ToArray());
+    }
+
+    public static List<byte> ReadAllBytesSync(string path)
+    {
+        return File.ReadAllBytes(path).ToList();
+    }
+
+    public static void WriteAllBytesSync(string path, List<byte> content)
+    {
+        File.WriteAllBytes(path, content.ToArray());
+    }
+
     public static Func<string, bool> isUsed = null;
 
     #region
@@ -13,11 +77,11 @@ public partial class TFSE
 
     public static
 #if ASYNC
-    async Task<string>
+        async Task<string>
 #else
 string
 #endif
-    ReadAllText(string path, Encoding enc)
+        ReadAllText(string path, Encoding enc)
     {
         if (isUsed != null)
             if (isUsed.Invoke(path))
@@ -40,45 +104,45 @@ return File.ReadAllText(path, enc);
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    WriteAllLinesArray(string path, string[] c)
+        WriteAllLinesArray(string path, string[] c)
     {
 #if ASYNC
         await
 #endif
-        WriteAllLines(path, c.ToList());
+            WriteAllLines(path, c.ToList());
     }
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    WriteAllBytesArray(string path, byte[] c)
+        WriteAllBytesArray(string path, byte[] c)
     {
 #if ASYNC
         await
 #endif
-        WriteAllBytes(path, c.ToList());
+            WriteAllBytes(path, c.ToList());
     }
 
     public static
 #if ASYNC
-    async Task<byte[]>
+        async Task<byte[]>
 #else
 byte[]
 #endif
-    ReadAllBytesArray(string path)
+        ReadAllBytesArray(string path)
     {
         return (
 #if ASYNC
-        await
+            await
 #endif
-        ReadAllBytes(path)).ToArray();
+                ReadAllBytes(path)).ToArray();
     }
 
     #endregion
@@ -92,11 +156,11 @@ byte[]
     /// <returns></returns>
     public static
 #if ASYNC
-    async Task<List<byte>>
+        async Task<List<byte>>
 #else
 List<byte>
 #endif
-    ReadAllBytes(string file)
+        ReadAllBytes(string file)
     {
         if (LockedByBitLocker(file)) return new List<byte>();
 
@@ -106,7 +170,7 @@ List<byte>
 
         return
 #if ASYNC
-        (await File.ReadAllBytesAsync(file)).ToList();
+            (await File.ReadAllBytesAsync(file)).ToList();
 #else
 File.ReadAllBytes(file).ToList();
 #endif
@@ -114,11 +178,11 @@ File.ReadAllBytes(file).ToList();
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    WriteAllBytes(string file, List<byte> b)
+        WriteAllBytes(string file, List<byte> b)
     {
         if (LockedByBitLocker(file)) return;
 
@@ -135,11 +199,11 @@ File.WriteAllBytes(file, b.ToArray());
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    WriteAllLines(string file, IList<string> lines)
+        WriteAllLines(string file, IList<string> lines)
     {
         if (LockedByBitLocker(file)) return;
 
@@ -149,16 +213,16 @@ void
 File.WriteAllLines
 #endif
 
-        (file, lines.ToArray());
+            (file, lines.ToArray());
     }
 
     public static
 #if ASYNC
-    async Task<List<string>>
+        async Task<List<string>>
 #else
 List<string>
 #endif
-    ReadAllLines(string file, bool trim = true)
+        ReadAllLines(string file, bool trim = true)
 
     {
         if (LockedByBitLocker(file)) return new List<string>();
@@ -168,7 +232,7 @@ List<string>
 
         var result =
 #if ASYNC
-        (await File.ReadAllLinesAsync(file)).ToList();
+            (await File.ReadAllLinesAsync(file)).ToList();
 #else
 File.ReadAllLines(file).ToList();
 #endif
@@ -183,11 +247,11 @@ File.ReadAllLines(file).ToList();
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    WriteAllText(string path, string content)
+        WriteAllText(string path, string content)
     {
         if (LockedByBitLocker(path)) return;
 
@@ -200,11 +264,11 @@ File.WriteAllText(path, content);
 
     public static
 #if ASYNC
-    async Task<string>
+        async Task<string>
 #else
 string
 #endif
-    ReadAllText(string f)
+        ReadAllText(string f)
     {
         if (LockedByBitLocker(f)) return string.Empty;
 
@@ -227,11 +291,11 @@ return File.ReadAllText(f);
 
     public static
 #if ASYNC
-    async Task
+        async Task
 #else
 void
 #endif
-    AppendAllText(string path, string content)
+        AppendAllText(string path, string content)
     {
         if (LockedByBitLocker(path)) return;
 
