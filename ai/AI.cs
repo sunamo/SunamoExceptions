@@ -8,6 +8,11 @@ namespace SunamoExceptions;
 
 public record AIAssembly<T>(Action<T> a, T t);
 
+public class AIInitArgs
+{
+    public AIAssembly<IAIWinPi> winPi;
+}
+
 public class AI
 {
     /// <summary>
@@ -24,4 +29,12 @@ public class AI
 
         AIStore.winPi = a.winPi?.t;
     }
+}
+
+/// <summary>
+///     Assemblies Interop
+/// </summary>
+public class AIWinPi : IAIWinPi
+{
+    public Action<string> PHWinPiRunAsDesktopUserNoAdmin { get; set; }
 }
