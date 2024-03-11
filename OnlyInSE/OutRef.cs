@@ -17,23 +17,3 @@ public class OutRef<T, U>
     public T Item1 { get; set; }
     public U Item2 { get; set; }
 }
-
-public class OutRef3<T, U, V> : OutRef<T, U>
-{
-    public OutRef(T t, U u, V v) : base(t, u)
-    {
-        Item3 = v;
-    }
-
-    public V Item3 { get; set; }
-}
-
-public class OutRef4<T, U, V, W> : OutRef<T, U, V>
-{
-    public OutRef(T t, U u, V v, W w) : base(t, u, v)
-    {
-        Item4 = w;
-    }
-
-    public W Item4 { get; set; }
-}
