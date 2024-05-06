@@ -98,7 +98,7 @@ public class Exc
 
         methodName = p[p.Count - 1];
         p.RemoveAt(p.Count - 1);
-        type = string.Join(AllStringsSE.dot, p);
+        type = string.Join(AllStrings.dot, p);
     }
 
     public static bool _trimTestOnEnd = true;

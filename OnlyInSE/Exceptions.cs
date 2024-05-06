@@ -24,7 +24,7 @@ public class Exceptions
 
     public static string NotValidXml(string before, string path, Exception ex)
     {
-        return before + path + AllStringsSE.space + TextOfExceptions(ex);
+        return before + path + AllStrings.space + TextOfExceptions(ex);
     }
 
     public static string ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
@@ -92,7 +92,7 @@ public class Exceptions
 
     public static string AnyElementIsNullOrEmpty(string before, string nameOfCollection, List<int> nulled)
     {
-        return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(AllStringsSE.comma, nulled) +
+        return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(AllStrings.comma, nulled) +
         " with null value";
     }
 
@@ -359,7 +359,7 @@ public class Exceptions
 
         return foundedUnallowed.Count > 0
         ? CheckBefore(before) + input + " contains unallowed chars: " +
-        string.Join(AllStringsSE.space, unallowedStrings)
+        string.Join(AllStrings.space, unallowedStrings)
         : null;
     }
 
@@ -454,7 +454,7 @@ public class Exceptions
 
         return notContained.Count == 0
         ? null
-        : CheckBefore(before) + originalText + " dont contains: " + string.Join(AllStringsSE.comma, notContained);
+        : CheckBefore(before) + originalText + " dont contains: " + string.Join(AllStrings.comma, notContained);
     }
 
     public static string FolderCannotBeDeleted(string v, string repairedBlogPostsFolder, Exception ex)
@@ -491,7 +491,7 @@ public class Exceptions
     }
 
 
-    public const string sp = AllStringsSE.space;
+    public const string sp = AllStrings.space;
 
 
     public static string CannotMoveFolder(string before, string item, string nova, Exception ex)
@@ -501,12 +501,12 @@ public class Exceptions
 
     public static string ExcAsArg(string before, Exception ex, string message)
     {
-        return before + message + AllStringsSE.space + TextOfExceptions(ex);
+        return before + message + AllStrings.space + TextOfExceptions(ex);
     }
 
     public static string Ftp(string before, Exception ex, string message)
     {
-        return before + message + AllStringsSE.space + TextOfExceptions(ex);
+        return before + message + AllStrings.space + TextOfExceptions(ex);
     }
 
     public static string IO(string before, string message)
@@ -662,8 +662,8 @@ public class Exceptions
             // sess and SunamoPageHelperSunamo have the i18n method. Sess calculates that the text translation is in dictionaries, while SunamoPageHelperSunamo needs to have a method set for this. If this doesn't work, replace it with SunamoPageHelperSunamo
             // coz SunamoPageHelperSunamo is not in SunamoExceptions available
             return CheckBefore(before) + " " + TranslateAble.i18n("DifferentCountElementsInCollection") + " " +
-            string.Concat(namefc + AllStringsSE.swda + countfc) + " vs. " +
-            string.Concat(namesc + AllStringsSE.swda + countsc);
+            string.Concat(namefc + AllStrings.swda + countfc) + " vs. " +
+            string.Concat(namesc + AllStrings.swda + countsc);
 
         return null;
     }
