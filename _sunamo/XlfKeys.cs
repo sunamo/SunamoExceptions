@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions._sunamo;
 //namespace SunamoExceptions._sunamo;
 
 //internal class XlfKeys

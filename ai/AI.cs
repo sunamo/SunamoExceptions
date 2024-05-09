@@ -1,4 +1,4 @@
-namespace SunamoExceptions;
+namespace SunamoExceptions.ai;
 
 
 
