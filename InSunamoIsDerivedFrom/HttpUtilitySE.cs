@@ -1,4 +1,10 @@
-namespace SunamoExceptions.InSunamoIsDerivedFrom;
+namespace
+#if SunamoShared
+SunamoShared
+#else SunamoExceptionsInSunamoIsDerivedFrom
+SunamoExceptionsInSunamoIsDerivedFrom
+#endif
+;
 
 public class HttpUtilitySE
 {

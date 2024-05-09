@@ -1,4 +1,10 @@
-namespace SunamoExceptions;
+namespace
+#if SunamoFileIO
+SunamoFileIO
+#else SunamoExceptions
+SunamoExceptions
+#endif
+;
 
 
 

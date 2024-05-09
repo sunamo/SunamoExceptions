@@ -1,6 +1,12 @@
 using SunamoExceptions.Data;
 
-namespace SunamoExceptions;
+namespace
+#if SunamoDevCode
+SunamoDevCode
+#else SunamoExceptions
+SunamoExceptions
+#endif
+;
 
 
 public class MayExcHelper

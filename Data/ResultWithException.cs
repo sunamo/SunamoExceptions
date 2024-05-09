@@ -1,4 +1,16 @@
-namespace SunamoExceptions.Data;
+namespace
+#if SunamoDevCode
+SunamoDevCode
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoOctokit
+SunamoOctokit
+#elif SunamoThisApp
+SunamoThisApp
+#else SunamoExceptionsData
+SunamoExceptionsData
+#endif
+;
 
 
 

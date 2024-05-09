@@ -1,4 +1,44 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace
+#if SunamoCl
+SunamoCl
+#elif SunamoClipboard
+SunamoClipboard
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoDictionary
+SunamoDictionary
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoHtml
+SunamoHtml
+#elif SunamoLogger
+SunamoLogger
+#elif SunamoMail
+SunamoMail
+#elif SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#elif SunamoPS
+SunamoPS
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoShared
+SunamoShared
+#elif SunamoString
+SunamoString
+#elif SunamoStringFormat
+SunamoStringFormat
+#elif SunamoStringJoin
+SunamoStringJoin
+#elif SunamoStringParts
+SunamoStringParts
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoStringTrim
+SunamoStringTrim
+#else SunamoExceptionsOnlyInSE
+SunamoExceptionsOnlyInSE
+#endif
+;
 
 
 

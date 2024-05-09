@@ -1,4 +1,28 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace
+#if SunamoBts
+SunamoBts
+#elif SunamoCollections
+SunamoCollections
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoGitBashBuilder
+SunamoGitBashBuilder
+#elif SunamoHtml
+SunamoHtml
+#elif SunamoLogger
+SunamoLogger
+#elif SunamoShared
+SunamoShared
+#elif SunamoString
+SunamoString
+#elif SunamoStringJoin
+SunamoStringJoin
+#else SunamoExceptionsOnlyInSE
+SunamoExceptionsOnlyInSE
+#endif
+;
 
 
 

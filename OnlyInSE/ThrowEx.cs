@@ -1,4 +1,88 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace
+#if SunamoBts
+SunamoBts
+#elif SunamoChar
+SunamoChar
+#elif SunamoCl
+SunamoCl
+#elif SunamoCollections
+SunamoCollections
+#elif SunamoCollectionsGeneric
+SunamoCollectionsGeneric
+#elif SunamoCollectionsValuesTableGrid
+SunamoCollectionsValuesTableGrid
+#elif SunamoConverters
+SunamoConverters
+#elif SunamoCrypt
+SunamoCrypt
+#elif SunamoCSharp
+SunamoCSharp
+#elif SunamoDateTime
+SunamoDateTime
+#elif SunamoDebugging
+SunamoDebugging
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoDictionary
+SunamoDictionary
+#elif SunamoFileExtensions
+SunamoFileExtensions
+#elif SunamoFileIO
+SunamoFileIO
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoFluentFtp
+SunamoFluentFtp
+#elif SunamoFtp
+SunamoFtp
+#elif SunamoFubuCore
+SunamoFubuCore
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoGitBashBuilder
+SunamoGitBashBuilder
+#elif SunamoHtml
+SunamoHtml
+#elif SunamoHttp
+SunamoHttp
+#elif SunamoLogger
+SunamoLogger
+#elif SunamoNumbers
+SunamoNumbers
+#elif SunamoPercentCalculator
+SunamoPercentCalculator
+#elif SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#elif SunamoReflection
+SunamoReflection
+#elif SunamoShared
+SunamoShared
+#elif SunamoString
+SunamoString
+#elif SunamoStringFormat
+SunamoStringFormat
+#elif SunamoStringReplace
+SunamoStringReplace
+#elif SunamoStringShared
+SunamoStringShared
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoStringSubstring
+SunamoStringSubstring
+#elif SunamoTextOutputGenerator
+SunamoTextOutputGenerator
+#elif SunamoUri
+SunamoUri
+#elif SunamoWinStd
+SunamoWinStd
+#elif SunamoXliffParser
+SunamoXliffParser
+#elif SunamoXml
+SunamoXml
+#else SunamoExceptionsOnlyInSE
+SunamoExceptionsOnlyInSE
+#endif
+;
 
 
 

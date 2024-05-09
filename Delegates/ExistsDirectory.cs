@@ -1,4 +1,10 @@
-namespace SunamoExceptions.Delegates;
+namespace
+#if SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#else SunamoExceptionsDelegates
+SunamoExceptionsDelegates
+#endif
+;
 
 // must be in SE, not SS - many project would reference SS only due to delegates
 

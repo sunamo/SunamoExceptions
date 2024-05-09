@@ -1,4 +1,10 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace
+#if SunamoShared
+SunamoShared
+#else SunamoExceptionsOnlyInSE
+SunamoExceptionsOnlyInSE
+#endif
+;
 
 public class TypesList
 {

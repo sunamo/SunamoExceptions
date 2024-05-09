@@ -2,7 +2,41 @@ using SunamoDelegates;
 using System.Collections;
 using System.Text;
 
-namespace SunamoExceptions.OnlyInSE;
+namespace
+#if SunamoBts
+SunamoBts
+#elif SunamoCl
+SunamoCl
+#elif SunamoCollections
+SunamoCollections
+#elif SunamoCollectionsShared
+SunamoCollectionsShared
+#elif SunamoCSharp
+SunamoCSharp
+#elif SunamoDevCode
+SunamoDevCode
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoNuGetProtocol
+SunamoNuGetProtocol
+#elif SunamoNumbers
+SunamoNumbers
+#elif SunamoReflection
+SunamoReflection
+#elif SunamoShared
+SunamoShared
+#elif SunamoString
+SunamoString
+#elif SunamoStringGetString
+SunamoStringGetString
+#elif SunamoStringJoin
+SunamoStringJoin
+#elif SunamoVcf
+SunamoVcf
+#else SunamoExceptionsOnlyInSE
+SunamoExceptionsOnlyInSE
+#endif
+;
 
 public class Types
 {
