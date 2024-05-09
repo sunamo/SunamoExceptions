@@ -3,7 +3,7 @@ using SunamoExceptions.Data;
 namespace
 #if SunamoDevCode
 SunamoDevCode
-#else SunamoExceptions
+#else
 SunamoExceptions
 #endif
 ;

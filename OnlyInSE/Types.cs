@@ -33,7 +33,7 @@ SunamoStringGetString
 SunamoStringJoin
 #elif SunamoVcf
 SunamoVcf
-#else SunamoExceptionsOnlyInSE
+#else
 SunamoExceptionsOnlyInSE
 #endif
 ;

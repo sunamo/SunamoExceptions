@@ -1,7 +1,7 @@
 namespace
 #if SunamoPlatformUwpInterop
 SunamoPlatformUwpInterop
-#else SunamoExceptionsDelegates
+#else
 SunamoExceptionsDelegates
 #endif
 ;

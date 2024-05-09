@@ -79,7 +79,7 @@ SunamoWinStd
 SunamoXliffParser
 #elif SunamoXml
 SunamoXml
-#else SunamoExceptionsOnlyInSE
+#else
 SunamoExceptionsOnlyInSE
 #endif
 ;

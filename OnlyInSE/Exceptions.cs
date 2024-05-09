@@ -19,7 +19,7 @@ SunamoShared
 SunamoString
 #elif SunamoStringJoin
 SunamoStringJoin
-#else SunamoExceptionsOnlyInSE
+#else
 SunamoExceptionsOnlyInSE
 #endif
 ;

@@ -7,7 +7,7 @@ SunamoFubuCsProjFile
 SunamoOctokit
 #elif SunamoThisApp
 SunamoThisApp
-#else SunamoExceptionsData
+#else
 SunamoExceptionsData
 #endif
 ;

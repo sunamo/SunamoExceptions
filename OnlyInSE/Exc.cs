@@ -35,7 +35,7 @@ SunamoStringParts
 SunamoStringSplit
 #elif SunamoStringTrim
 SunamoStringTrim
-#else SunamoExceptionsOnlyInSE
+#else
 SunamoExceptionsOnlyInSE
 #endif
 ;

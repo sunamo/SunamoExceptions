@@ -1,7 +1,7 @@
 namespace
 #if SunamoFileIO
 SunamoFileIO
-#else SunamoExceptions
+#else
 SunamoExceptions
 #endif
 ;
