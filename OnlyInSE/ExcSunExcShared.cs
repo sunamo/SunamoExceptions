@@ -143,7 +143,7 @@ namespace SunamoExceptions.OnlyInSE;
 
 //    private static List<string> GetLines(string v)
 //    {
-//        var l = v.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+//        var l = vv.Split(new string[] { v.Contains("\r\n") ? "\r\n" : "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
 //        return l;
 //    }
 //    #endregion
