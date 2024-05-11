@@ -2,7 +2,7 @@ namespace
 #if SunamoCl
 SunamoCl
 #else
- SunamoExceptions.ai
+SunamoExceptions
 #endif
     ;
 

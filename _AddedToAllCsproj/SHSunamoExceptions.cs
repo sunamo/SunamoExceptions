@@ -218,7 +218,7 @@ SunamoYaml
 #elif SunamoYouTube
 SunamoYouTube
 #else
-SunamoExceptionsAddedToAllCsproj
+SunamoExceptions
 #endif
 ;
 internal class SHSunamoExceptions

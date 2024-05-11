@@ -222,7 +222,7 @@ SunamoYaml
 #elif SunamoYouTube
 SunamoYouTube
 #else
-SunamoExceptionsOnlyInSE
+SunamoExceptions
 #endif
 ;
 

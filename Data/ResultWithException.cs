@@ -8,7 +8,7 @@ SunamoOctokit
 #elif SunamoThisApp
 SunamoThisApp
 #else
-SunamoExceptionsData
+SunamoExceptions
 #endif
 ;
 

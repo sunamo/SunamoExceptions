@@ -3,7 +3,7 @@ namespace
 #if SunamoCl
 SunamoCl
 #else
-SunamoExceptionsai
+SunamoExceptions
 #endif
 ;
 public class AIInitArgs

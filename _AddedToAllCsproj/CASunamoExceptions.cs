@@ -218,7 +218,7 @@ SunamoYaml
 #elif SunamoYouTube
 SunamoYouTube
 #else
-_AddedToAllCsproj.CASunamoExceptions.cs
+SunamoExceptions
 #endif
 ;
 

@@ -1,4 +1,4 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace SunamoExceptions;
 
 //using System;
 //using System.Collections.Generic;

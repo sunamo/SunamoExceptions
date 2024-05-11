@@ -4,7 +4,7 @@ namespace
 #if SunamoCl
 SunamoCl
 #else
-    SunamoExceptions.Interfaces
+SunamoExceptions
 #endif
 ;
 

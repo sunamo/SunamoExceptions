@@ -1,4 +1,6 @@
 
+namespace SunamoExceptions;
+
 namespace
 #if SunamoCollectionsValuesTableGrid
     SunamoCollectionsValuesTableGrid

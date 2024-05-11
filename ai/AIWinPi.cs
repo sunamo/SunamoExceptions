@@ -1,5 +1,5 @@
 
-namespace SunamoExceptions.ai;
+namespace SunamoExceptions;
 public class AIWinPi : IAIWinPi
 {
     public Action<string> PHWinPiRunAsDesktopUserNoAdmin { get; set; }

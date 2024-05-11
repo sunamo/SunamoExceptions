@@ -3,7 +3,7 @@ namespace
 #if SunamoBts
     SunamoBts
 #else
-    SunamoExceptions.OnlyInSE
+SunamoExceptions
 #endif
     ;
 

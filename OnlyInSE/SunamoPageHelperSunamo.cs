@@ -1,4 +1,4 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace SunamoExceptions;
 
 public class SunamoPageHelperSunamo : TranslateAble
 {

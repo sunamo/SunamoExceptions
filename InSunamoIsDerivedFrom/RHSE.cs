@@ -1,4 +1,4 @@
-namespace SunamoExceptions.InSunamoIsDerivedFrom;
+namespace SunamoExceptions;
 
 public class RHSE
 {

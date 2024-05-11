@@ -1,4 +1,4 @@
-namespace SunamoExceptions.Attributes;
+namespace SunamoExceptions;
 
 //NotUsedInSunExc
 
