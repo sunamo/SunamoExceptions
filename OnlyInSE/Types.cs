@@ -226,7 +226,7 @@ SunamoExceptionsOnlyInSE
 #endif
 ;
 
-public class Types
+public partial class Types
 {
     
 

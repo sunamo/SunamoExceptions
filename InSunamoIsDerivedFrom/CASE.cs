@@ -1,15 +1,19 @@
-namespace SunamoExceptions.InSunamoIsDerivedFrom;
 
+namespace
+#if SunamoCollectionsValuesTableGrid
+    SunamoCollectionsValuesTableGrid
+#else
+    SunamoExceptions.InSunamoIsDerivedFrom
+#endif
+;
 
 public class CASE
 {
-    [NotUsedInSunExc]
     public static void InitFillWith(List<string> datas, int pocet, string initWith = Consts.stringEmpty)
     {
         InitFillWith<string>(datas, pocet, initWith);
     }
 
-    [NotUsedInSunExc]
     public static void InitFillWith<T>(List<T> datas, int pocet, T initWith)
     {
         for (int i = 0; i < pocet; i++)
@@ -18,7 +22,6 @@ public class CASE
         }
     }
 
-    [NotUsedInSunExc]
     public static void InitFillWith<T>(List<T> arr, int columns)
     {
         for (int i = 0; i < columns; i++)

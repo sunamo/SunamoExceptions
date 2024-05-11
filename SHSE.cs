@@ -13,10 +13,7 @@ public class SHSE
         return r;
     }
 
-    public static List<string> SplitNone(string text, params string[] deli)
-    {
-        return text.Split(deli, StringSplitOptions.None).ToList();
-    }
+    
 
     /// <summary>
     ///     Usage: Exc.MethodOfOccuredFromStackTrace
@@ -86,6 +83,11 @@ public class SHSE
     public static List<string> Split(string s, params string[] dot)
     {
         return s.Split(dot, StringSplitOptions.RemoveEmptyEntries).ToList();
+    }
+
+    public static List<string> SplitNone(string text, params string[] deli)
+    {
+        return text.Split(deli, StringSplitOptions.None).ToList();
     }
 
     /// <summary>

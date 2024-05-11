@@ -232,4 +232,25 @@ public class CASunamoExceptions
 
         return false;
     }
+
+    public static void InitFillWith(List<string> datas, int pocet, string initWith = Consts.stringEmpty)
+    {
+        InitFillWith<string>(datas, pocet, initWith);
+    }
+
+    public static void InitFillWith<T>(List<T> datas, int pocet, T initWith)
+    {
+        for (int i = 0; i < pocet; i++)
+        {
+            datas.Add(initWith);
+        }
+    }
+
+    public static void InitFillWith<T>(List<T> arr, int columns)
+    {
+        for (int i = 0; i < columns; i++)
+        {
+            arr.Add(default);
+        }
+    }
 }
