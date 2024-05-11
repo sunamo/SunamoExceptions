@@ -1,4 +1,11 @@
-namespace SunamoExceptions.OnlyInSE;
+namespace
+
+#if SunamoBts
+    SunamoBts
+#else
+    SunamoExceptions.OnlyInSE
+#endif
+    ;
 
 public class SunamoExceptionsNotTranslateAble
 {

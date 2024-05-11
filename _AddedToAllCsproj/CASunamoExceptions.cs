@@ -1,52 +1,24 @@
-
-using System.Collections;
-using System.Text;
-
 namespace
-#if SunamoBts
-SunamoBts
-#elif SunamoCl
-SunamoCl
-#elif SunamoCollections
-SunamoCollections
-#elif SunamoCollectionsShared
-SunamoCollectionsShared
-#elif SunamoCSharp
-SunamoCSharp
-#elif SunamoDevCode
-SunamoDevCode
-#elif SunamoFubuCsProjFile
-SunamoFubuCsProjFile
-#elif SunamoNuGetProtocol
-SunamoNuGetProtocol
-#elif SunamoNumbers
-SunamoNumbers
-#elif SunamoReflection
-SunamoReflection
-#elif SunamoShared
-SunamoShared
-#elif SunamoString
-SunamoString
-#elif SunamoStringGetString
-SunamoStringGetString
-#elif SunamoStringJoin
-SunamoStringJoin
-#elif SunamoVcf
-SunamoVcf
+#if SunamoArgs
+SunamoArgs
 #elif SunamoAsync
 SunamoAsync
-#elif SunamoArgs
-SunamoArgs
 #elif SunamoAttributes
 SunamoAttributes
+#elif SunamoBts
+SunamoBts
 #elif SunamoChar
 SunamoChar
+#elif SunamoCl
+SunamoCl
 #elif SunamoClearScript
 SunamoClearScript
 #elif SunamoClipboard
 SunamoClipboard
 #elif SunamoCollectionOnDrive
 SunamoCollectionOnDrive
+#elif SunamoCollections
+SunamoCollections
 #elif SunamoCollectionsChangeContent
 SunamoCollectionsChangeContent
 #elif SunamoCollectionsGeneric
@@ -57,6 +29,8 @@ SunamoCollectionsGenericShared
 SunamoCollectionsIndexesWithNull
 #elif SunamoCollectionsNonGeneric
 SunamoCollectionsNonGeneric
+#elif SunamoCollectionsShared
+SunamoCollectionsShared
 #elif SunamoCollectionsValuesTableGrid
 SunamoCollectionsValuesTableGrid
 #elif SunamoCollectionWithoutDuplicates
@@ -69,6 +43,8 @@ SunamoCompare
 SunamoConverters
 #elif SunamoCrypt
 SunamoCrypt
+#elif SunamoCSharp
+SunamoCSharp
 #elif SunamoCsv
 SunamoCsv
 #elif SunamoData
@@ -83,6 +59,8 @@ SunamoDebugging
 SunamoDebugIO
 #elif SunamoDelegates
 SunamoDelegates
+#elif SunamoDevCode
+SunamoDevCode
 #elif SunamoDictionary
 SunamoDictionary
 #elif SunamoEmbeddedResources
@@ -107,6 +85,8 @@ SunamoFluentFtp
 SunamoFtp
 #elif SunamoFubuCore
 SunamoFubuCore
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
 #elif SunamoGitBashBuilder
 SunamoGitBashBuilder
 #elif SunamoGoogleSheets
@@ -135,6 +115,10 @@ SunamoMarkdown
 SunamoMime
 #elif SunamoMsgReader
 SunamoMsgReader
+#elif SunamoNuGetProtocol
+SunamoNuGetProtocol
+#elif SunamoNumbers
+SunamoNumbers
 #elif SunamoNumbersShared
 SunamoNumbersShared
 #elif SunamoOctokit
@@ -153,6 +137,8 @@ SunamoPlatformUwpInterop
 SunamoPS
 #elif SunamoRandom
 SunamoRandom
+#elif SunamoReflection
+SunamoReflection
 #elif SunamoRegex
 SunamoRegex
 #elif SunamoRoslyn
@@ -161,16 +147,24 @@ SunamoRoslyn
 SunamoRss
 #elif SunamoSerializer
 SunamoSerializer
+#elif SunamoShared
+SunamoShared
 #elif SunamoSolutionsIndexer
 SunamoSolutionsIndexer
 #elif SunamoStopwatch
 SunamoStopwatch
+#elif SunamoString
+SunamoString
 #elif SunamoStringData
 SunamoStringData
 #elif SunamoStringFormat
 SunamoStringFormat
 #elif SunamoStringGetLines
 SunamoStringGetLines
+#elif SunamoStringGetString
+SunamoStringGetString
+#elif SunamoStringJoin
+SunamoStringJoin
 #elif SunamoStringJoinPairs
 SunamoStringJoinPairs
 #elif SunamoStringParts
@@ -207,6 +201,8 @@ SunamoUri
 SunamoUriWebServices
 #elif SunamoValues
 SunamoValues
+#elif SunamoVcf
+SunamoVcf
 #elif SunamoWikipedia
 SunamoWikipedia
 #elif SunamoWinStd
@@ -222,58 +218,18 @@ SunamoYaml
 #elif SunamoYouTube
 SunamoYouTube
 #else
-SunamoExceptionsOnlyInSE
+_AddedToAllCsproj.CASunamoExceptions.cs
 #endif
 ;
 
-public class Types
+public class CASunamoExceptions
 {
-    
+    public static bool IsListStringWrappedInArray<T>(List<T> v2)
+    {
+        var first = v2.First().ToString();
+        if (v2.Count == 1 && (first == "System.Collections.Generic.List`1[System.String]" ||
+        first == "System.Collections.Generic.List`1[System.Object]")) return true;
 
-    public static readonly Type tObject = typeof(object);
-
-    public static readonly Type tStringBuilder = typeof(StringBuilder);
-
-    public static readonly Type tIEnumerable = typeof(IEnumerable);
-
-    public static readonly Type tString = typeof(string);
-    public static readonly Type tFloat = typeof(float);
-    public static readonly Type tDouble = typeof(double);
-    public static readonly Type tInt = typeof(int);
-    public static readonly Type tLong = typeof(long);
-    public static readonly Type tShort = typeof(short);
-    public static readonly Type tDecimal = typeof(decimal);
-    public static readonly Type tSbyte = typeof(sbyte);
-    public static readonly Type tByte = typeof(byte);
-    public static readonly Type tUshort = typeof(ushort);
-    public static readonly Type tUint = typeof(uint);
-    public static readonly Type tUlong = typeof(ulong);
-    public static readonly Type tDateTime = typeof(DateTime);
-    public static readonly Type tBinary = typeof(byte[]);
-    public static readonly Type tChar = typeof(char);
-
-    public static readonly List<Type> allBasicTypes = new()
-{
-tObject, tString, tStringBuilder, tInt, tDateTime,
-tDouble, tFloat, tChar, tBinary, tByte, tShort, tBinary, tLong, tDecimal, tSbyte, tUshort, tUint, tUlong
-};
-
-    public static readonly Type list = typeof(IList);
-
-    #region Same seria as in DefaultValueForTypeT
-
-    public static readonly Type tBool = typeof(bool);
-
-    #region Signed numbers
-
-    #endregion
-
-    #region Unsigned numbers
-
-    #endregion
-
-
-    public static readonly Type tGuid = typeof(Guid);
-
-    #endregion
+        return false;
+    }
 }

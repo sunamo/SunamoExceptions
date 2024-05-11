@@ -1,5 +1,12 @@
-namespace SunamoExceptions.Interfaces;
 
+
+namespace
+#if SunamoCl
+SunamoCl
+#else
+    SunamoExceptions.Interfaces
+#endif
+;
 
 
 public interface IAIWinPi

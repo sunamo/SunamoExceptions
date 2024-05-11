@@ -1,8 +1,16 @@
+
+
+using System.Collections;
+using System.Net;
+using System.Text;
+
 namespace
 #if SunamoBts
 SunamoBts
 #elif SunamoCollections
 SunamoCollections
+#elif SunamoChar
+SunamoChar
 #elif SunamoDevCode
 SunamoDevCode
 #elif SunamoFileSystem
@@ -19,6 +27,202 @@ SunamoShared
 SunamoString
 #elif SunamoStringJoin
 SunamoStringJoin
+#elif SunamoArgs
+SunamoArgs
+#elif SunamoAsync
+SunamoAsync
+#elif SunamoAttributes
+SunamoAttributes
+#elif SunamoCl
+SunamoCl
+#elif SunamoClearScript
+SunamoClearScript
+#elif SunamoClipboard
+SunamoClipboard
+#elif SunamoCollectionOnDrive
+SunamoCollectionOnDrive
+#elif SunamoCollectionsChangeContent
+SunamoCollectionsChangeContent
+#elif SunamoCollectionsGeneric
+SunamoCollectionsGeneric
+#elif SunamoCollectionsGenericShared
+SunamoCollectionsGenericShared
+#elif SunamoCollectionsIndexesWithNull
+SunamoCollectionsIndexesWithNull
+#elif SunamoCollectionsNonGeneric
+SunamoCollectionsNonGeneric
+#elif SunamoCollectionsShared
+SunamoCollectionsShared
+#elif SunamoCollectionsValuesTableGrid
+SunamoCollectionsValuesTableGrid
+#elif SunamoCollectionWithoutDuplicates
+SunamoCollectionWithoutDuplicates
+#elif SunamoColors
+SunamoColors
+#elif SunamoCompare
+SunamoCompare
+#elif SunamoConverters
+SunamoConverters
+#elif SunamoCrypt
+SunamoCrypt
+#elif SunamoCSharp
+SunamoCSharp
+#elif SunamoCsv
+SunamoCsv
+#elif SunamoData
+SunamoData
+#elif SunamoDateTime
+SunamoDateTime
+#elif SunamoDebugCollection
+SunamoDebugCollection
+#elif SunamoDebugging
+SunamoDebugging
+#elif SunamoDebugIO
+SunamoDebugIO
+#elif SunamoDelegates
+SunamoDelegates
+#elif SunamoDictionary
+SunamoDictionary
+#elif SunamoEmbeddedResources
+SunamoEmbeddedResources
+#elif SunamoEnums
+SunamoEnums
+#elif SunamoEnumsHelper
+SunamoEnumsHelper
+#elif SunamoExceptions
+SunamoExceptions
+#elif SunamoExtensions
+SunamoExtensions
+#elif SunamoFileExtensions
+SunamoFileExtensions
+#elif SunamoFileIO
+SunamoFileIO
+#elif SunamoFluentFtp
+SunamoFluentFtp
+#elif SunamoFtp
+SunamoFtp
+#elif SunamoFubuCore
+SunamoFubuCore
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoGoogleSheets
+SunamoGoogleSheets
+#elif SunamoHttp
+SunamoHttp
+#elif SunamoIni
+SunamoIni
+#elif SunamoInterfaces
+SunamoInterfaces
+#elif SunamoJson
+SunamoJson
+#elif SunamoLang
+SunamoLang
+#elif SunamoLogMessage
+SunamoLogMessage
+#elif SunamoMail
+SunamoMail
+#elif SunamoMarkdown
+SunamoMarkdown
+#elif SunamoMime
+SunamoMime
+#elif SunamoMsgReader
+SunamoMsgReader
+#elif SunamoNuGetProtocol
+SunamoNuGetProtocol
+#elif SunamoNumbers
+SunamoNumbers
+#elif SunamoNumbersShared
+SunamoNumbersShared
+#elif SunamoOctokit
+SunamoOctokit
+#elif SunamoPackageJson
+SunamoPackageJson
+#elif SunamoParsing
+SunamoParsing
+#elif SunamoPercentCalculator
+SunamoPercentCalculator
+#elif SunamoPInvoke
+SunamoPInvoke
+#elif SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#elif SunamoPS
+SunamoPS
+#elif SunamoRandom
+SunamoRandom
+#elif SunamoReflection
+SunamoReflection
+#elif SunamoRegex
+SunamoRegex
+#elif SunamoRoslyn
+SunamoRoslyn
+#elif SunamoRss
+SunamoRss
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoSolutionsIndexer
+SunamoSolutionsIndexer
+#elif SunamoStopwatch
+SunamoStopwatch
+#elif SunamoStringData
+SunamoStringData
+#elif SunamoStringFormat
+SunamoStringFormat
+#elif SunamoStringGetLines
+SunamoStringGetLines
+#elif SunamoStringGetString
+SunamoStringGetString
+#elif SunamoStringJoinPairs
+SunamoStringJoinPairs
+#elif SunamoStringParts
+SunamoStringParts
+#elif SunamoStringReplace
+SunamoStringReplace
+#elif SunamoStringShared
+SunamoStringShared
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoStringSubstring
+SunamoStringSubstring
+#elif SunamoStringTrim
+SunamoStringTrim
+#elif SunamoText
+SunamoText
+#elif SunamoTextOutputGenerator
+SunamoTextOutputGenerator
+#elif SunamoThisApp
+SunamoThisApp
+#elif SunamoThread
+SunamoThread
+#elif SunamoTidy
+SunamoTidy
+#elif SunamoTwoWayDictionary
+SunamoTwoWayDictionary
+#elif SunamoTypeOfMessage
+SunamoTypeOfMessage
+#elif SunamoUnderscore
+SunamoUnderscore
+#elif SunamoUri
+SunamoUri
+#elif SunamoUriWebServices
+SunamoUriWebServices
+#elif SunamoValues
+SunamoValues
+#elif SunamoVcf
+SunamoVcf
+#elif SunamoWikipedia
+SunamoWikipedia
+#elif SunamoWinStd
+SunamoWinStd
+#elif SunamoXlfKeys
+SunamoXlfKeys
+#elif SunamoXliffParser
+SunamoXliffParser
+#elif SunamoXml
+SunamoXml
+#elif SunamoYaml
+SunamoYaml
+#elif SunamoYouTube
+SunamoYouTube
 #else
 SunamoExceptionsOnlyInSE
 #endif
@@ -76,9 +280,11 @@ public class Exceptions
 
     public static string BadFormatOfElementInList(string before, object elVal, string listName)
     {
-        return before + TranslateAble.i18n("BadFormatOfElement") + " " + SHSE.NullToStringOrDefault(elVal) +
+        return before + TranslateAble.i18n("BadFormatOfElement") + " " + SHSunamoExceptions.NullToStringOrDefault(elVal) +
         " in list " + listName;
     }
+
+
 
     public static string IsTheSame(string before, string fst, string sec)
     {
@@ -128,10 +334,10 @@ public class Exceptions
         return CheckBefore(before) + nameOfCollection + " have odd elements count";
     }
 
-    public static string PassedListInsteadOfArray(string before, string variableName, IEnumerable v2)
+    public static string PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2)
     {
         var ts = v2.ToString();
-        if (CASE.IsListStringWrappedInArray(v2))
+        if (CASunamoExceptions.IsListStringWrappedInArray(v2))
             return before + $" {variableName} is List<string>, was passed List<string> into params";
 
         return null;
@@ -202,7 +408,7 @@ public class Exceptions
                 wrongCount.Add(i);
 
         return wrongCount.Count > 0
-        ? before + $"Elements {string.Join(AllCharsSE.comma, wrongCount)} have different count than 0 (first)"
+        ? before + $"Elements {string.Join(AllChars.comma, wrongCount)} have different count than 0 (first)"
         : null;
     }
 
@@ -225,7 +431,7 @@ public class Exceptions
     public static string CheckBackslashEnd(string before, string r)
     {
         if (r.Length != 0)
-            if (r[r.Length - 1] != AllCharsSE.bs)
+            if (r[r.Length - 1] != AllChars.bs)
                 return CheckBefore(before) + TranslateAble.i18n("StringHasNotBeenInPathFormat") + "!";
 
         return null;
@@ -261,7 +467,7 @@ public class Exceptions
         return foundedUnallowed.Count != 0
         ? CheckBefore(before) + " " + TranslateAble.i18n("ElementOf") + " " + arrayName + " on index " + dex +
         " with value " + valueElement + " contains unallowed string(" + foundedUnallowed.Count + "): " +
-        string.Join(AllCharsSE.comma, unallowedStrings)
+        string.Join(AllChars.comma, unallowedStrings)
         : null;
     }
 
@@ -570,7 +776,7 @@ public class Exceptions
 
     public static string DumpAsString(object s)
     {
-        return RHSE.DumpAsXml(s);
+        return null; //RHSE.DumpAsXml(s);
     }
 
     public static string InvalidCast(string before, string message)
@@ -614,7 +820,7 @@ public class Exceptions
     public static string NotImplementedMethod(string before)
     {
         return CheckBefore(before) +
-        SunamoExceptionsNotTranslateAble.NotImplementedCasePublicProgramErrorPleaseContactDeveloper + ".";
+        "Not implemented case. public program error. Please contact developer" + ".";
     }
 
 
@@ -709,7 +915,7 @@ public class Exceptions
     string message = Consts.se)
     {
         return d.Count != 0
-        ? before + $"Duplicated elements in {nameOfVariable} list: " + string.Join(AllCharsSE.comma, d.ToArray()) +
+        ? before + $"Duplicated elements in {nameOfVariable} list: " + string.Join(AllChars.comma, d.ToArray()) +
         " " + message
         : null;
     }

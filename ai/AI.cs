@@ -1,4 +1,10 @@
-namespace SunamoExceptions.ai;
+namespace
+#if SunamoCl
+SunamoCl
+#else
+ SunamoExceptions.ai
+#endif
+    ;
 
 
 

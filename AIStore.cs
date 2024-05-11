@@ -1,6 +1,8 @@
 namespace
 #if SunamoFileIO
 SunamoFileIO
+#elif SunamoCl
+    SunamoCl
 #else
 SunamoExceptions
 #endif

@@ -10,7 +10,7 @@
 
 [assembly:
 SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1124:Do not use regions", Justification = "<Pending>",
-Scope = "type", Target = "~T:AllCharsSE")]
+Scope = "type", Target = "~T:AllChars")]
 /*
 Toto se mi bude občas dít, např:
 dict.Add("Ulice",
@@ -53,4 +53,4 @@ Target = "~M:SunamoMimeHelper.Init")]
 */
 [assembly:
 SuppressMessage("StyleCop.CSharp.ReadabilityRules", "SA1413:Use trailing comma in multi-line initializers",
-Justification = "<Pending>", Scope = "member", Target = "~F:AllCharsSE.lowerChars")]
+Justification = "<Pending>", Scope = "member", Target = "~F:AllChars.lowerChars")]
