@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace
 #if SunamoAsync
     SunamoAsync
+#elif SunamoCl
+    SunamoCl
 #else
 SunamoExceptions
 #endif
