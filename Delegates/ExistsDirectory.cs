@@ -1,6 +1,10 @@
 namespace
 #if SunamoPlatformUwpInterop
 SunamoPlatformUwpInterop
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoFileSystem
+SunamoFileSystem
 #else
 SunamoExceptions
 #endif

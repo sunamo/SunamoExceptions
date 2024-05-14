@@ -1,10 +1,14 @@
 namespace
 #if SunamoCl
 SunamoCl
+#elif SunamoShared
+SunamoShared
+#elif SunamoEnums
+SunamoEnums
 #else
 SunamoExceptions
 #endif
-    ;
+;
 
 
 

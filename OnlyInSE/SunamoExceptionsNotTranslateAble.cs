@@ -1,11 +1,11 @@
 namespace
 
 #if SunamoBts
-    SunamoBts
+SunamoBts
 #else
 SunamoExceptions
 #endif
-    ;
+;
 
 public class SunamoExceptionsNotTranslateAble
 {

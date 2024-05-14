@@ -220,7 +220,7 @@ SunamoYouTube
 #else
 SunamoExceptions
 #endif
-    ;
+;
 
 public class TranslateAble
 {

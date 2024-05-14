@@ -2,9 +2,27 @@
 
 namespace
 #if SunamoCollectionsValuesTableGrid
-    SunamoCollectionsValuesTableGrid
+SunamoCollectionsValuesTableGrid
+#elif SunamoCollectionsShared
+SunamoCollectionsShared
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoSerializer
+SunamoSerializer
+#elif SunamoString
+SunamoString
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoExtensions
+SunamoExtensions
+#elif SunamoExceptions
+SunamoExceptions
+#elif SunamoExceptions
+SunamoExceptions
 #else
-    SunamoExceptions.InSunamoIsDerivedFrom
+SunamoExceptions.InSunamoIsDerivedFrom
 #endif
 ;
 

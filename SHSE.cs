@@ -1,4 +1,26 @@
-namespace SunamoExceptions;
+namespace
+#if SunamoCl
+SunamoCl
+#elif SunamoConverters
+SunamoConverters
+#elif SunamoLogger
+SunamoLogger
+#elif SunamoReflection
+SunamoReflection
+#elif SunamoStringData
+SunamoStringData
+#elif SunamoStringJoin
+SunamoStringJoin
+#elif SunamoStringReplace
+SunamoStringReplace
+#elif SunamoStringSplit
+SunamoStringSplit
+#elif SunamoExtensions
+SunamoExtensions
+#else
+SunamoExceptions
+#endif
+;
 
 public class SHSE
 {

@@ -1,4 +1,30 @@
-namespace SunamoExceptions;
+namespace
+#if SunamoFileIO
+SunamoFileIO
+#elif SunamoFileSystem
+SunamoFileSystem
+#elif SunamoFluentFtp
+SunamoFluentFtp
+#elif SunamoFubuCore
+SunamoFubuCore
+#elif SunamoFubuCsProjFile
+SunamoFubuCsProjFile
+#elif SunamoMsgReader
+SunamoMsgReader
+#elif SunamoPackageJson
+SunamoPackageJson
+#elif SunamoPlatformUwpInterop
+SunamoPlatformUwpInterop
+#elif SunamoVcf
+SunamoVcf
+#elif SunamoXml
+SunamoXml
+#elif SunamoLang
+SunamoLang
+#else
+SunamoExceptions
+#endif
+;
 
 public class TFSE
 {

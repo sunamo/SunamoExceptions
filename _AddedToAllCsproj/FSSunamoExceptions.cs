@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace
 #if SunamoCollectionOnDrive
-    SunamoCollectionOnDrive
+SunamoCollectionOnDrive
 #else
 SunamoExceptions
 #endif

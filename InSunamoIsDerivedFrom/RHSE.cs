@@ -1,4 +1,10 @@
-namespace SunamoExceptions;
+namespace
+#if SunamoReflection
+SunamoReflection
+#else
+SunamoExceptions
+#endif
+;
 
 public class RHSE
 {

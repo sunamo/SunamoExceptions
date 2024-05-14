@@ -20,6 +20,16 @@
     <Compile Include="OnlyInSE\Exc.cs" Link="_linked\SunamoExceptions\OnlyInSE\Exc.cs" />
     <Compile Include="OnlyInSE\Types.cs" Link="_linked\SunamoExceptions\OnlyInSE\Types.cs" />
     <Compile Include="..\SunamoXlfKeys\XlfKeys.cs" Link="_linked\SunamoXlfKeys\XlfKeys.cs" />
+    <Compile Include="..\SunamoMime\SunamoMimeHelper.cs" Link="_linked\SunamoMime\SunamoMimeHelper.cs" />
+    <Compile Include="..\SunamoFubuCsProjFile\_NotMine\None.cs" Link="_linked\SunamoFubuCsProjFile\_NotMine\None.cs" />
+    <Compile Include="..\SunamoReflection\RHShared64.cs" Link="_linked\SunamoReflection\RHShared64.cs" />
+    <Compile Include="..\SunamoLogger\Base\TemplateLoggerBase.cs" Link="_linked\SunamoLogger\Base\TemplateLoggerBase.cs" />
+    <Compile Include="..\SunamoFileSystem\FS.cs" Link="_linked\SunamoFileSystem\FS.cs" />
+    <Compile Include="..\SunamoFubuCore\CommandLine\Argument.cs" Link="_linked\SunamoFubuCore\CommandLine\Argument.cs" />
+    <Compile Include="..\SunamoShared\Helpers\PD.cs" Link="_linked\SunamoShared\Helpers\PD.cs" />
+    <Compile Include="..\SunamoEnums\Enums\Signed.cs" Link="_linked\SunamoEnums\Enums\Signed.cs" />
+    <Compile Include="..\SunamoDelegates\VoidVoid.cs" Link="_linked\SunamoDelegates\VoidVoid.cs" />
+    <Compile Include="..\SunamoDelegates\TaskVoid.cs" Link="_linked\SunamoDelegates\TaskVoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
