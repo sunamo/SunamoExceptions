@@ -21,6 +21,8 @@ SunamoExtensions
 SunamoExceptions
 #elif SunamoExceptions
 SunamoExceptions
+#elif SunamoCollections
+SunamoCollections
 #else
 SunamoExceptions.InSunamoIsDerivedFrom
 #endif
