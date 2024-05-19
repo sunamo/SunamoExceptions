@@ -12,11 +12,6 @@
     <DefineConstants>$(DefineConstants);ASYNC;SunamoExceptions</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\SunamoValues\AllStrings.cs" Link="_linked\SunamoValues\AllStrings.cs" />
-    <Compile Include="..\SunamoValues\Consts.cs" Link="_linked\SunamoValues\Consts.cs" />
-    <Compile Include="..\SunamoValues\AllChars.cs" Link="_linked\SunamoValues\AllChars.cs" />
-    <Compile Include="..\SunamoDelegates\VoidVoid.cs" Link="_linked\SunamoDelegates\VoidVoid.cs" />
-    <Compile Include="..\SunamoDelegates\TaskVoid.cs" Link="_linked\SunamoDelegates\TaskVoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
