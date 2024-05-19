@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 namespace
 #if SunamoCollectionOnDrive
 SunamoCollectionOnDrive
+#elif SunamoFtp
+SunamoFtp
 #else
 SunamoExceptions
 #endif
