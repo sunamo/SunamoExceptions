@@ -17,6 +17,8 @@ SunamoStringReplace
 SunamoStringSplit
 #elif SunamoExtensions
 SunamoExtensions
+#elif SunamoDevCode
+SunamoDevCode
 #else
 SunamoExceptions
 #endif
@@ -51,7 +53,8 @@ public class SHSE
 
         if (autoTrim)
         {
-            CASE.Trim(vr);
+            vr = vr.ConvertAll(d => d.Trim());
+            
         }
 
         return vr;

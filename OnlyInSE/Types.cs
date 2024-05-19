@@ -11,8 +11,8 @@ SunamoCl
 SunamoCollections
 #elif SunamoCollectionsShared
 SunamoCollectionsShared
-#elif SunamoCSharp
-SunamoCSharp
+#elif SunamoDevCode
+SunamoDevCode
 #elif SunamoDevCode
 SunamoDevCode
 #elif SunamoFubuCsProjFile

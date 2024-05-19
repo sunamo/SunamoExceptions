@@ -65,8 +65,8 @@ SunamoCompare
 SunamoConverters
 #elif SunamoCrypt
 SunamoCrypt
-#elif SunamoCSharp
-SunamoCSharp
+#elif SunamoDevCode
+SunamoDevCode
 #elif SunamoCsv
 SunamoCsv
 #elif SunamoData

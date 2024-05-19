@@ -21,6 +21,8 @@ SunamoVcf
 SunamoXml
 #elif SunamoLang
 SunamoLang
+#elif SunamoDevCode
+SunamoDevCode
 #else
 SunamoExceptions
 #endif

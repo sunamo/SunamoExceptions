@@ -1,8 +1,8 @@
 
 namespace SunamoExceptions;
-public class OutRef4<T, U, V, W> : OutRef<T, U, V>
+public class OutRef4<T, U, V, W> : OutRef3<T, U, V>
 {
-    public OutRef(T t, U u, V v, W w) : base(t, u, v)
+    public OutRef4(T t, U u, V v, W w) : base(t, u, v)
     {
         Item4 = w;
     }

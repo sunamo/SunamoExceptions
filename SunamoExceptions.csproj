@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <WarningLevel>5</WarningLevel>
-    <Version>24.2.6.3</Version>
+    <Version>24.5.18.1</Version>
     <Description>Library with templates for throwing exceptions</Description>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -12,26 +12,14 @@
     <DefineConstants>$(DefineConstants);ASYNC;SunamoExceptions</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\SunamoValues\Consts.cs" Link="_linked\SunamoValues\Consts.cs" />
-    <Compile Include="_AddedToAllCsproj\CASunamoExceptions.cs" Link="_linked\SunamoExceptions\_AddedToAllCsproj\CASunamoExceptions.cs" />
     <Compile Include="..\SunamoValues\AllStrings.cs" Link="_linked\SunamoValues\AllStrings.cs" />
+    <Compile Include="..\SunamoValues\Consts.cs" Link="_linked\SunamoValues\Consts.cs" />
     <Compile Include="..\SunamoValues\AllChars.cs" Link="_linked\SunamoValues\AllChars.cs" />
-    <Compile Include="OnlyInSE\ThrowEx.cs" Link="_linked\SunamoExceptions\OnlyInSE\ThrowEx.cs" />
-    <Compile Include="OnlyInSE\Exc.cs" Link="_linked\SunamoExceptions\OnlyInSE\Exc.cs" />
-    <Compile Include="OnlyInSE\Types.cs" Link="_linked\SunamoExceptions\OnlyInSE\Types.cs" />
-    <Compile Include="..\SunamoXlfKeys\XlfKeys.cs" Link="_linked\SunamoXlfKeys\XlfKeys.cs" />
-    <Compile Include="..\SunamoMime\SunamoMimeHelper.cs" Link="_linked\SunamoMime\SunamoMimeHelper.cs" />
-    <Compile Include="..\SunamoFubuCsProjFile\_NotMine\None.cs" Link="_linked\SunamoFubuCsProjFile\_NotMine\None.cs" />
-    <Compile Include="..\SunamoReflection\RHShared64.cs" Link="_linked\SunamoReflection\RHShared64.cs" />
-    <Compile Include="..\SunamoLogger\Base\TemplateLoggerBase.cs" Link="_linked\SunamoLogger\Base\TemplateLoggerBase.cs" />
-    <Compile Include="..\SunamoFileSystem\FS.cs" Link="_linked\SunamoFileSystem\FS.cs" />
-    <Compile Include="..\SunamoFubuCore\CommandLine\Argument.cs" Link="_linked\SunamoFubuCore\CommandLine\Argument.cs" />
-    <Compile Include="..\SunamoShared\Helpers\PD.cs" Link="_linked\SunamoShared\Helpers\PD.cs" />
-    <Compile Include="..\SunamoEnums\Enums\Signed.cs" Link="_linked\SunamoEnums\Enums\Signed.cs" />
     <Compile Include="..\SunamoDelegates\VoidVoid.cs" Link="_linked\SunamoDelegates\VoidVoid.cs" />
     <Compile Include="..\SunamoDelegates\TaskVoid.cs" Link="_linked\SunamoDelegates\TaskVoid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+    <Folder Include="_linked\" />
   </ItemGroup>
 </Project>

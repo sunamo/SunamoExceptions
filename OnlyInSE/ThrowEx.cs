@@ -1,4 +1,5 @@
 
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
@@ -47,8 +48,8 @@ SunamoCompare
 SunamoConverters
 #elif SunamoCrypt
 SunamoCrypt
-#elif SunamoCSharp
-SunamoCSharp
+#elif SunamoDevCode
+SunamoDevCode
 #elif SunamoCsv
 SunamoCsv
 #elif SunamoData
@@ -604,6 +605,8 @@ PD.ShowMb(s);
     /// </summary>
     //private static Action<string> Sl => PD.WriteToStartupLogRelease;
 
+    public static bool debuggerBreakOnEveryExc = false;
+
     /// <summary>
     ///     true if everything is OK
     ///     false if some error occured
@@ -612,6 +615,11 @@ PD.ShowMb(s);
     /// <param name="exception"></param>
     public static bool ThrowIsNotNull(string exception, bool reallyThrow = true)
     {
+        if (debuggerBreakOnEveryExc)
+{
+            Debugger.Break();
+        }
+
         // Výjimky se tak často nevyhazují. Tohle je daň za to že jsem tu měl arch
         // jež nebyla dobře navržená. V ThrowEx se to již podruhé volat nebude.
 
