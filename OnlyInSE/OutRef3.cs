@@ -1,4 +1,3 @@
-
 namespace
 #if SunamoDevCode
 SunamoDevCode
@@ -12,6 +11,5 @@ public class OutRef3<T, U, V> : OutRef<T, U>
     {
         Item3 = v;
     }
-
     public V Item3 { get; set; }
 }

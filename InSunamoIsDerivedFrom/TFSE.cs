@@ -27,14 +27,12 @@ SunamoDevCode
 SunamoExceptions
 #endif
 ;
-
 public class TFSE
 {
     public static string ReadAllTextSync(string path)
     {
         return ReadAllTextSync(path, false);
     }
-
     public static string ReadAllTextSync(string path, bool createEmptyIfWasNotExists = false)
     {
         if (createEmptyIfWasNotExists)
@@ -43,25 +41,20 @@ public class TFSE
                 WriteAllTextSync(path, string.Empty);
                 return string.Empty;
             }
-
         return File.ReadAllText(path);
     }
-
     public static void WriteAllTextSync(string path, string content)
     {
         File.WriteAllText(path, content);
     }
-
     public static void AppendAllTextSync(string path, string content)
     {
         File.AppendAllText(path, content);
     }
-
     public static List<string> ReadAllLinesSync(string path)
     {
         return ReadAllLinesSync(path, false);
     }
-
     public static List<string> ReadAllLinesSync(string path, bool createEmptyIfWasNotExists = false)
     {
         if (createEmptyIfWasNotExists)
@@ -70,39 +63,30 @@ public class TFSE
                 WriteAllTextSync(path, string.Empty);
                 return new List<string>();
             }
-
         return File.ReadAllLines(path).ToList();
     }
-
     public static void WriteAllLinesSync(string path, List<string> content)
     {
         File.WriteAllLines(path, content.ToArray());
     }
-
     public static void AppendAllLinesSync(string path, List<string> content)
     {
         File.AppendAllLines(path, content.ToArray());
     }
-
     public static List<byte> ReadAllBytesSync(string path)
     {
         return File.ReadAllBytes(path).ToList();
     }
-
     public static void WriteAllBytesSync(string path, List<byte> content)
     {
         File.WriteAllBytes(path, content.ToArray());
     }
-
     public static Func<string, bool> isUsed = null;
-
     #region
-
     protected static bool LockedByBitLocker(string path)
     {
         return ThrowEx.LockedByBitLocker(path);
     }
-
     public static
 #if ASYNC
         async Task<string>
@@ -114,22 +98,17 @@ string
         if (isUsed != null)
             if (isUsed.Invoke(path))
                 return string.Empty;
-
 #if ASYNC
         //TFSE.await WaitD();
 #endif
-
         //return enc == null ? File.ReadAllText(path) : File.ReadAllText(path, enc);
-
 #if ASYNC
         return await File.ReadAllTextAsync(path, enc);
 #else
 return File.ReadAllText(path, enc);
 #endif
     }
-
     #region Array
-
     public static
 #if ASYNC
         async Task
@@ -143,7 +122,6 @@ void
 #endif
             WriteAllLines(path, c.ToList());
     }
-
     public static
 #if ASYNC
         async Task
@@ -157,7 +135,6 @@ void
 #endif
             WriteAllBytes(path, c.ToList());
     }
-
     public static
 #if ASYNC
         async Task<byte[]>
@@ -172,11 +149,8 @@ byte[]
 #endif
                 ReadAllBytes(path)).ToArray();
     }
-
     #endregion
-
     #region Bytes
-
     /// <summary>
     ///     Only one method where could be TFSE.ReadAllBytes
     /// </summary>
@@ -191,11 +165,9 @@ List<byte>
         ReadAllBytes(string file)
     {
         if (LockedByBitLocker(file)) return new List<byte>();
-
 #if ASYNC
         //await WaitD();
 #endif
-
         return
 #if ASYNC
             (await File.ReadAllBytesAsync(file)).ToList();
@@ -203,7 +175,6 @@ List<byte>
 File.ReadAllBytes(file).ToList();
 #endif
     }
-
     public static
 #if ASYNC
         async Task
@@ -213,18 +184,14 @@ void
         WriteAllBytes(string file, List<byte> b)
     {
         if (LockedByBitLocker(file)) return;
-
 #if ASYNC
         await File.WriteAllBytesAsync(file, b.ToArray());
 #else
 File.WriteAllBytes(file, b.ToArray());
 #endif
     }
-
     #endregion
-
     #region Lines
-
     public static
 #if ASYNC
         async Task
@@ -234,16 +201,13 @@ void
         WriteAllLines(string file, IList<string> lines)
     {
         if (LockedByBitLocker(file)) return;
-
 #if ASYNC
         await File.WriteAllLinesAsync
 #else
 File.WriteAllLines
 #endif
-
             (file, lines.ToArray());
     }
-
     public static
 #if ASYNC
         async Task<List<string>>
@@ -251,13 +215,11 @@ File.WriteAllLines
 List<string>
 #endif
         ReadAllLines(string file, bool trim = true)
-
     {
         if (LockedByBitLocker(file)) return new List<string>();
 #if ASYNC
         //await WaitD();
 #endif
-
         var result =
 #if ASYNC
             (await File.ReadAllLinesAsync(file)).ToList();
@@ -265,14 +227,10 @@ List<string>
 File.ReadAllLines(file).ToList();
 #endif
         if (trim) result = result.Where(d => !string.IsNullOrWhiteSpace(d)).ToList();
-
         return result;
     }
-
     #endregion
-
     #region Text
-
     public static
 #if ASYNC
         async Task
@@ -282,14 +240,12 @@ void
         WriteAllText(string path, string content)
     {
         if (LockedByBitLocker(path)) return;
-
 #if ASYNC
         await File.WriteAllTextAsync(path, content);
 #else
 File.WriteAllText(path, content);
 #endif
     }
-
     public static
 #if ASYNC
         async Task<string>
@@ -299,7 +255,6 @@ string
         ReadAllText(string f)
     {
         if (LockedByBitLocker(f)) return string.Empty;
-
 #if ASYNC
         //await WaitD();
 #endif
@@ -316,7 +271,6 @@ return File.ReadAllText(f);
             return string.Empty;
         }
     }
-
     public static
 #if ASYNC
         async Task
@@ -326,7 +280,6 @@ void
         AppendAllText(string path, string content)
     {
         if (LockedByBitLocker(path)) return;
-
 #if ASYNC
         //await WaitD();
 #endif
@@ -342,11 +295,8 @@ File.AppendAllText(path, content);
         {
         }
     }
-
     #endregion
-
     #endregion
-
 #if ASYNC
     public static async Task<string> WaitD()
     {

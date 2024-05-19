@@ -5,7 +5,6 @@ SunamoReflection
 SunamoExceptions
 #endif
 ;
-
 public class RHSE
 {
     /// <summary>
@@ -17,7 +16,6 @@ public class RHSE
     public static string DumpAsXml(object output)
     {
         string objectAsXmlString;
-
         XmlSerializer xs = new(output.GetType());
         using (StringWriter sw = new())
         {
@@ -31,36 +29,24 @@ public class RHSE
                 objectAsXmlString = ex.ToString();
             }
         }
-
         return objectAsXmlString;
     }
-
-
     public static bool IsOrIsDeriveFromBaseClass(Type children, Type parent, bool a1CanBeString = true)
     {
         if (children == Types.tString && !a1CanBeString) return false;
-
         if (children == null) ThrowEx.IsNull("children", children);
-
         while (true)
         {
             if (children == null) return false;
-
             if (children == parent) return true;
-
             foreach (var inter in children.GetInterfaces())
                 if (inter == parent)
                     return true;
-
             children = children.BaseType;
         }
     }
-
-
     #region from RHShared64.cs
-
     #region Get types of class
-
     ///// <summary>
     ///// Return FieldInfo, so will be useful extract Name etc.
     ///// </summary>
@@ -83,15 +69,10 @@ public class RHSE
     //        ///fieldInfos = type.GetFields(BindingFlags.Static);//.Where(f => f.IsLiteral);
     //        fieldInfos = type.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.NonPublic |
     //          BindingFlags.FlattenHierarchy).ToList();
-
     //    }
-
-
     //    var withType = fieldInfos.Where(fi => fi.IsLiteral && !fi.IsInitOnly).ToList();
     //    return withType;
     //}
-
     #endregion
-
     #endregion
 }

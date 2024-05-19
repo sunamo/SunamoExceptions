@@ -1,12 +1,10 @@
 namespace
-
 #if SunamoBts
 SunamoBts
 #else
 SunamoExceptions
 #endif
 ;
-
 public class SunamoExceptionsNotTranslateAble
 {
     public const string NotImplementedCasePublicProgramErrorPleaseContactDeveloper =

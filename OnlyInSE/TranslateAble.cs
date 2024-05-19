@@ -221,7 +221,6 @@ SunamoYouTube
 SunamoExceptions
 #endif
 ;
-
 public class TranslateAble
 {
     /// <summary>

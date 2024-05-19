@@ -231,17 +231,14 @@ internal class SHSunamoExceptions
         r = sb.ToString();
         return r;
     }
-
     public static List<string> SplitChar(string s, params char[] dot)
     {
         return s.Split(dot, StringSplitOptions.RemoveEmptyEntries).ToList();
     }
-
     public static List<string> Split(string s, params string[] dot)
     {
         return s.Split(dot, StringSplitOptions.RemoveEmptyEntries).ToList();
     }
-
     public static List<string> SplitNone(string text, params string[] deli)
     {
         return text.Split(deli, StringSplitOptions.None).ToList();
@@ -254,7 +251,6 @@ internal class SHSunamoExceptions
     public static string TrimEnd(string name, string ext)
     {
         while (name.EndsWith(ext)) return name.Substring(0, name.Length - ext.Length);
-
         return name;
     }
 }

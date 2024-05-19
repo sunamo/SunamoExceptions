@@ -1,7 +1,5 @@
-
 using System.Collections;
 using System.Text;
-
 namespace
 #if SunamoBts
 SunamoBts
@@ -225,17 +223,12 @@ SunamoYouTube
 SunamoExceptions
 #endif
 ;
-
 public partial class Types
 {
     
-
     public static readonly Type tObject = typeof(object);
-
     public static readonly Type tStringBuilder = typeof(StringBuilder);
-
     public static readonly Type tIEnumerable = typeof(IEnumerable);
-
     public static readonly Type tString = typeof(string);
     public static readonly Type tFloat = typeof(float);
     public static readonly Type tDouble = typeof(double);
@@ -251,29 +244,18 @@ public partial class Types
     public static readonly Type tDateTime = typeof(DateTime);
     public static readonly Type tBinary = typeof(byte[]);
     public static readonly Type tChar = typeof(char);
-
     public static readonly List<Type> allBasicTypes = new()
 {
 tObject, tString, tStringBuilder, tInt, tDateTime,
 tDouble, tFloat, tChar, tBinary, tByte, tShort, tBinary, tLong, tDecimal, tSbyte, tUshort, tUint, tUlong
 };
-
     public static readonly Type list = typeof(IList);
-
     #region Same seria as in DefaultValueForTypeT
-
     public static readonly Type tBool = typeof(bool);
-
     #region Signed numbers
-
     #endregion
-
     #region Unsigned numbers
-
     #endregion
-
-
     public static readonly Type tGuid = typeof(Guid);
-
     #endregion
 }

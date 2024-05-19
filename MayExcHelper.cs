@@ -1,5 +1,3 @@
-
-
 namespace
 #if SunamoDevCode
 SunamoDevCode
@@ -7,8 +5,6 @@ SunamoDevCode
 SunamoExceptions
 #endif
 ;
-
-
 public class MayExcHelper
 {
     /// <summary>
@@ -27,7 +23,6 @@ public class MayExcHelper
         }
         return false;
     }
-
     // /// <summary>
     // /// True when is there error
     // /// </summary>

@@ -5,7 +5,6 @@ SunamoShared
 SunamoExceptions
 #endif
 ;
-
 public class TypesList
 {
     public static readonly Type tLong = typeof(List<long>);

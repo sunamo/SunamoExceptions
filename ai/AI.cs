@@ -9,15 +9,7 @@ SunamoEnums
 SunamoExceptions
 #endif
 ;
-
-
-
-
-
-
-
 public record AIAssembly<T>(Action<T> a, T t);
-
 public class AI
 {
     /// <summary>
@@ -29,9 +21,7 @@ public class AI
     {
         // dekonstrukci tu nemůžu použít protože mi auto dekonstruuje i AIAssembly a tedy vrácené objekty jsou 2x a bylo by těžké se v tom vyznat
         //var (winPi) = a;
-
         if (a.winPi != null) a.winPi.a(a.winPi.t);
-
         AIStore.winPi = a.winPi?.t;
     }
 }

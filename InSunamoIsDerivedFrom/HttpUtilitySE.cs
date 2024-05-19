@@ -1,5 +1,4 @@
 using System.Collections.Specialized;
-
 namespace
 #if SunamoShared
 SunamoShared
@@ -11,7 +10,6 @@ SunamoDevCode
 SunamoExceptions
 #endif
 ;
-
 public class HttpUtilitySE
 {
     /// <summary>
@@ -33,11 +31,9 @@ public class HttpUtilitySE
             {
                 var key = parts[0].Trim('?', ' ');
                 var val = parts[1].Trim();
-
                 queryParameters.Add(key, val);
             }
         }
-
         return queryParameters;
     }
 }

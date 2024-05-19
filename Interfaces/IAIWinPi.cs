@@ -1,5 +1,3 @@
-
-
 namespace
 #if SunamoCl
 SunamoCl
@@ -7,8 +5,6 @@ SunamoCl
 SunamoExceptions
 #endif
 ;
-
-
 public interface IAIWinPi
 {
     Action<string> PHWinPiRunAsDesktopUserNoAdmin { get; set; }
