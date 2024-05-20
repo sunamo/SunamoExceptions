@@ -19,6 +19,10 @@ SunamoStringSplit
 SunamoExtensions
 #elif SunamoDevCode
 SunamoDevCode
+#elif SunamoString
+SunamoString
+#elif SunamoStringTrim
+SunamoStringTrim
 #else
 SunamoExceptions
 #endif

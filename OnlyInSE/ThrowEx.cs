@@ -224,6 +224,10 @@ SunamoYouTube
 SunamoGetFiles
 #elif SunamoGetFolders
 SunamoGetFolders
+#elif SunamoCollectionsTo
+SunamoCollectionsTo
+#elif SunamoXlfEngine
+SunamoXlfEngine
 #else
 OnlyInSE.ThrowEx.cs
 #endif

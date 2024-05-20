@@ -1,3 +1,5 @@
+using System.Xml.Serialization;
+
 namespace
 #if SunamoReflection
 SunamoReflection
