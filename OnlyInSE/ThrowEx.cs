@@ -229,7 +229,7 @@ SunamoCollectionsTo
 #elif SunamoXlfEngine
 SunamoXlfEngine
 #else
-OnlyInSE.ThrowEx.cs
+SunamoExceptions
 #endif
 ;
 public class ThrowEx

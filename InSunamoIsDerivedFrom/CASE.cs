@@ -24,7 +24,7 @@ SunamoCollections
 #elif SunamoDevCode
 SunamoDevCode
 #else
-SunamoExceptions.InSunamoIsDerivedFrom
+SunamoExceptions
 #endif
 ;
 public class CASE
