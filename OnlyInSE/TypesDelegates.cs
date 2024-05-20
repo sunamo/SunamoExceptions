@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace
 #if SunamoAsync
-    SunamoAsync
+SunamoAsync
 #elif SunamoCl
-    SunamoCl
+SunamoCl
 #else
 SunamoExceptions
 #endif
 ;
-
-
-
 public partial class Types
 {
     public static readonly Type tVoidVoid = typeof(VoidVoid);
