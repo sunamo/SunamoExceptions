@@ -537,7 +537,7 @@ PD.ShowMb(s);
     {
         if (debuggerBreakOnEveryExc)
 {
-            Debugger.Break();
+            System.Diagnostics.Debugger.Break();
         }
         // Výjimky se tak často nevyhazují. Tohle je daň za to že jsem tu měl arch
         // jež nebyla dobře navržená. V ThrowEx se to již podruhé volat nebude.
@@ -787,10 +787,7 @@ ShowMb("Throw exc");
     {
         ThrowIsNotNull(Exceptions.DoesntHaveRequiredType(FullNameOfExecutedCode(), variableName));
     }
-    public static void KeyNotFound<T1, T2>(IDictionary<T2, T2> en, T2 v, T2 key)
-    {
-        throw new NotImplementedException();
-    }
+
     public static void MoreThanOneElement(string listName, int count, string moreInfo = Consts.se)
     {
         var fn = FullNameOfExecutedCode();
@@ -949,6 +946,9 @@ ShowMb("Throw exc");
         r = sb.ToString();
         return r;
     }
+
+    
+
     //    private static void ThrowIsNotNull(Func<string, object, string> f, object o)
     //{
     //    ThrowIsNotNull(f, o);

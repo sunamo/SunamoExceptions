@@ -23,6 +23,10 @@ SunamoDevCode
 SunamoString
 #elif SunamoStringTrim
 SunamoStringTrim
+#elif SunamoShared
+SunamoShared
+#elif SunamoStringShared
+SunamoStringShared
 #else
 SunamoExceptions
 #endif

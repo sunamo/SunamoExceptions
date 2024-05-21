@@ -17,12 +17,16 @@ SunamoPackageJson
 SunamoPlatformUwpInterop
 #elif SunamoVcf
 SunamoVcf
+#elif SunamoFileExtensions
+SunamoFileExtensions
 #elif SunamoXml
 SunamoXml
 #elif SunamoLang
 SunamoLang
 #elif SunamoDevCode
 SunamoDevCode
+#elif SunamoWikipedia
+    SunamoWikipedia
 #else
 SunamoExceptions
 #endif

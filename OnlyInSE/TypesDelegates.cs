@@ -8,6 +8,8 @@ namespace
 SunamoAsync
 #elif SunamoCl
 SunamoCl
+#elif SunamoShared
+    SunamoShared
 #else
 SunamoExceptions
 #endif

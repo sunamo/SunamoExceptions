@@ -197,7 +197,7 @@ namespace SunamoExceptions;
 
 ////    private static void ThrowIsNotNull(Func<string, string, string> firstLetterIsNotUpper, string selectedFile)
 ////    {
-////        throw new NotImplementedException();
+////        ThrowEx.NotImplementedMethod();
 ////    }
 
 ////    /// <summary>
