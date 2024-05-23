@@ -1,4 +1,4 @@
 namespace SunamoExceptions;
 
 
-internal delegate void VoidVoid();
+public delegate void VoidVoid();
