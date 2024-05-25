@@ -67,7 +67,7 @@ public class TFSE
                 WriteAllTextSync(path, string.Empty);
                 return new List<string>();
             }
-        return File.ReadAllText(path).ToList();
+        return SHGetLines.GetLines(File.ReadAllText(path));
     }
     public static void WriteAllLinesSync(string path, List<string> content)
     {
@@ -224,9 +224,9 @@ List<string>
 #if ASYNC
         //await WaitD();
 #endif
-        var result = SHGetLines.GetLines SHGetLines.GetLines
+        var result = SHGetLines.GetLines
 #if ASYNC
-            (await File.ReadAllTextAsync(file)).ToList();
+            (await File.ReadAllTextAsync(file));
 #else
 File.ReadAllText(file).ToList();
 #endif
