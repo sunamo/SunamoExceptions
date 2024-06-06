@@ -16,8 +16,8 @@ SunamoFileSystem
 SunamoGitBashBuilder
 #elif SunamoHtml
 SunamoHtml
-#elif SunamoLogger
-SunamoLogger
+#elif SunamoLogging
+SunamoLogging
 #elif SunamoShared
 SunamoShared
 #elif SunamoString

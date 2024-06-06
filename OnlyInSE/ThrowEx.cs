@@ -1,6 +1,3 @@
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
 namespace
 #if SunamoArgs
 SunamoArgs
@@ -106,8 +103,8 @@ SunamoInterfaces
 SunamoJson
 #elif SunamoLang
 SunamoLang
-#elif SunamoLogger
-SunamoLogger
+#elif SunamoLogging
+SunamoLogging
 #elif SunamoLogMessage
 SunamoLogMessage
 #elif SunamoMail
@@ -460,6 +457,12 @@ public class ThrowEx
     #region DifferentCountInLists
     #endregion
     #endregion
+
+    public static void UncommentAfterNugetsFinished()
+    {
+        ThrowIsNotNull(FullNameOfExecutedCode(T.Item1, T.Item2));
+    }
+
     /// <summary>
     ///     Je lichý
     /// </summary>
@@ -536,7 +539,7 @@ PD.ShowMb(s);
     public static bool ThrowIsNotNull(string exception, bool reallyThrow = true)
     {
         if (debuggerBreakOnEveryExc)
-{
+        {
             System.Diagnostics.Debugger.Break();
         }
         // Výjimky se tak často nevyhazují. Tohle je daň za to že jsem tu měl arch
@@ -947,7 +950,7 @@ ShowMb("Throw exc");
         return r;
     }
 
-    
+
 
     //    private static void ThrowIsNotNull(Func<string, object, string> f, object o)
     //{

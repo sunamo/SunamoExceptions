@@ -121,8 +121,8 @@ SunamoInterfaces
 SunamoJson
 #elif SunamoLang
 SunamoLang
-#elif SunamoLogger
-SunamoLogger
+#elif SunamoLogging
+SunamoLogging
 #elif SunamoLogMessage
 SunamoLogMessage
 #elif SunamoMail

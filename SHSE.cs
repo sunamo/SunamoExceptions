@@ -3,8 +3,8 @@ namespace
 SunamoCl
 #elif SunamoConverters
 SunamoConverters
-#elif SunamoLogger
-SunamoLogger
+#elif SunamoLogging
+SunamoLogging
 #elif SunamoReflection
 SunamoReflection
 #elif SunamoStringData

@@ -17,8 +17,8 @@ SunamoDictionary
 SunamoFileSystem
 #elif SunamoHtml
 SunamoHtml
-#elif SunamoLogger
-SunamoLogger
+#elif SunamoLogging
+SunamoLogging
 #elif SunamoMail
 SunamoMail
 #elif SunamoPlatformUwpInterop

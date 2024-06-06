@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <WarningLevel>5</WarningLevel>
-    <Version>24.5.25.1</Version>
+    <Version>24.5.28.1</Version>
     <Description>Library with templates for throwing exceptions</Description>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
