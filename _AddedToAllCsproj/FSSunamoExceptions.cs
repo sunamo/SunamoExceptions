@@ -226,6 +226,10 @@ SunamoXml
 SunamoYaml
 #elif SunamoYouTube
 SunamoYouTube
+#elif SunamoDictionaryToDelete
+SunamoDictionaryToDelete
+#elif SunamoDotnetCmdBuilder
+SunamoDotnetCmdBuilder
 #else
 SunamoExceptions
 #endif
@@ -251,7 +255,7 @@ nad
         while (true)
         {
             nad = Path.GetDirectoryName(nad);
-            // TODO: Tady to nefunguje pro UWP/UAP apps protoze nemaji pristup k celemu disku. Zjistit co to je UWP/UAP/... a jak v nem ziskat/overit jakoukoliv slozku na disku
+            
             if (Directory.Exists(nad))
             {
                 break;

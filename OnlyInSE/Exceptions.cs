@@ -228,6 +228,10 @@ SunamoGetFiles
 SunamoGetFolders
 #elif SunamoXlfEngine
 SunamoXlfEngine
+#elif SunamoDictionaryToDelete
+SunamoDictionaryToDelete
+#elif SunamoDotnetCmdBuilder
+SunamoDotnetCmdBuilder
 #else
 SunamoExceptions
 #endif
@@ -262,13 +266,13 @@ public class Exceptions
     {
         return CheckBefore(before) + what + " is not allowed.";
     }
-    /// <summary>
-    ///     Je lichý
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="colName"></param>
-    /// <param name="col"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
+    
     public static string IsOdd(string before, string colName, ICollection col)
     {
         return col.Count % 2 == 1 ? CheckBefore(before) + colName + " has odd number of elements " + col.Count : null;
@@ -337,24 +341,24 @@ public class Exceptions
     {
         return before + "Uncomment next rows";
     }
-    /// <summary>
-    ///     https://stackoverflow.com/a/168922
-    /// </summary>
-    /// <param name="v"></param>
-    /// <param name="colName"></param>
-    /// <param name="col"></param>
-    /// <param name="indexName"></param>
-    /// <param name="index"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static string OutOfRange(string v, string colName, ICollection col, string indexName, int index)
     {
         return col.Count <= index
         ? CheckBefore(v) + $"{index} (variable {indexName}) is out of range in {colName}"
         : null;
     }
-    /// <summary>
-    ///     Zmena: metoda nezapisuje primo na konzoli, misto toho pouze vraci retezec
-    /// </summary>
+    
+    
+    
     public static string FileHasExtensionNotParseableToImageFormat(string before, string fnOri)
     {
         return CheckBefore(before) + "File " + fnOri + " has wrong file extension";
@@ -384,10 +388,10 @@ public class Exceptions
     }
     public static string FileExists(string before, string fulLPath)
     {
-        //if (Path.ExistsFile(fulLPath) || Path.)
-        //{
-        //    return null;
-        //}
+        
+        
+        
+        
         return CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
     public static string CheckBackslashEnd(string before, string r)
@@ -437,13 +441,13 @@ public class Exceptions
     {
         return CheckBefore(v) + TranslateAble.i18n("CanTDeleteFolder") + ": " + folder;
     }
-    /// <summary>
-    ///     Check whether in A3,4 is same count of elements
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="detailLocation"></param>
-    /// <param name="before2"></param>
-    /// <param name="after"></param>
+    
+    
+    
+    
+    
+    
+    
     public static string ElementWasntRemoved(string before, string detailLocation, int before2, int after)
     {
         return before2 == after
@@ -451,12 +455,12 @@ public class Exceptions
         detailLocation
         : null;
     }
-    /// <summary>
-    ///     https://stackoverflow.com/a/168922
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="folders"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
     public static string NoPassedFolders(string before, ICollection folders)
     {
         return folders.Count == 0 ? CheckBefore(before) + TranslateAble.i18n("NoPassedFolderInto") : null;
@@ -469,13 +473,13 @@ public class Exceptions
     {
         return CheckBefore(before) + description;
     }
-    /// <summary>
-    ///     Is used when single (not list etc) bad arg is entered to method
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="valueVar"></param>
-    /// <param name="nameVar"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
+    
     public static string InvalidParameter(string before, string valueVar, string nameVar)
     {
         return valueVar != WebUtility.UrlDecode(valueVar)
@@ -530,11 +534,11 @@ public class Exceptions
     }
     #endregion
     #region From easy copy from ExceptionsShared64.cs - all ok 16-10-21
-    /// <summary>
-    ///     Start with ConstsSE.Exception to identify occur
-    /// </summary>
-    /// <param name="ex"></param>
-    /// <param name="alsoInner"></param>
+    
+    
+    
+    
+    
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return Consts.se;
@@ -584,12 +588,12 @@ public class Exceptions
     }
     #endregion
     #region from ExceptionsShared.cs
-    /// <summary>
-    ///     Verify whether A2 contains A3
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="originalText"></param>
-    /// <param name="shouldContains"></param>
+    
+    
+    
+    
+    
+    
     public static string NotContains(string before, string originalText, params string[] shouldContains)
     {
         List<string> notContained = new();
@@ -623,7 +627,7 @@ public class Exceptions
         {
             throw new ArgumentException($"'{nameof(additionalMessage)}' cannot be null or empty.", nameof(additionalMessage));
         }
-        // Proto�e Linq to neum� a extension metody tu nebudu tahat https://stackoverflow.com/a/168922
+        
         return folders.OfType<object>().Count() == 0
         ? before + colName + " has no elements. " + additionalMessage
         : null;
@@ -671,7 +675,7 @@ public class Exceptions
     }
     public static string DumpAsString(object s)
     {
-        return null; //RHSE.DumpAsXml(s);
+        return null; 
     }
     public static string InvalidCast(string before, string message)
     {
@@ -756,8 +760,8 @@ public class Exceptions
     public static string DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
     {
         if (countfc != countsc)
-            // sess and SunamoPageHelperSunamo have the i18n method. Sess calculates that the text translation is in dictionaries, while SunamoPageHelperSunamo needs to have a method set for this. If this doesn't work, replace it with SunamoPageHelperSunamo
-            // coz SunamoPageHelperSunamo is not in SunamoExceptions available
+            
+            
             return CheckBefore(before) + " " + TranslateAble.i18n("DifferentCountElementsInCollection") + " " +
             string.Concat(namefc + AllStrings.swda + countfc) + " vs. " +
             string.Concat(namesc + AllStrings.swda + countsc);
@@ -788,30 +792,30 @@ public class Exceptions
         ? before + $"{list.Count} elements in {nameOfVariable} which is zero or more than one"
         : null;
     }
-    /// <summary>
-    ///     nechci mít v SunamoExceptions žádné pomocné metody, jedna dělá další a nabaluje se to
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="nameOfVariable"></param>
-    /// <param name="n"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
+    
     public static string IsNotPositiveNumber(string before, string nameOfVariable, int? n)
     {
         return !n.HasValue ? before + nameOfVariable + " is not int" :
         n.Value > 0 ? null : nameOfVariable + " is int but not > 0";
     }
-    //public static string IsNotPositiveNumber(string before, string nameOfVariable, string n,
-    //    bool excIfIsFloat = false, bool replaceCommaForDot = false)
-    //{
-    //    bool isInt = BTS.IsInt(n, excIfIsFloat, replaceCommaForDot);
-    //    return !isInt ? before + nameOfVariable + " is not int" : BTS.lastInt > 0 ? null : nameOfVariable + " is int but not > 0";
-    //}
-    /// <summary>
-    ///     no additional check
-    /// </summary>
-    /// <param name="before"></param>
-    /// <param name="item"></param>
-    /// <returns></returns>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static string NotExists(string before, string item)
     {
         return before + item + " not exists";

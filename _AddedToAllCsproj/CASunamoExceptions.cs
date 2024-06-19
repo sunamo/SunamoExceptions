@@ -225,6 +225,10 @@ SunamoGetFiles
 SunamoGetFolders
 #elif SunamoXlfEngine
 SunamoXlfEngine
+#elif SunamoDictionaryToDelete
+SunamoDictionaryToDelete
+#elif SunamoDotnetCmdBuilder
+SunamoDotnetCmdBuilder
 #else
 SunamoExceptions
 #endif

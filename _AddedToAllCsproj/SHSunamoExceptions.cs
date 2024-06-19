@@ -225,6 +225,10 @@ SunamoGetFiles
 SunamoGetFolders
 #elif SunamoXlfEngine
 SunamoXlfEngine
+#elif SunamoDictionaryToDelete
+SunamoDictionaryToDelete
+#elif SunamoDotnetCmdBuilder
+SunamoDotnetCmdBuilder
 #else
 SunamoExceptions
 #endif
@@ -253,7 +257,7 @@ internal class SHSunamoExceptions
     }
     public static string NullToStringOrDefault(object n)
     {
-        //return NullToStringOrDefault(n, null);
+        
         return n == null ? " " + Consts.nulled : AllStrings.space + n;
     }
     public static string TrimEnd(string name, string ext)
