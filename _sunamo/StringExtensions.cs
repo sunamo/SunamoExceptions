@@ -1,8 +1,8 @@
 namespace SunamoExceptions;
 
-public static class StringExtensions
+internal static class StringExtensions
 {
-    public static string ToUnixLineEnding(this string s)
+    internal static string ToUnixLineEnding(this string s)
     {
         return s.ReplaceLineEndings("\n");
     }
