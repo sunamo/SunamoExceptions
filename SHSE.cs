@@ -1,36 +1,3 @@
-namespace
-#if SunamoCl
-SunamoCl
-#elif SunamoConverters
-SunamoConverters
-#elif SunamoLogging
-SunamoLogging
-#elif SunamoReflection
-SunamoReflection
-#elif SunamoStringData
-SunamoStringData
-#elif SunamoStringJoin
-SunamoStringJoin
-#elif SunamoStringReplace
-SunamoStringReplace
-#elif SunamoStringSplit
-SunamoStringSplit
-#elif SunamoExtensions
-SunamoExtensions
-#elif SunamoDevCode
-SunamoDevCode
-#elif SunamoString
-SunamoString
-#elif SunamoStringTrim
-SunamoStringTrim
-#elif SunamoShared
-SunamoShared
-#elif SunamoStringShared
-SunamoStringShared
-#else
-SunamoExceptions
-#endif
-;
 public class SHSE
 {
     public static string JoinNL(List<string> l)
