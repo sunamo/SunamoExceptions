@@ -1,10 +1,3 @@
-namespace
-#if SunamoDevCode
-SunamoDevCode
-#else
-SunamoExceptions
-#endif
-;
 public class MayExcHelper
 {
     /// <summary>
