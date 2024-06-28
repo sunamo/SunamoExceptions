@@ -1,15 +1,4 @@
 using System.Collections.Specialized;
-namespace
-#if SunamoShared
-SunamoShared
-#elif SunamoConverters
-SunamoConverters
-#elif SunamoDevCode
-SunamoDevCode
-#else
-SunamoExceptions
-#endif
-;
 public class HttpUtilitySE
 {
     /// <summary>

@@ -1,16 +1,3 @@
-namespace
-#if SunamoDevCode
-SunamoDevCode
-#elif SunamoFubuCsProjFile
-SunamoFubuCsProjFile
-#elif SunamoOctokit
-SunamoOctokit
-#elif SunamoThisApp
-SunamoThisApp
-#else
-SunamoExceptions
-#endif
-;
 public class ResultWithException<T>
 {
     public T Data { get; set; }

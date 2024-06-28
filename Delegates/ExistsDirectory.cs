@@ -1,14 +1,3 @@
-namespace
-#if SunamoPlatformUwpInterop
-SunamoPlatformUwpInterop
-#elif SunamoFileSystem
-SunamoFileSystem
-#elif SunamoFileSystem
-SunamoFileSystem
-#else
-SunamoExceptions
-#endif
-;
 // must be in SE, not SS - many project would reference SS only due to delegates
 /// <summary>
 ///     For redirect to FSApps or FS - can't add

@@ -1,32 +1,3 @@
-namespace
-#if SunamoCollectionsValuesTableGrid
-SunamoCollectionsValuesTableGrid
-#elif SunamoCollectionsShared
-SunamoCollectionsShared
-#elif SunamoSerializer
-SunamoSerializer
-#elif SunamoSerializer
-SunamoSerializer
-#elif SunamoSerializer
-SunamoSerializer
-#elif SunamoString
-SunamoString
-#elif SunamoStringSplit
-SunamoStringSplit
-#elif SunamoExtensions
-SunamoExtensions
-#elif SunamoExceptions
-SunamoExceptions
-#elif SunamoExceptions
-SunamoExceptions
-#elif SunamoCollections
-SunamoCollections
-#elif SunamoDevCode
-SunamoDevCode
-#else
-SunamoExceptions
-#endif
-;
 public class CASE
 {
     public static void InitFillWith(List<string> datas, int pocet, string initWith = Consts.stringEmpty)

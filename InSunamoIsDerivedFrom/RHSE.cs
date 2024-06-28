@@ -1,11 +1,4 @@
 using System.Xml.Serialization;
-namespace
-#if SunamoReflection
-SunamoReflection
-#else
-SunamoExceptions
-#endif
-;
 public class RHSE
 {
     /// <summary>
