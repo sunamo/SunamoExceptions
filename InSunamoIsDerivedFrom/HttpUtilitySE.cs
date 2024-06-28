@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 using System.Collections.Specialized;
 public class HttpUtilitySE
 {

@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 public class TFSE
 {
     public static string ReadAllTextSync(string path)

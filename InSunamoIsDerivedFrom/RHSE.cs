@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 using System.Xml.Serialization;
 public class RHSE
 {

@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 using System.Diagnostics;
 using System.Text;
 

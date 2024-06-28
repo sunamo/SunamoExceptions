@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 public class SHSE
 {
     public static string JoinNL(List<string> l)

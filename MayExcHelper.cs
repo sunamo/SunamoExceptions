@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 public class MayExcHelper
 {
     /// <summary>

@@ -1,3 +1,5 @@
+
+namespace SunamoExceptions;
 public class CASE
 {
     public static void InitFillWith(List<string> datas, int pocet, string initWith = Consts.stringEmpty)
