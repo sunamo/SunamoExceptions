@@ -16,6 +16,6 @@ SunamoExceptions
 ;
 public partial class TypesDelegates
 {
-    public static readonly Type tVoidVoid = typeof(VoidVoid);
-    public static readonly Type tTaskVoid = typeof(TaskVoid);
+    public static readonly Type tAction = typeof(Action);
+    public static readonly Type tFuncTask = typeof(Func<Task>);
 }
