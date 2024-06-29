@@ -14,7 +14,7 @@ SunamoCl
 SunamoExceptions
 #endif
 ;
-public partial class Types
+public partial class TypesDelegates
 {
     public static readonly Type tVoidVoid = typeof(VoidVoid);
     public static readonly Type tTaskVoid = typeof(TaskVoid);
