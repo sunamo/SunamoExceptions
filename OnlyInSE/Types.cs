@@ -2,9 +2,9 @@
 namespace SunamoExceptions;
 using System.Collections;
 using System.Text;
-public partial class Types
+public class Types
 {
-    
+
     public static readonly Type tObject = typeof(object);
     public static readonly Type tStringBuilder = typeof(StringBuilder);
     public static readonly Type tIEnumerable = typeof(IEnumerable);
