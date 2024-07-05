@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.OnlyInSE;
 /// <summary>
 ///     Přes tyto třídy je jediná možnost jak se vypořádat s out/ref v async metodách

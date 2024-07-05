@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions;
 public class AIStore
 {

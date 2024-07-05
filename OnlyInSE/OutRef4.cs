@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.OnlyInSE;
 public class OutRef4<T, U, V, W> : OutRef3<T, U, V>
 {

@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.Delegates;
 // must be in SE, not SS - many project would reference SS only due to delegates
 /// <summary>

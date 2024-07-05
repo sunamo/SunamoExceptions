@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions._sunamo.SunamoValues;
 internal class AllStrings
 {

@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.Interfaces;
 public interface IAIWinPi
 {

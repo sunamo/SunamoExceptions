@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.ai;
 public record AIAssembly<T>(Action<T> a, T t);
 public class AI

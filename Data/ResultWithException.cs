@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.Data;
 public class ResultWithException<T>
 {

@@ -1,7 +1,4 @@
-
 namespace SunamoExceptions.OnlyInSE;
-using System.Diagnostics;
-using System.Text;
 
 
 
@@ -118,4 +115,3 @@ public class Exc
     #endregion
     #endregion
 }
-

@@ -1,7 +1,4 @@
-
 namespace SunamoExceptions.OnlyInSE;
-using System.Collections;
-using System.Text;
 public class Types
 {
 

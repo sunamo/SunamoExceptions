@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions._AddedToAllCsproj;
 internal class SHSunamoExceptions
 {

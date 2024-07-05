@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.InSunamoIsDerivedFrom;
 public class CASE
 {

@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.OnlyInSE;
 public class TranslateAble
 {

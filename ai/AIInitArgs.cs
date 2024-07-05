@@ -1,4 +1,3 @@
-
 namespace SunamoExceptions.ai;
 public class AIInitArgs
 {
