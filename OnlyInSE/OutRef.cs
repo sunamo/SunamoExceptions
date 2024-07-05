@@ -1,5 +1,5 @@
 
-namespace SunamoExceptions;
+namespace SunamoExceptions.OnlyInSE;
 /// <summary>
 ///     Přes tyto třídy je jediná možnost jak se vypořádat s out/ref v async metodách
 ///     Ukládat do to statické property je nesmysl protože k tomu můžou v jeden čas přistupovat úplně všichni

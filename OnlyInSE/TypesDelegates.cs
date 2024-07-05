@@ -11,7 +11,7 @@ SunamoCl
 #elif SunamoShared
     SunamoShared
 #else
-SunamoExceptions
+SunamoExceptions.OnlyInSE
 #endif
 ;
 public class TypesDelegates

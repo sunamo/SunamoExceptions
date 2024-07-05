@@ -1,5 +1,5 @@
 
-namespace SunamoExceptions;
+namespace SunamoExceptions.Data;
 public class ResultWithException<T>
 {
     public T Data { get; set; }

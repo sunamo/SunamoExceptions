@@ -1,5 +1,5 @@
 
-namespace SunamoExceptions;
+namespace SunamoExceptions.OnlyInSE;
 public class OutRef3<T, U, V> : OutRef<T, U>
 {
     public OutRef3(T t, U u, V v) : base(t, u)

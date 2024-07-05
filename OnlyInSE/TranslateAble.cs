@@ -1,5 +1,5 @@
 
-namespace SunamoExceptions;
+namespace SunamoExceptions.OnlyInSE;
 public class TranslateAble
 {
     
