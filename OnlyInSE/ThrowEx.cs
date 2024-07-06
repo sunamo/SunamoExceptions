@@ -6,15 +6,15 @@ public class ThrowEx
     public static void DummyNotThrow(Exception ex)
     {
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     public static bool NotContains(string p, params string[] after)
     {
         return ThrowIsNotNull(Exceptions.NotContains(FullNameOfExecutedCode(), p, after));
@@ -38,13 +38,13 @@ public class ThrowEx
         ThrowIsNotNull(Exceptions.WrongNumberOfElements(FullNameOfExecutedCode(T.Item1, T.Item2), requireElements,
         nameCount, ele));
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static void DirectoryWasntFound(string folder1)
     {
         ThrowIsNotNull(Exceptions.DirectoryWasntFound(FullNameOfExecutedCode(), folder1));
@@ -80,10 +80,10 @@ public class ThrowEx
         Exceptions.IsNotPositiveNumber(FullNameOfExecutedCode(), nameOfVariable, n)
         );
     }
-    
-    
-    
-    
+
+
+
+
     public static void NotExists(string item)
     {
         ThrowIsNotNull(
@@ -97,14 +97,14 @@ public class ThrowEx
         );
     }
     #endregion
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     public static bool ThrowIsNotNull(Exception exception)
     {
         if (exception != null)
@@ -136,7 +136,7 @@ public class ThrowEx
     public static Func<char, bool> IsLockedByBitLocker;
     public static bool LockedByBitLocker(string path)
     {
-        
+
         if (IsLockedByBitLocker != null)
         {
             var p = path[0];
@@ -188,7 +188,7 @@ public class ThrowEx
     {
         ThrowIsNotNull(Exceptions.FtpAuthentication, s);
     }
-    
+
     public static void InvalidCast(string v)
     {
         ThrowIsNotNull(Exceptions.InvalidCast, v);
@@ -205,7 +205,7 @@ public class ThrowEx
     {
         ThrowIsNotNull(Exceptions.FtpSecurityNotAvailable, v);
     }
-    
+
     public static void FtpMissingSocket(Exception ex)
     {
         ThrowIsNotNull(Exceptions.FtpMissingSocket, ex);
@@ -233,12 +233,30 @@ public class ThrowEx
         ThrowIsNotNull(FullNameOfExecutedCode(T.Item1, T.Item2));
     }
 
-    
-    
-    
-    
-    
-    
+
+    public static void FileAlreadyExists(string file)
+    {
+        throw new Exception("File already exists: " + file);
+    }
+
+    public static void ListNullOrEmpty<T>(string variableName, IEnumerable<T> t)
+    {
+        IsNull(variableName, t);
+
+        bool isEmpty = true;
+        foreach (var item in t)
+        {
+            isEmpty = false;
+            break;
+        }
+
+        if (isEmpty)
+        {
+            throw new Exception(variableName + " is empty!");
+        }
+    }
+
+
     public static bool IsOdd(string colName, ICollection e)
     {
         var f = Exceptions.IsOdd;
@@ -288,49 +306,49 @@ PD.ShowMb(s);
         var exc = f(FullNameOfExecutedCode(T.Item1, T.Item2));
         return ThrowIsNotNull(exc);
     }
-    
-    
-    
-    
-    
+
+
+
+
+
     private static string lastMethod;
-    
-    
-    
-    
-    
+
+
+
+
+
     public static bool debuggerBreakOnEveryExc = false;
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static bool ThrowIsNotNull(string exception, bool reallyThrow = true)
     {
         if (debuggerBreakOnEveryExc)
         {
             System.Diagnostics.Debugger.Break();
         }
-        
-        
+
+
         var cm = T.Item2;
         if (exception != null)
         {
             if (lastMethod == cm)
-                
-                
-                
-                
-                
+
+
+
+
+
                 return false;
             if (lastMethod == null)
             {
-                
-                
-                
-                
-                
+
+
+
+
+
             }
             else
             {
@@ -338,13 +356,13 @@ PD.ShowMb(s);
 #if MB
 ShowMb();
 #endif
-                
+
             }
             lastMethod = cm;
             if (Exc.aspnet)
             {
-                
-                
+
+
                 writeServerError(T.Item3, exception);
                 if (reallyThrow && reallyThrow2) throw new Exception(exception);
             }
@@ -364,21 +382,21 @@ ShowMb("Throw exc");
         }
         return true;
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     public static void IsNotWindowsPathFormat(string argName, string argValue)
     {
         ThrowIsNotNull(Exceptions.IsNotWindowsPathFormat(null, argName, argValue));
     }
     public static string FullNameOfExecutedCode()
     {
-        
+
         var f = FullNameOfExecutedCode(T.Item1, T.Item2, true);
         return f;
     }
@@ -399,18 +417,18 @@ ShowMb("Throw exc");
         ThrowIsNotNull(Exceptions.IsNull(FullNameOfExecutedCode(), variableName, variable));
     }
 #pragma warning disable
-    
-    
-    
-    
-    
+
+
+
+
+
     public static Action<string, string> writeServerError;
 #pragma warning enable
-    
-    
-    
-    
-    
+
+
+
+
+
     public static string FullNameOfExecutedCode(object type, string methodName, bool fromThrowEx = false)
     {
         if (methodName == null)
@@ -462,16 +480,16 @@ ShowMb("Throw exc");
         ThrowIsNotNull(Exceptions.FolderCannotBeDeleted(FullNameOfExecutedCode(), repairedBlogPostsFolder, ex));
     }
     public static Action<object> showExceptionWindow = null;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
     public static void KeyNotFound<T, U>(IDictionary<T, U> en, string dictName, T key)
     {
         ThrowIsNotNull(Exceptions.KeyNotFound(FullNameOfExecutedCode(ThrowEx.T.Item1, ThrowEx.T.Item2), en, dictName,
@@ -497,13 +515,13 @@ ShowMb("Throw exc");
         ThrowIsNotNull(Exceptions.CannotCreateDateTime(FullNameOfExecutedCode(), year, month, day, hour, minute,
         seconds, ex));
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static void FileDoesntExists(string fulLPath)
     {
         ThrowIsNotNull(Exceptions.FileExists(FullNameOfExecutedCode(), fulLPath));
@@ -521,12 +539,12 @@ ShowMb("Throw exc");
     {
         Custom(Exceptions.TextOfExceptions(ex));
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static bool DirectoryExists(string path)
     {
         return ThrowIsNotNull(Exceptions.DirectoryExists(FullNameOfExecutedCode(), path));
@@ -543,10 +561,10 @@ ShowMb("Throw exc");
     {
         return false;
     }
-    
-    
-    
-    
+
+
+
+
     public static void NameIsNotSetted(string nameControl, string nameFromProperty)
     {
         ThrowIsNotNull(Exceptions.NameIsNotSetted(FullNameOfExecutedCode(), nameControl, nameFromProperty));
@@ -571,16 +589,16 @@ ShowMb("Throw exc");
     {
         return ThrowIsNotNull(Exceptions.NotInt(FullNameOfExecutedCode(), what, value));
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
     public static void IsNotNull(string variableName, object variable)
     {
         ThrowIsNotNull(Exceptions.IsNotNull(FullNameOfExecutedCode(), variableName, variable));
@@ -600,14 +618,14 @@ ShowMb("Throw exc");
         ThrowIsNotNull(
         Exceptions.StringContainsUnallowedSubstrings(FullNameOfExecutedCode(), input, unallowedStrings));
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     public static void InvalidParameter(string valueVar, string nameVar)
     {
         ThrowIsNotNull(Exceptions.InvalidParameter(FullNameOfExecutedCode(), valueVar, nameVar));
@@ -616,7 +634,7 @@ ShowMb("Throw exc");
     {
         ThrowIsNotNull(Exceptions.ElementCantBeFound(FullNameOfExecutedCode(), nameCollection, element));
     }
-    
+
     #endregion
     #region Without parameters
     public static void NotSupported()
@@ -649,14 +667,14 @@ ShowMb("Throw exc");
         ThrowIsNotNull(Exceptions.RepeatAfterTimeXTimesFailed(FullNameOfExecutedCode(T.Item1, T.Item2), times,
         timeoutInMs, address, sharedAlgorithmSlastError));
     }
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     public static void ElementWasntRemoved(string detailLocation, int before, int after)
     {
         ThrowIsNotNull(Exceptions.ElementWasntRemoved(FullNameOfExecutedCode(), detailLocation, before, after));
@@ -722,20 +740,20 @@ ShowMb("Throw exc");
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
