@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <WarningLevel>5</WarningLevel>
-    <Version>24.7.1.1</Version>
+    <Version>24.7.12.1</Version>
     <Description>Library with templates for throwing exceptions</Description>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
