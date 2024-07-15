@@ -1,5 +1,6 @@
 namespace SunamoExceptions._AddedToAllCsproj;
-internal class SHSunamoExceptions
+
+public class SHSunamoExceptions
 {
     public static string JoinNL(List<string> l)
     {
