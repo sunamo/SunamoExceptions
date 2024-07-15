@@ -9,8 +9,8 @@ public class SHSE
         r = sb.ToString();
         return r;
     }
-    
-    
+
+
     public static string FirstCharLower(string nazevPP)
     {
         if (nazevPP.Length < 2) return nazevPP;
@@ -45,7 +45,7 @@ public class SHSE
     /// <param name="dot"></param>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public static List<string> SplitChar(string s, params char[] dot)
+    public static List<string> SplitCharMore(string s, params char[] dot)
     {
         return s.Split(dot, StringSplitOptions.RemoveEmptyEntries).ToList();
     }

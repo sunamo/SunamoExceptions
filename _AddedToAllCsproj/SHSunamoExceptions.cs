@@ -10,7 +10,7 @@ public class SHSunamoExceptions
         r = sb.ToString();
         return r;
     }
-    public static List<string> SplitChar(string s, params char[] dot)
+    public static List<string> SplitCharMore(string s, params char[] dot)
     {
         return s.Split(dot, StringSplitOptions.RemoveEmptyEntries).ToList();
     }
