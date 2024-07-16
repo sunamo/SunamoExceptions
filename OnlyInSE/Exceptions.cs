@@ -43,7 +43,7 @@ public class Exceptions
     }
     public static string BadFormatOfElementInList(string before, object elVal, string listName)
     {
-        return before + TranslateAble.i18n("BadFormatOfElement") + " " + SHSunamoExceptions.NullToStringOrDefault(elVal) +
+        return before + TranslateAble.i18n("BadFormatOfElement") + " " + SH.NullToStringOrDefault(elVal) +
         " in list " + listName;
     }
     public static string IsTheSame(string before, string fst, string sec)
@@ -84,7 +84,7 @@ public class Exceptions
     public static string PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2)
     {
         var ts = v2.ToString();
-        if (CASunamoExceptions.IsListStringWrappedInArray(v2))
+        if (CA.IsListStringWrappedInArray(v2))
             return before + $" {variableName} is List<string>, was passed List<string> into params";
         return null;
     }
