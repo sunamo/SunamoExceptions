@@ -1,4 +1,5 @@
 namespace SunamoExceptions._AddedToAllCsproj;
+
 public class CASunamoExceptions
 {
     public static bool IsListStringWrappedInArray<T>(List<T> v2)

@@ -12,7 +12,7 @@ global using SunamoExceptions.ai;
 global using SunamoExceptions.Attributes;
 global using SunamoExceptions.Data;
 global using SunamoExceptions.Delegates;
-global using SunamoExceptions.InSunamoIsDerivedFrom;
+
 global using SunamoExceptions.Interfaces;
 global using SunamoExceptions.OnlyInSE;
 global using SunamoExceptions._AddedToAllCsproj;

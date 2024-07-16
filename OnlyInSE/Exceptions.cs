@@ -1,4 +1,5 @@
 namespace SunamoExceptions.OnlyInSE;
+
 public class Exceptions
 {
     public static string UseRlc(string before)
