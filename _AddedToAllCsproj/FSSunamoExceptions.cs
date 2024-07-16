@@ -1,6 +1,6 @@
-namespace SunamoExceptions._AddedToAllCsproj;
+//namespace SunamoExceptions._AddedToAllCsproj;
 
-public class FSSunamoExceptions
+public class FS
 {
     public static void CreateUpfoldersPsysicallyUnlessThere(string nad)
     {
