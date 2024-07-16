@@ -1,4 +1,4 @@
-//namespace SunamoExceptions._AddedToAllCsproj;
+namespace SunamoExceptions._AddedToAllCsproj;
 
 public class SH
 {
