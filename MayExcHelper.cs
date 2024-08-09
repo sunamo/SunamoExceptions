@@ -1,8 +1,9 @@
 namespace SunamoExceptions;
+
 public class MayExcHelper
 {
     /// <summary>
-    /// True when is there error
+    ///     True when is there error
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="result"></param>
@@ -15,6 +16,7 @@ public class MayExcHelper
             //ThisApp.Error( result.exc);
             return true;
         }
+
         return false;
     }
     // /// <summary>
