@@ -1,6 +1,6 @@
-namespace SunamoExceptions._AddedToAllCsproj;
+namespace SunamoExceptions._sunamo;
 
-public class SH
+internal class SH
 {
     public static string JoinNL(List<string> l)
     {
@@ -24,7 +24,7 @@ public class SH
     }
     public static string NullToStringOrDefault(object n)
     {
-        
+
         return n == null ? " " + Consts.nulled : AllStrings.space + n;
     }
     public static string TrimEnd(string name, string ext)

@@ -1,4 +1,6 @@
+
 namespace SunamoExceptions.OnlyInSE;
+using SunamoExceptions._sunamo;
 
 public class Exceptions
 {
@@ -30,13 +32,13 @@ public class Exceptions
     {
         return CheckBefore(before) + what + " is not allowed.";
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static string IsOdd(string before, string colName, ICollection col)
     {
         return col.Count % 2 == 1 ? CheckBefore(before) + colName + " has odd number of elements " + col.Count : null;
@@ -105,24 +107,24 @@ public class Exceptions
     {
         return before + "Uncomment next rows";
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     public static string OutOfRange(string v, string colName, ICollection col, string indexName, int index)
     {
         return col.Count <= index
         ? CheckBefore(v) + $"{index} (variable {indexName}) is out of range in {colName}"
         : null;
     }
-    
-    
-    
+
+
+
     public static string FileHasExtensionNotParseableToImageFormat(string before, string fnOri)
     {
         return CheckBefore(before) + "File " + fnOri + " has wrong file extension";
@@ -152,10 +154,10 @@ public class Exceptions
     }
     public static string FileExists(string before, string fulLPath)
     {
-        
-        
-        
-        
+
+
+
+
         return CheckBefore(before) + " " + TranslateAble.i18n("DoesnTExists") + ": " + fulLPath;
     }
     public static string CheckBackslashEnd(string before, string r)
@@ -205,13 +207,13 @@ public class Exceptions
     {
         return CheckBefore(v) + TranslateAble.i18n("CanTDeleteFolder") + ": " + folder;
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static string ElementWasntRemoved(string before, string detailLocation, int before2, int after)
     {
         return before2 == after
@@ -219,12 +221,12 @@ public class Exceptions
         detailLocation
         : null;
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static string NoPassedFolders(string before, ICollection folders)
     {
         return folders.Count == 0 ? CheckBefore(before) + TranslateAble.i18n("NoPassedFolderInto") : null;
@@ -237,13 +239,13 @@ public class Exceptions
     {
         return CheckBefore(before) + description;
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static string InvalidParameter(string before, string valueVar, string nameVar)
     {
         return valueVar != WebUtility.UrlDecode(valueVar)
@@ -298,11 +300,11 @@ public class Exceptions
     }
     #endregion
     #region From easy copy from ExceptionsShared64.cs - all ok 16-10-21
-    
-    
-    
-    
-    
+
+
+
+
+
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return Consts.se;
@@ -352,12 +354,12 @@ public class Exceptions
     }
     #endregion
     #region from ExceptionsShared.cs
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     public static string NotContains(string before, string originalText, params string[] shouldContains)
     {
         List<string> notContained = new();
@@ -392,7 +394,7 @@ public class Exceptions
         // {
         //     throw new ArgumentException($"'{nameof(additionalMessage)}' cannot be null or empty.", nameof(additionalMessage));
         // }
-        
+
         return folders.OfType<object>().Count() == 0
         ? before + colName + " has no elements. " + additionalMessage
         : null;
@@ -440,7 +442,7 @@ public class Exceptions
     }
     public static string DumpAsString(object s)
     {
-        return null; 
+        return null;
     }
     public static string InvalidCast(string before, string message)
     {
@@ -525,8 +527,8 @@ public class Exceptions
     public static string DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
     {
         if (countfc != countsc)
-            
-            
+
+
             return CheckBefore(before) + " " + TranslateAble.i18n("DifferentCountElementsInCollection") + " " +
             string.Concat(namefc + AllStrings.swda + countfc) + " vs. " +
             string.Concat(namesc + AllStrings.swda + countsc);
@@ -557,30 +559,30 @@ public class Exceptions
         ? before + $"{list.Count} elements in {nameOfVariable} which is zero or more than one"
         : null;
     }
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     public static string IsNotPositiveNumber(string before, string nameOfVariable, int? n)
     {
         return !n.HasValue ? before + nameOfVariable + " is not int" :
         n.Value > 0 ? null : nameOfVariable + " is int but not > 0";
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
     public static string NotExists(string before, string item)
     {
         return before + item + " not exists";

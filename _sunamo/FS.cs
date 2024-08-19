@@ -1,6 +1,6 @@
-namespace SunamoExceptions._AddedToAllCsproj;
+namespace SunamoExceptions._sunamo;
 
-public class FS
+internal class FS
 {
     public static void CreateUpfoldersPsysicallyUnlessThere(string nad)
     {
@@ -21,7 +21,7 @@ nad
         while (true)
         {
             nad = Path.GetDirectoryName(nad);
-            
+
             if (Directory.Exists(nad))
             {
                 break;

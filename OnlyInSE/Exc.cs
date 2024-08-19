@@ -1,4 +1,6 @@
+
 namespace SunamoExceptions.OnlyInSE;
+using SunamoExceptions._sunamo;
 
 public class Exc
 {
