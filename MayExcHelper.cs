@@ -19,6 +19,19 @@ public class MayExcHelper
 
         return false;
     }
+
+    public static bool MayExc<T>(string exc)
+    {
+        if (exc != null)
+        {
+            Console.WriteLine(exc);
+            //ThisApp.Error( result.exc);
+            return true;
+        }
+
+        return false;
+    }
+
     // /// <summary>
     // /// True when is there error
     // /// </summary>
