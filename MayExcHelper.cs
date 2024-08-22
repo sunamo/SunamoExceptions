@@ -8,19 +8,19 @@ public class MayExcHelper
     /// <typeparam name="T"></typeparam>
     /// <param name="result"></param>
     /// <returns></returns>
-    public static bool MayExc<T>(ResultWithException<T> result)
-    {
-        if (result.exc != null)
-        {
-            Console.WriteLine(result.exc);
-            //ThisApp.Error( result.exc);
-            return true;
-        }
+    //public static bool MayExc<T>(ResultWithException<T> result)
+    //{
+    //    if (result.exc != null)
+    //    {
+    //        Console.WriteLine(result.exc);
+    //        //ThisApp.Error( result.exc);
+    //        return true;
+    //    }
 
-        return false;
-    }
+    //    return false;
+    //}
 
-    public static bool MayExc<T>(string exc)
+    public static bool MayExc(string exc)
     {
         if (exc != null)
         {
