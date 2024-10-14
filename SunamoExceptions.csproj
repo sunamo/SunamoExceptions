@@ -1,31 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <WarningLevel>5</WarningLevel>
-    <Version>24.10.2.1</Version>
-    <Description>Library with templates for throwing exceptions</Description>
-    <Authors>www.sunamo.cz</Authors>
-    <Copyright>www.sunamo.cz</Copyright>
-    <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/sunamo/SunamoExceptions.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>readme.md</PackageReadmeFile>
-    <PackageReleaseNotes>Added method</PackageReleaseNotes>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoExceptions;SunamoExceptions.csproj</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoExceptions;SunamoExceptions.csproj</DefineConstants>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Include="readme.md" Pack="True" PackagePath="." />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="_AddedToAllCsproj\" />
-    <Folder Include="_linked\" />
-  </ItemGroup>
+
 </Project>

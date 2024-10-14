@@ -1,0 +1,2 @@
+﻿Jednou provždy jsem si v tom udělal pořádek
+Myšlenka je furt stejná, v Exceptions se dělá veškerá kontrola a vrací se string

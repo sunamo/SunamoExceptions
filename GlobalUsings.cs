@@ -1,10 +1,8 @@
-global using System.Data;
-global using SunamoExceptions.Data;
-global using SunamoExceptions.Interfaces;
-global using SunamoExceptions.OnlyInSE;
+
 global using SunamoExceptions._sunamo.SunamoValues;
-global using SunamoExceptions;
-global using SunamoExceptions.ai;
-global using SunamoExceptions.Delegates;
-global using SunamoExceptions._sunamo;
-global using SunamoExceptions._sunamo.SunamoStringGetLines;
+global using System.Collections.Generic;
+global using System.Collections;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using System;
