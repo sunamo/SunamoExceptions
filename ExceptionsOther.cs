@@ -1,14 +1,10 @@
 namespace SunamoExceptions;
-using System;
-using System.Text;
-
 partial class Exceptions
 {
     private static string CheckBefore(string before)
     {
         return string.IsNullOrWhiteSpace(before) ? "" : before + ": ";
     }
-
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return "";

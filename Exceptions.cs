@@ -1,7 +1,4 @@
 namespace SunamoExceptions;
-using SunamoExceptions._sunamo;
-using System.Net;
-
 public sealed partial class Exceptions
 {
     public static string? FileAlreadyExists(string before, string path)
@@ -12,28 +9,24 @@ public sealed partial class Exceptions
         }
         return null;
     }
-
     public static string? ListNullOrEmpty<T>(string before, string variableName, IEnumerable<T>? t)
     {
         if (t == null)
         {
             return CheckBefore(before) + variableName + " is null";
         }
-
         bool isEmpty = true;
         foreach (var item in t)
         {
             isEmpty = false;
             break;
         }
-
         if (isEmpty)
         {
             return CheckBefore(before) + variableName + " is empty!";
         }
         return null;
     }
-
     public static string? LockedByBitLocker(string before, string path, Func<char, bool> IsLockedByBitLocker)
     {
         if (IsLockedByBitLocker != null)
@@ -46,18 +39,14 @@ public sealed partial class Exceptions
         }
         return null;
     }
-
     public static string? NotInt(string before, string what, int? value)
     {
         return !value.HasValue ? CheckBefore(before) + what + " is not with value " + value + " valid integer number" : null;
     }
-
-
     public static string? IsOdd(string before, string colName, ICollection col)
     {
         return col.Count % 2 == 1 ? CheckBefore(before) + colName + " has odd number of elements " + col.Count : null;
     }
-
     public static string? WrongExtension(string before, string path, string ext)
     {
         return System.IO.Path.GetExtension(path) != ext ? CheckBefore(before) + path + "don't have " + ext + " extension" : null;
@@ -75,18 +64,12 @@ public sealed partial class Exceptions
         " wasn't found."
         : null;
     }
-
-
-
     public static string? PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2, Func<List<T>, bool> CA_IsListStringWrappedInArray)
     {
         if (CA_IsListStringWrappedInArray(v2))
             return CheckBefore(before) + $" {variableName} is List<string>, was passed List<string> into params";
         return null;
-
     }
-
-
     public static string? IsWhitespaceOrNull(string before, string variable, object data)
     {
         var isNull = false;
@@ -94,7 +77,6 @@ public sealed partial class Exceptions
         if (data == null)
             isNull = true;
         else if ((data.ToString() ?? "").Trim() == string.Empty) isWhitespace = true;
-
         return isNull || isWhitespace ? CheckBefore(before) + variable + (isNull ? " is null" : " is whitespace") : null;
     }
     public static string? UncommentNextRows(string before)
@@ -107,9 +89,6 @@ public sealed partial class Exceptions
         ? CheckBefore(before) + $"{index} (variable {indexName}) is out of range in {colName}"
         : null;
     }
-
-
-
     public static string? HaveAllInnerSameCount(string before, List<List<string>> elements)
     {
         var first = elements[0].Count;
@@ -127,7 +106,6 @@ public sealed partial class Exceptions
         ? null
         : CheckBefore(before) + " " + "does not exists" + ": " + fulLPath;
     }
-
     public static string? CheckBackslashEnd(string before, string r)
     {
         if (r.Length != 0)
@@ -135,12 +113,10 @@ public sealed partial class Exceptions
                 return CheckBefore(before) + " string has not been in path format" + "!";
         return null;
     }
-
     public static string? IsNotNull(string before, string variableName, object variable)
     {
         return variable != null ? CheckBefore(before) + variableName + " must be null." : null;
     }
-
     public static string? ArrayElementContainsUnallowedStrings(string before, string arrayName, int dex,
     string valueElement, params string[] unallowedStrings)
     {
@@ -180,15 +156,12 @@ public sealed partial class Exceptions
     {
         return ex != null ? CheckBefore(v) + " " + TextOfExceptions(ex) : null;
     }
-
     public static string? InvalidParameter(string before, string valueVar, string nameVar)
     {
         return valueVar != WebUtility.UrlDecode(valueVar)
         ? CheckBefore(before) + valueVar + " is url encoded " + nameVar
         : null;
     }
-
-
     public static string? MoreThanOneElement(string before, string listName, int count, string moreInfo = "")
     {
         return count > 1
@@ -217,10 +190,6 @@ public sealed partial class Exceptions
         string.Join("", unallowedStrings)
         : null;
     }
-
-
-
-
     public static string? IsNull(string before, string variableName, object? variable)
     {
         return variable == null ? CheckBefore(before) + variableName + " " + "is null" + "." : null;
@@ -239,9 +208,6 @@ public sealed partial class Exceptions
         return CheckBefore(before) + "Not implemented case" + fr + " . public program error. Please contact developer" +
         ".";
     }
-
-
-
     public static string? NotContains(string before, string originalText, params string[] shouldContains)
     {
         List<string> notContained = [];
@@ -252,13 +218,11 @@ public sealed partial class Exceptions
         ? null
         : CheckBefore(before) + originalText + " dont contains: " + string.Join(",", notContained);
     }
-
     public static string? HasNotKeyDictionary<Key, Value>(string before, string nameDict, IDictionary<Key, Value> qsDict,
     Key remains)
     {
         return !qsDict.ContainsKey(remains) ? CheckBefore(before) + nameDict + " does not contains key " + remains : null;
     }
-
     public static string? IsEmpty(string before, IEnumerable folders, string colName,
     string additionalMessage = "")
     {
@@ -271,9 +235,6 @@ public sealed partial class Exceptions
         ? CheckBefore(before) + colName + " has no elements. " + additionalMessage
         : null;
     }
-
-
-
     public static string? UriFormat(string before, string url, Func<string, bool> uhIsUri)
     {
         if (uhIsUri(url))
@@ -282,15 +243,12 @@ public sealed partial class Exceptions
         }
         return CheckBefore(before) + "Is not correct url format: " + url;
     }
-
     public static string? IsWindowsPathFormat(string before, string input, Func<string, bool> isWindowsPathFormat)
     {
         if (isWindowsPathFormat(input))
             return CheckBefore(before) + input + "is path but only key is expected";
-
         return null;
     }
-
     public static string? IsNotWindowsPathFormat(string before, string argName, string argValue, bool raiseIsNotWindowsPathFormat, Func<string, bool> SunamoFileSystem_IsWindowsPathFormat)
     {
         if (raiseIsNotWindowsPathFormat)
@@ -301,8 +259,6 @@ public sealed partial class Exceptions
         }
         return null;
     }
-
-
     public static string? DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
     {
         if (countfc != countsc)
@@ -341,11 +297,9 @@ public sealed partial class Exceptions
         return !n.HasValue ? CheckBefore(before) + nameOfVariable + " is not int" :
         n.Value > 0 ? null : CheckBefore(before) + nameOfVariable + " is int but not > 0";
     }
-
     public static string? CheckBackSlashEnd(string before, string r)
     {
         if (!r.EndsWith('\\')) return CheckBefore(before) + " " + r + " don't end with \\";
         return null;
     }
-
 }

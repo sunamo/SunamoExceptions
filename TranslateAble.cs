@@ -1,4 +1,4 @@
-namespace SunamoExceptions._sunamo;
+namespace SunamoExceptions;
 internal class TranslateAble
 {
     internal static string i18n(string v)

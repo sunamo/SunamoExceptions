@@ -1,18 +1,12 @@
 namespace SunamoExceptions;
-using System;
-using System.Diagnostics;
-using System.Reflection;
-
 partial class ThrowEx
 {
     public static string FullNameOfExecutedCode()
     {
         var placeOfExc = Exc.PlaceOfException();
-
         var f = FullNameOfExecutedCode(placeOfExc.Item1, placeOfExc.Item2, true);
         return f;
     }
-
     private static string FullNameOfExecutedCode(object type, string methodName, bool fromThrowEx = false)
     {
         if (methodName == null)
@@ -42,7 +36,6 @@ partial class ThrowEx
         }
         return string.Concat(typeFullName, ".", methodName);
     }
-
     public static bool ThrowIsNotNull(string? exception, bool reallyThrow = true)
     {
         if (exception == null)
@@ -56,7 +49,6 @@ partial class ThrowEx
         }
         return false;
     }
-
     public static bool ThrowIsNotNull(Exception exception, bool reallyThrow = true)
     {
         if (exception != null)
@@ -66,7 +58,6 @@ partial class ThrowEx
         }
         return true;
     }
-
     public static bool ThrowIsNotNull<A, B>(Func<string, A, B, string?> f, A ex, B message)
     {
         var exc = f(FullNameOfExecutedCode(), ex, message);

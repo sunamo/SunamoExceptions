@@ -1,7 +1,4 @@
 namespace SunamoExceptions;
-using System;
-using System.Text;
-
 partial class Exceptions
 {
     public static string? IsNullOrWhitespace(string before, string argName, string argValue)

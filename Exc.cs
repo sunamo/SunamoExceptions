@@ -1,8 +1,4 @@
 namespace SunamoExceptions;
-using System;
-using System.Diagnostics;
-using System.Linq;
-
 public class Exc
 {
     public static Tuple<string, string, string> PlaceOfException(
@@ -11,7 +7,6 @@ public class Exc
         StackTrace st = new();
         var v = st.ToString();
         var l = v.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
-
         l.RemoveAt(0);
         var i = 0;
         string type = string.Empty;
@@ -27,8 +22,6 @@ public class Exc
                 }
             if (item.StartsWith("at System."))
             {
-
-
                 l.Add(string.Empty);
                 l.Add(string.Empty);
                 break;
@@ -36,19 +29,15 @@ public class Exc
         }
         return new Tuple<string, string, string>(type, methodName, string.Join(Environment.NewLine, l));
     }
-
     public static void TypeAndMethodName(string l, out string type, out string methodName)
     {
         var s2 = l.Split("at ")[1].Trim();
         var s = s2.Split("(")[0];
-
-
         var p = s.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         methodName = p[^1];
         p.RemoveAt(p.Count - 1);
         type = string.Join(".", p);
     }
-
     public static string CallingMethod(int v = 1)
     {
         StackTrace stackTrace = new();
