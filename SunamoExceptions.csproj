@@ -3,7 +3,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Description>Remove unused usings</Description>
+    <Description>Library with templates for throwing exceptions</Description>
     <Version>24.10.16.1</Version>
     <PackageReleaseNotes>Remove unused usings</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
