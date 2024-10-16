@@ -1,10 +1,10 @@
-﻿using System;
+namespace SunamoExceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExceptions;
 partial class Exceptions
 {
     private static string CheckBefore(string before)
@@ -14,9 +14,9 @@ partial class Exceptions
 
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
-        if (ex == null) return Consts.se;
+        if (ex == null) return "";
         StringBuilder sb = new();
-        sb.Append(Consts.Exception);
+        sb.Append("Exception:");
         sb.AppendLine(ex.Message);
         if (alsoInner)
             while (ex.InnerException != null)

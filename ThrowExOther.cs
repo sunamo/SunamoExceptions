@@ -1,4 +1,5 @@
-﻿using System;
+namespace SunamoExceptions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -6,7 +7,6 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExceptions;
 partial class ThrowEx
 {
     public static string FullNameOfExecutedCode()
@@ -44,7 +44,7 @@ partial class ThrowEx
             var t = type.GetType();
             typeFullName = t.FullName ?? "Type cannot be get via type.GetType()";
         }
-        return string.Concat(typeFullName, AllStrings.dot, methodName);
+        return string.Concat(typeFullName, ".", methodName);
     }
 
     public static bool ThrowIsNotNull(string? exception, bool reallyThrow = true)

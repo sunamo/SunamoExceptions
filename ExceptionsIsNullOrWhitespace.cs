@@ -1,10 +1,10 @@
-﻿using System;
+namespace SunamoExceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExceptions;
 partial class Exceptions
 {
     public static string? IsNullOrWhitespace(string before, string argName, string argValue)

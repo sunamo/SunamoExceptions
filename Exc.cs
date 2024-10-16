@@ -1,11 +1,10 @@
-﻿using System;
+namespace SunamoExceptions;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace SunamoExceptions;
 
 public class Exc
 {
@@ -47,10 +46,10 @@ public class Exc
         var s = s2.Split("(")[0];
 
 
-        var p = s.Split(new char[] { AllChars.dot }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        var p = s.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         methodName = p[^1];
         p.RemoveAt(p.Count - 1);
-        type = string.Join(AllStrings.dot, p);
+        type = string.Join(".", p);
     }
 
     public static string CallingMethod(int v = 1)

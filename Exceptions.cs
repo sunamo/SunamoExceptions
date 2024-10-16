@@ -1,7 +1,7 @@
+namespace SunamoExceptions;
 using SunamoExceptions._sunamo;
 using System.Net;
 
-namespace SunamoExceptions;
 public sealed partial class Exceptions
 {
     public static string? FileAlreadyExists(string before, string path)
@@ -118,7 +118,7 @@ public sealed partial class Exceptions
             if (first != elements[i].Count)
                 wrongCount.Add(i);
         return wrongCount.Count > 0
-        ? CheckBefore(before) + $"Elements {string.Join(AllChars.comma, wrongCount)} have different count than 0 (first)"
+        ? CheckBefore(before) + $"Elements {string.Join(',', wrongCount)} have different count than 0 (first)"
         : null;
     }
     public static string? DirectoryExists(string before, string fulLPath)
@@ -131,7 +131,7 @@ public sealed partial class Exceptions
     public static string? CheckBackslashEnd(string before, string r)
     {
         if (r.Length != 0)
-            if (r[^1] != AllChars.bs)
+            if (r[^1] != '\\')
                 return CheckBefore(before) + " string has not been in path format" + "!";
         return null;
     }
@@ -148,7 +148,7 @@ public sealed partial class Exceptions
         return foundedUnallowed.Count != 0
         ? CheckBefore(before) + " " + TranslateAble.i18n("ElementOf") + " " + arrayName + " on index " + dex +
         " with value " + valueElement + " contains unallowed string(" + foundedUnallowed.Count + "): " +
-        string.Join(AllChars.comma, unallowedStrings)
+        string.Join(',', unallowedStrings)
         : null;
     }
     public static string? StartIsHigherThanEnd(string before, int start, int end)
@@ -189,7 +189,7 @@ public sealed partial class Exceptions
     }
 
 
-    public static string? MoreThanOneElement(string before, string listName, int count, string moreInfo = Consts.se)
+    public static string? MoreThanOneElement(string before, string listName, int count, string moreInfo = "")
     {
         return count > 1
         ? CheckBefore(before) + listName + " has " + count + " elements, which is more than 1. " + moreInfo
@@ -214,7 +214,7 @@ public sealed partial class Exceptions
                 foundedUnallowed.Add(item);
         return foundedUnallowed.Count > 0
         ? CheckBefore(before) + input + " contains unallowed chars: " +
-        string.Join(AllStrings.space, unallowedStrings)
+        string.Join("", unallowedStrings)
         : null;
     }
 
@@ -250,7 +250,7 @@ public sealed partial class Exceptions
                 notContained.Add(item);
         return notContained.Count == 0
         ? null
-        : CheckBefore(before) + originalText + " dont contains: " + string.Join(AllStrings.comma, notContained);
+        : CheckBefore(before) + originalText + " dont contains: " + string.Join(",", notContained);
     }
 
     public static string? HasNotKeyDictionary<Key, Value>(string before, string nameDict, IDictionary<Key, Value> qsDict,
@@ -260,7 +260,7 @@ public sealed partial class Exceptions
     }
 
     public static string? IsEmpty(string before, IEnumerable folders, string colName,
-    string additionalMessage = Consts.se)
+    string additionalMessage = "")
     {
         // Nemůže tu být žádná taková validace, protože vyhodí výjimku i když kolekce není prázdná
         // if (string.IsNullOrEmpty(additionalMessage))
@@ -307,8 +307,8 @@ public sealed partial class Exceptions
     {
         if (countfc != countsc)
             return CheckBefore(before) + " different count elements in collection" + " " +
-            string.Concat(namefc + AllStrings.swda + countfc) + " vs. " +
-            string.Concat(namesc + AllStrings.swda + countsc);
+            string.Concat(namefc + "-" + countfc) + " vs. " +
+            string.Concat(namesc + "-" + countsc);
         return null;
     }
     public static string? FirstLetterIsNotUpper(string before, string p)
@@ -323,10 +323,10 @@ public sealed partial class Exceptions
         : null;
     }
     public static string? DuplicatedElements(string before, string nameOfVariable, IList<string> d,
-    string message = Consts.se)
+    string message = "")
     {
         return d.Count != 0
-        ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(AllChars.comma, [.. d]) +
+        ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(',', [.. d]) +
         " " + message
         : null;
     }

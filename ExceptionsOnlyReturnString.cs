@@ -1,11 +1,11 @@
-﻿using SunamoExceptions._sunamo;
+namespace SunamoExceptions;
+using SunamoExceptions._sunamo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SunamoExceptions;
 partial class Exceptions
 {
     public static string? UseRlc(string before)
@@ -21,7 +21,7 @@ partial class Exceptions
 
     public static string? NotValidXml(string before, string path, Exception ex)
     {
-        return CheckBefore(before) + path + AllStrings.space + TextOfExceptions(ex);
+        return CheckBefore(before) + path + "" + TextOfExceptions(ex);
     }
     public static string? ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
     {
@@ -49,7 +49,7 @@ partial class Exceptions
     }
     public static string? AnyElementIsNullOrEmpty(string before, string nameOfCollection, List<int> nulled)
     {
-        return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(AllStrings.comma, nulled) +
+        return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(",", nulled) +
         " with null value";
     }
 
@@ -155,12 +155,12 @@ Exception ex)
 
     public static string? ExcAsArg(string before, Exception ex, string message)
     {
-        return CheckBefore(before) + message + AllStrings.space + TextOfExceptions(ex);
+        return CheckBefore(before) + message + "" + TextOfExceptions(ex);
     }
 
     public static string? Ftp(string before, Exception ex, string message)
     {
-        return CheckBefore(before) + message + AllStrings.space + TextOfExceptions(ex);
+        return CheckBefore(before) + message + "" + TextOfExceptions(ex);
     }
     public static string? IO(string before, string message)
     {
