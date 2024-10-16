@@ -1,7 +1,4 @@
 namespace SunamoExceptions;
-using System.Diagnostics;
-using System.Reflection;
-
 public partial class ThrowEx
 {
     public static bool NotContains(string text, params string[] shouldContains)
