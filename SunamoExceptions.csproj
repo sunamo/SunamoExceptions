@@ -13,4 +13,10 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="ExceptionsIsNullOrWhitespace.cs" />
+    <Compile Remove="ExceptionsOnlyReturnString.cs" />
+    <Compile Remove="ExceptionsOther.cs" />
+    <Compile Remove="ThrowExOther.cs" />
+  </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ partial class Exceptions
     }
     public static string? NotValidXml(string before, string path, Exception ex)
     {
-        return CheckBefore(before) + path + "" + TextOfExceptions(ex);
+        return CheckBefore(before) + path + string.Empty + TextOfExceptions(ex);
     }
     public static string? ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
     {
@@ -53,7 +53,7 @@ partial class Exceptions
         }
         return null;
     }
-    public static string? FileHasExtensionNotParseableToImageFormat(string before, string fnOri)
+    public static string? FileHasExtensionNotParseAbleToImageFormat(string before, string fnOri)
     {
         return CheckBefore(before) + "File " + fnOri + " has wrong file extension";
     }
@@ -79,7 +79,7 @@ partial class Exceptions
     {
         return CheckBefore(before) + actual + " elements in " + nameCollection + ", maximum is " + max;
     }
-    public static string? FuncionalityDenied(string before, string description)
+    public static string? FunctionalityDenied(string before, string description)
     {
         return CheckBefore(before) + description;
     }
@@ -125,11 +125,11 @@ Exception ex)
     }
     public static string? ExcAsArg(string before, Exception ex, string message)
     {
-        return CheckBefore(before) + message + "" + TextOfExceptions(ex);
+        return CheckBefore(before) + message + string.Empty + TextOfExceptions(ex);
     }
     public static string? Ftp(string before, Exception ex, string message)
     {
-        return CheckBefore(before) + message + "" + TextOfExceptions(ex);
+        return CheckBefore(before) + message + string.Empty + TextOfExceptions(ex);
     }
     public static string? IO(string before, string message)
     {

@@ -1,6 +1,81 @@
 namespace SunamoExceptions;
 public partial class ThrowEx
 {
+    #region Other
+    public static string FullNameOfExecutedCode()
+    {
+        var placeOfExc = Exceptions.PlaceOfException();
+        var f = FullNameOfExecutedCode(placeOfExc.Item1, placeOfExc.Item2, true);
+        return f;
+    }
+    private static string FullNameOfExecutedCode(object type, string methodName, bool fromThrowEx = false)
+    {
+        if (methodName == null)
+        {
+            var depth = 2;
+            if (fromThrowEx) depth++;
+            methodName = Exceptions.CallingMethod(depth);
+        }
+        string typeFullName;
+        if (type is Type type2)
+        {
+            typeFullName = type2.FullName ?? "Type cannot be get via type is Type type2";
+        }
+        else if (type is MethodBase method)
+        {
+            typeFullName = method.ReflectedType?.FullName ?? "Type cannot be get via type is MethodBase method";
+            methodName = method.Name;
+        }
+        else if (type is string)
+        {
+            typeFullName = type.ToString() ?? "Type cannot be get via type is string";
+        }
+        else
+        {
+            var t = type.GetType();
+            typeFullName = t.FullName ?? "Type cannot be get via type.GetType()";
+        }
+        return string.Concat(typeFullName, ".", methodName);
+    }
+    public static bool ThrowIsNotNull(string? exception, bool reallyThrow = true)
+    {
+        if (exception == null)
+        {
+            Debugger.Break();
+            if (reallyThrow)
+            {
+                throw new Exception(exception);
+            }
+            return true;
+        }
+        return false;
+    }
+    public static bool ThrowIsNotNull(Exception exception, bool reallyThrow = true)
+    {
+        if (exception != null)
+        {
+            ThrowIsNotNull(exception.Message, reallyThrow);
+            return false;
+        }
+        return true;
+    }
+    public static bool ThrowIsNotNull<A, B>(Func<string, A, B, string?> f, A ex, B message)
+    {
+        var exc = f(FullNameOfExecutedCode(), ex, message);
+        return ThrowIsNotNull(exc);
+    }
+    public static bool ThrowIsNotNull<A>(Func<string, A, string?> f, A o)
+    {
+        var exc = f(FullNameOfExecutedCode(), o);
+        return ThrowIsNotNull(exc);
+    }
+    public static bool ThrowIsNotNull(Func<string, string?> f)
+    {
+        var exc = f(FullNameOfExecutedCode());
+        return ThrowIsNotNull(exc);
+    }
+    #endregion
+
     public static bool NotContains(string text, params string[] shouldContains)
     {
         return ThrowIsNotNull(Exceptions.NotContains(FullNameOfExecutedCode(), text, shouldContains));
@@ -91,11 +166,11 @@ public partial class ThrowEx
 
 
 
-    public static bool NotFoundTranSlationKeyWithCustomError(string message)
+    public static bool NotFoundTranslationKeyWithCustomError(string message)
     {
         return Custom(message);
     }
-    public static bool NotFoundTranSlationKeyWithoutCustomError(string message)
+    public static bool NotFoundTranslationKeyWithoutCustomError(string message)
     {
         return Custom(message);
     }
@@ -207,7 +282,7 @@ public partial class ThrowEx
     }
     public static bool Custom(string message, bool reallyThrow = true, string v2 = "")
     {
-        var joined = string.Join("", message, v2);
+        var joined = string.Join(string.Empty, message, v2);
         var str = Exceptions.Custom(FullNameOfExecutedCode(), joined);
         return ThrowIsNotNull(str, reallyThrow);
     }
@@ -233,20 +308,6 @@ public partial class ThrowEx
     {
         return ThrowIsNotNull(Exceptions.IsNull(FullNameOfExecutedCode(), variableName, variable));
     }
-#pragma warning disable
-
-
-
-
-
-    public static Action<string, string> writeServerError;
-#pragma warning enable
-
-
-
-
-
-
 
     public static bool NotImplementedCase(object niCase)
     {
@@ -371,7 +432,7 @@ public partial class ThrowEx
     {
         return ThrowIsNotNull(Exceptions.IsNotNull(FullNameOfExecutedCode(), variableName, variable));
     }
-    public static bool ArrayElementContainsUnallowedStrings(string arrayName, int dex, string valueElement,
+    public static bool ArrayElementContainsUnAllowedStrings(string arrayName, int dex, string valueElement,
     params string[] unallowedStrings)
     {
         return ThrowIsNotNull(Exceptions.ArrayElementContainsUnallowedStrings(FullNameOfExecutedCode(), arrayName, dex,
@@ -381,7 +442,7 @@ public partial class ThrowEx
     {
         return ThrowIsNotNull(Exceptions.OnlyOneElement(FullNameOfExecutedCode(), colName, list));
     }
-    public static bool StringContainsUnallowedSubstrings(string input, params string[] unallowedStrings)
+    public static bool StringContainsUnAllowedSubstrings(string input, params string[] unallowedStrings)
     {
         return ThrowIsNotNull(
         Exceptions.StringContainsUnallowedSubstrings(FullNameOfExecutedCode(), input, unallowedStrings));
@@ -445,18 +506,18 @@ public partial class ThrowEx
     {
         return ThrowIsNotNull(Exceptions.FolderCantBeRemoved(FullNameOfExecutedCode(), folder));
     }
-    public static bool FileHasExtensionNotParseableToImageFormat(string fnOri)
+    public static bool FileHasExtensionNotParseAbleToImageFormat(string fnOri)
     {
         return ThrowIsNotNull(
-        Exceptions.FileHasExtensionNotParseableToImageFormat(FullNameOfExecutedCode(), fnOri));
+        Exceptions.FileHasExtensionNotParseAbleToImageFormat(FullNameOfExecutedCode(), fnOri));
     }
     public static bool FileSystemException(Exception ex)
     {
         return ThrowIsNotNull(Exceptions.FileSystemException(FullNameOfExecutedCode(), ex));
     }
-    public static bool FuncionalityDenied(string description)
+    public static bool FunctionalityDenied(string description)
     {
-        return ThrowIsNotNull(Exceptions.FuncionalityDenied(FullNameOfExecutedCode(), description));
+        return ThrowIsNotNull(Exceptions.FunctionalityDenied(FullNameOfExecutedCode(), description));
     }
     public static bool CannotMoveFolder(string item, string nova, Exception ex)
     {
