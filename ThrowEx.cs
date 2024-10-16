@@ -410,7 +410,7 @@ public partial class ThrowEx
     {
         return ThrowIsNotNull(Exceptions.NotSupported(FullNameOfExecutedCode()));
     }
-    public static bool CheckBackslashEnd(string stacktrace, string r)
+    public static bool CheckBackslashEnd(string r)
     {
         return ThrowIsNotNull(Exceptions.CheckBackSlashEnd(FullNameOfExecutedCode(), r));
     }
