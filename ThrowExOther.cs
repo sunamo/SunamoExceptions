@@ -3,7 +3,7 @@ partial class ThrowEx
 {
     public static string FullNameOfExecutedCode()
     {
-        var placeOfExc = Exc.PlaceOfException();
+        var placeOfExc = Exceptions.PlaceOfException();
         var f = FullNameOfExecutedCode(placeOfExc.Item1, placeOfExc.Item2, true);
         return f;
     }
@@ -13,7 +13,7 @@ partial class ThrowEx
         {
             var depth = 2;
             if (fromThrowEx) depth++;
-            methodName = Exc.CallingMethod(depth);
+            methodName = Exceptions.CallingMethod(depth);
         }
         string typeFullName;
         if (type is Type type2)
