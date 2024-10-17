@@ -289,10 +289,10 @@ public partial class ThrowEx
 
     static string FullNameOfExecutedCode(object type, string methodName, bool fromThrowEx = false)
     {
-        if(methodName == null)
+        if (methodName == null)
         {
             int depth = 2;
-            if(fromThrowEx)
+            if (fromThrowEx)
             {
                 depth++;
             }
@@ -300,17 +300,20 @@ public partial class ThrowEx
             methodName = Exceptions.CallingMethod(depth);
         }
         string typeFullName;
-        if(type is Type type2)
+        if (type is Type type2)
         {
             typeFullName = type2.FullName ?? "Type cannot be get via type is Type type2";
-        } else if(type is MethodBase method)
+        }
+        else if (type is MethodBase method)
         {
             typeFullName = method.ReflectedType?.FullName ?? "Type cannot be get via type is MethodBase method";
             methodName = method.Name;
-        } else if(type is string)
+        }
+        else if (type is string)
         {
             typeFullName = type.ToString() ?? "Type cannot be get via type is string";
-        } else
+        }
+        else
         {
             Type t = type.GetType();
             typeFullName = t.FullName ?? "Type cannot be get via type.GetType()";
@@ -320,10 +323,10 @@ public partial class ThrowEx
 
     public static bool ThrowIsNotNull(string? exception, bool reallyThrow = true)
     {
-        if(exception == null)
+        if (exception == null)
         {
             Debugger.Break();
-            if(reallyThrow)
+            if (reallyThrow)
             {
                 throw new Exception(exception);
             }
@@ -335,7 +338,7 @@ public partial class ThrowEx
     #region For avoid FullNameOfExecutedCode
     public static bool ThrowIsNotNull(Exception exception, bool reallyThrow = true)
     {
-        if(exception != null)
+        if (exception != null)
         {
             ThrowIsNotNull(exception.Message, reallyThrow);
             return false;

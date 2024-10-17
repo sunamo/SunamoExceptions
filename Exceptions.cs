@@ -3,7 +3,7 @@ namespace SunamoExceptions;
 public sealed partial class Exceptions
 {
     #region Other
-    private static string CheckBefore(string before)
+    public static string CheckBefore(string before)
     {
         return string.IsNullOrWhiteSpace(before) ? string.Empty : before + ": ";
     }
@@ -52,7 +52,7 @@ bool fillAlsoFirstTwo = true)
         }
         return new Tuple<string, string, string>(type, methodName, string.Join(Environment.NewLine, l));
     }
-    private static void TypeAndMethodName(string l, out string type, out string methodName)
+    public static void TypeAndMethodName(string l, out string type, out string methodName)
     {
         var s2 = l.Split("at ")[1].Trim();
         var s = s2.Split("(")[0];
@@ -97,7 +97,7 @@ bool fillAlsoFirstTwo = true)
     }
     readonly static StringBuilder sbAdditionalInfoInner = new();
     readonly static StringBuilder sbAdditionalInfo = new();
-    private static string AddParams()
+    public static string AddParams()
     {
         sbAdditionalInfo.Insert(0, Environment.NewLine);
         sbAdditionalInfo.Insert(0, "Outer:");
