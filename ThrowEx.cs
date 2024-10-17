@@ -3,6 +3,11 @@ namespace SunamoExceptions;
 
 public partial class ThrowEx
 {
+    public static bool KeyAlreadyExists<T, U>(Dictionary<T, U> dictionary, T key, string dictionaryName)
+    {
+        return ThrowIsNotNull(Exceptions.KeyAlreadyExists(FullNameOfExecutedCode(), dictionary, key, dictionaryName));
+    }
+
     public static bool ArgumentOutOfRangeException(string argName, string message = "")
     { return ThrowIsNotNull(Exceptions.ArgumentOutOfRangeException(FullNameOfExecutedCode(), argName, message)); }
     public static bool ArrayElementContainsUnAllowedStrings(

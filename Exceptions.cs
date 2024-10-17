@@ -260,6 +260,14 @@ Exception ex)
     }
     #endregion
 
+    public static string? KeyAlreadyExists<T, U>(string before, Dictionary<T, U> dictionary, T key, string dictionaryName)
+    {
+        if (dictionary.ContainsKey(key))
+        {
+            return before + $"Key {key} already exists in {dictionaryName}";
+        }
+        return null;
+    }
     public static string? FileAlreadyExists(string before, string path)
     {
         if (File.Exists(path))
@@ -303,10 +311,12 @@ Exception ex)
     {
         return !value.HasValue ? CheckBefore(before) + what + " is not with value " + value + " valid integer number" : null;
     }
+
     public static string? HasOddNumberOfElements(string before, string listName, ICollection list)
     {
         return list.Count % 2 == 1 ? CheckBefore(before) + listName + " has odd number of elements " + list.Count : null;
     }
+
     public static string? WrongExtension(string before, string path, string requiredExt)
     {
         return System.IO.Path.GetExtension(path) != requiredExt ? CheckBefore(before) + path + "don't have " + requiredExt + " extension" : null;
