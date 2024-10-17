@@ -1,3 +1,4 @@
+// © www.sunamo.cz. All Rights Reserved.
 namespace SunamoExceptions;
 public sealed partial class Exceptions
 {
@@ -6,6 +7,7 @@ public sealed partial class Exceptions
     {
         return string.IsNullOrWhiteSpace(before) ? string.Empty : before + ": ";
     }
+
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return string.Empty;
@@ -73,7 +75,7 @@ bool fillAlsoFirstTwo = true)
     #endregion
 
     #region IsNullOrWhitespace
-    public static string? IsNullOrWhitespace(string before, string argName, string argValue)
+    public static string? IsNullOrWhitespace(string before, string argName, string argValue, bool notAllowOnlyWhitespace)
     {
         string addParams;
         if (argValue == null)
@@ -86,7 +88,7 @@ bool fillAlsoFirstTwo = true)
             addParams = AddParams();
             return CheckBefore(before) + argName + " is empty (without trim)" + addParams;
         }
-        if (argValue.Trim() == string.Empty)
+        if (notAllowOnlyWhitespace && argValue.Trim() == string.Empty)
         {
             addParams = AddParams();
             return CheckBefore(before) + argName + " is empty (with trim)" + addParams;
@@ -109,7 +111,22 @@ bool fillAlsoFirstTwo = true)
     }
     #endregion
 
-    #region OnlyReturnString
+    #region OnlyReturnString 
+    public static string? FolderIsNotEmpty(string before, string variableName, string path)
+    {
+        return before + $"Folder {path} is not empty. Variable name: {variableName}";
+    }
+
+    public static string? NotInRange(string before, string variableName, IEnumerable<string> list, int isLt, int isGt)
+    {
+        return before + $"{variableName} with items {string.Join(",", list)} is out of range, it is < {isLt} or > {isGt}";
+    }
+
+    public static string? NotSupportedExtension(string before, string extension)
+    {
+        return before + $"Extension {extension} is not supported";
+    }
+
     public static string? UseRlc(string before)
     {
         return CheckBefore(before) + "Don't implement, use methods in rlc";
@@ -122,12 +139,9 @@ bool fillAlsoFirstTwo = true)
     }
     public static string? NotValidXml(string before, string path, Exception ex)
     {
-        return CheckBefore(before) + path + string.Empty + TextOfExceptions(ex);
+        return CheckBefore(before) + path + " is not valid xml. " + TextOfExceptions(ex);
     }
-    public static string? ViolationSqlIndex(string before, string tableName, string abcToStringColumnsInIndex)
-    {
-        return CheckBefore(before) + $"{tableName} {abcToStringColumnsInIndex}";
-    }
+
     public static string? IsNotAllowed(string before, string what)
     {
         return CheckBefore(before) + what + " is not allowed.";
@@ -145,7 +159,7 @@ bool fillAlsoFirstTwo = true)
     {
         return CheckBefore(before) + " is dividing by zero.";
     }
-    public static string? AnyElementIsNullOrEmpty(string before, string nameOfCollection, List<int> nulled)
+    public static string? AnyElementIsNullOrEmpty(string before, string nameOfCollection, IEnumerable<int> nulled)
     {
         return CheckBefore(before) + $"In {nameOfCollection} has indexes " + string.Join(",", nulled) +
         " with null value";
@@ -188,11 +202,11 @@ bool fillAlsoFirstTwo = true)
     {
         return CheckBefore(before) + actual + " elements in " + nameCollection + ", maximum is " + max;
     }
-    public static string? FunctionalityDenied(string before, string description)
+    public static string? FunctionalityDenied(string before, string functionalityName)
     {
-        return CheckBefore(before) + description;
+        return CheckBefore(before) + $"Functionality {functionalityName} is denied";
     }
-    public static string? MoreCandidates(string before, List<string> list, string item)
+    public static string? MoreCandidates(string before, IEnumerable<string> list, string item)
     {
         return CheckBefore(before) + "Under" + " " + item + " is more candidates: " + Environment.NewLine +
         string.Join(Environment.NewLine, list);
@@ -211,15 +225,15 @@ bool fillAlsoFirstTwo = true)
     }
     public static string? ArgumentOutOfRangeException(string before, string paramName, string message)
     {
-        return CheckBefore(before) + paramName + " " + message;
+        return CheckBefore(before) + $"{paramName} is out of range, another info: {message}";
     }
     public static string? Custom(string before, string message)
     {
         return CheckBefore(before) + message;
     }
-    public static string? FolderCannotBeDeleted(string before, string repairedBlogPostsFolder, Exception ex)
+    public static string? FolderCannotBeDeleted(string before, string folder, Exception ex)
     {
-        return CheckBefore(before) + repairedBlogPostsFolder + TextOfExceptions(ex);
+        return CheckBefore(before) + $"{folder} cannot be deleted, another info: " + TextOfExceptions(ex);
     }
     public static string? CannotCreateDateTime(string before, int year, int month, int day, int hour, int minute, int seconds,
 Exception ex)
@@ -236,60 +250,16 @@ Exception ex)
     {
         return CheckBefore(before) + message + string.Empty + TextOfExceptions(ex);
     }
-    public static string? Ftp(string before, Exception ex, string message)
-    {
-        return CheckBefore(before) + message + string.Empty + TextOfExceptions(ex);
-    }
-    public static string? IO(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? InvalidOperation(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? ArgumentOutOfRange(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? Format(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? FtpSecurityNotAvailable(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? InvalidCast(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? ObjectDisposed(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? Timeout(string before, string message)
-    {
-        return CheckBefore(before) + message;
-    }
-    public static string? FtpMissingSocket(string before, Exception ex)
-    {
-        return CheckBefore(before) + TextOfExceptions(ex);
-    }
     public static string? NotImplementedMethod(string before)
     {
-        return CheckBefore(before) +
-        "Not implemented case. public program error. Please contact developer" + ".";
+        return CheckBefore(before) + "Not implemented method.";
     }
-    public static string? NotExists(string before, string item)
+    public static string? NotExists(string before, string what)
     {
-        return CheckBefore(before) + item + " not exists";
-    }
-    public static string? Socket(string before, int socketError)
-    {
-        return CheckBefore(before) + " socket error: " + socketError;
+        return CheckBefore(before) + what + " not exists";
     }
     #endregion
+
     public static string? FileAlreadyExists(string before, string path)
     {
         if (File.Exists(path))
@@ -298,14 +268,14 @@ Exception ex)
         }
         return null;
     }
-    public static string? ListNullOrEmpty<T>(string before, string variableName, IEnumerable<T>? t)
+    public static string? ListNullOrEmpty<T>(string before, string variableName, IEnumerable<T>? list)
     {
-        if (t == null)
+        if (list == null)
         {
             return CheckBefore(before) + variableName + " is null";
         }
         bool isEmpty = true;
-        foreach (var item in t)
+        foreach (var item in list)
         {
             isEmpty = false;
             break;
@@ -316,6 +286,7 @@ Exception ex)
         }
         return null;
     }
+
     public static string? LockedByBitLocker(string before, string path, Func<char, bool> IsLockedByBitLocker)
     {
         if (IsLockedByBitLocker != null)
@@ -332,20 +303,22 @@ Exception ex)
     {
         return !value.HasValue ? CheckBefore(before) + what + " is not with value " + value + " valid integer number" : null;
     }
-    public static string? IsOdd(string before, string colName, ICollection col)
+    public static string? HasOddNumberOfElements(string before, string listName, ICollection list)
     {
-        return col.Count % 2 == 1 ? CheckBefore(before) + colName + " has odd number of elements " + col.Count : null;
+        return list.Count % 2 == 1 ? CheckBefore(before) + listName + " has odd number of elements " + list.Count : null;
     }
-    public static string? WrongExtension(string before, string path, string ext)
+    public static string? WrongExtension(string before, string path, string requiredExt)
     {
-        return System.IO.Path.GetExtension(path) != ext ? CheckBefore(before) + path + "don't have " + ext + " extension" : null;
+        return System.IO.Path.GetExtension(path) != requiredExt ? CheckBefore(before) + path + "don't have " + requiredExt + " extension" : null;
     }
-    public static string? WrongNumberOfElements(string before, int requireElements, string nameCount,
-    IEnumerable<string> ele)
+
+    public static string? WrongNumberOfElements<T>(string before, int requireElements, string nameCollection,
+    IEnumerable<T> collection)
     {
-        var c = ele.Count();
-        return c != requireElements ? CheckBefore(before) + $" {nameCount} has {c}, it's required {requireElements}" : null;
+        var c = collection.Count();
+        return c != requireElements ? CheckBefore(before) + $" {nameCollection} has {c}, it's required {requireElements}" : null;
     }
+
     public static string? DirectoryWasntFound(string before, string directory)
     {
         return !Directory.Exists(directory)
@@ -353,10 +326,10 @@ Exception ex)
         " wasn't found."
         : null;
     }
-    public static string? PassedListInsteadOfArray<T>(string before, string variableName, List<T> v2, Func<List<T>, bool> CA_IsListStringWrappedInArray)
+    public static string? PassedListInsteadOfArray<T>(string before, string variableName, IEnumerable<T> v2, Func<IEnumerable<T>, bool> CA_IsListStringWrappedInArray)
     {
         if (CA_IsListStringWrappedInArray(v2))
-            return CheckBefore(before) + $" {variableName} is List<string>, was passed List<string> into params";
+            return CheckBefore(before) + $" {variableName} is IEnumerable<string>, was passed IEnumerable<string> into params";
         return null;
     }
     public static string? IsWhitespaceOrNull(string before, string variable, object data)
@@ -483,16 +456,16 @@ Exception ex)
     {
         return variable == null ? CheckBefore(before) + variableName + " " + "is null" + "." : null;
     }
-    public static string? NotImplementedCase(string before, object niCase)
+    public static string? NotImplementedCase(string before, object notImplementedName)
     {
         var fr = string.Empty;
-        if (niCase != null)
+        if (notImplementedName != null)
         {
             fr = " for ";
-            if (niCase.GetType() == typeof(Type))
-                fr += ((Type)niCase).FullName;
+            if (notImplementedName.GetType() == typeof(Type))
+                fr += ((Type)notImplementedName).FullName;
             else
-                fr += niCase.ToString();
+                fr += notImplementedName.ToString();
         }
         return CheckBefore(before) + "Not implemented case" + fr + " . public program error. Please contact developer" +
         ".";
@@ -515,11 +488,6 @@ Exception ex)
     public static string? IsEmpty(string before, IEnumerable folders, string colName,
     string additionalMessage = "")
     {
-        // Nemůže tu být žádná taková validace, protože vyhodí výjimku i když kolekce není prázdná
-        // if (string.IsNullOrEmpty(additionalMessage))
-        // {
-        //     throw new ArgumentException($"'{nameof(additionalMessage)}' cannot be null or empty.", nameof(additionalMessage));
-        // }
         return !folders.OfType<object>().Any()
         ? CheckBefore(before) + colName + " has no elements. " + additionalMessage
         : null;
@@ -548,6 +516,12 @@ Exception ex)
         }
         return null;
     }
+
+    public static string WasAlreadyInitialized(string before)
+    {
+        return before + " was already initialized!";
+    }
+
     public static string? DifferentCountInLists(string before, string namefc, int countfc, string namesc, int countsc)
     {
         if (countfc != countsc)
@@ -567,11 +541,11 @@ Exception ex)
         ? CheckBefore(before) + key + " is not exists in dictionary" + " " + dictName
         : null;
     }
-    public static string? DuplicatedElements(string before, string nameOfVariable, IList<string> d,
+    public static string? DuplicatedElements(string before, string nameOfVariable, List<string> duplicatedElements,
     string message = "")
     {
-        return d.Count != 0
-        ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(',', [.. d]) +
+        return duplicatedElements.Count != 0
+        ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(',', [.. duplicatedElements]) +
         " " + message
         : null;
     }
