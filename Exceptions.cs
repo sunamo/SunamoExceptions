@@ -1,5 +1,5 @@
-// © www.sunamo.cz. All Rights Reserved.
 namespace SunamoExceptions;
+// © www.sunamo.cz. All Rights Reserved.
 public sealed partial class Exceptions
 {
     #region Other

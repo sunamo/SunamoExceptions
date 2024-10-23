@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>24.10.16.1</Version>
-    <PackageReleaseNotes>Remove unused usings</PackageReleaseNotes>
+    <Version>24.10.23.1</Version>
+    <PackageReleaseNotes>Fix</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>

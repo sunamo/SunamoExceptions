@@ -1,6 +1,4 @@
-// © www.sunamo.cz. All Rights Reserved.
 namespace SunamoExceptions;
-
 public partial class ThrowEx
 {
     public static bool KeyAlreadyExists<T, U>(Dictionary<T, U> dictionary, T key, string dictionaryName)
@@ -328,7 +326,7 @@ public partial class ThrowEx
 
     public static bool ThrowIsNotNull(string? exception, bool reallyThrow = true)
     {
-        if (exception == null)
+        if (exception != null)
         {
             Debugger.Break();
             if (reallyThrow)
