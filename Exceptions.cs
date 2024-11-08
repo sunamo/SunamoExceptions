@@ -8,6 +8,16 @@ public sealed partial class Exceptions
         return string.IsNullOrWhiteSpace(before) ? string.Empty : before + ": ";
     }
 
+    public static string? HasNotIndex<T>(string before, IEnumerable<T> list, string listName, int maxRequiredIndex)
+    {
+        if (list.Count() <= maxRequiredIndex)
+        {
+            return $"{listName} dont have only {list.Count()} items but is required {maxRequiredIndex} indexes";
+        }
+
+        return null;
+    }
+
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {
         if (ex == null) return string.Empty;

@@ -6,6 +6,11 @@ public partial class ThrowEx
         return ThrowIsNotNull(Exceptions.KeyAlreadyExists(FullNameOfExecutedCode(), dictionary, key, dictionaryName));
     }
 
+    public static bool HasNotIndex<T>(IEnumerable<T> list, string listName, int maxRequiredIndex)
+    {
+        return ThrowIsNotNull(Exceptions.HasNotIndex(FullNameOfExecutedCode(), list, listName, maxRequiredIndex));
+    }
+
     public static bool ArgumentOutOfRangeException(string argName, string message = "")
     { return ThrowIsNotNull(Exceptions.ArgumentOutOfRangeException(FullNameOfExecutedCode(), argName, message)); }
     public static bool ArrayElementContainsUnAllowedStrings(
