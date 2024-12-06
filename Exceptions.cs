@@ -588,7 +588,7 @@ Exception ex)
 
     internal static string? FolderDoesNotExists(string before, string folder, string additionalInfo)
     {
-        if (!Directory.Exists(before))
+        if (!Directory.Exists(folder))
         {
             return before + $"Folder {folder} does not exists. {additionalInfo}";
         }
