@@ -585,4 +585,13 @@ Exception ex)
         if (!r.EndsWith('\\')) return CheckBefore(before) + " " + r + " don't end with \\";
         return null;
     }
+
+    internal static string? FolderDoesNotExists(string before, string folder, string additionalInfo)
+    {
+        if (!Directory.Exists(before))
+        {
+            return before + $"Folder {folder} does not exists. {additionalInfo}";
+        }
+        return null;
+    }
 }

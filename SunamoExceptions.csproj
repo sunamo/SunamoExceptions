@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>24.11.8.1</Version>
-    <PackageReleaseNotes>Added methods</PackageReleaseNotes>
+    <Version>24.12.6.1</Version>
+    <PackageReleaseNotes>Added method</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>

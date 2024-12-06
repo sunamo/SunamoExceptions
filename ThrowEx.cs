@@ -1,6 +1,11 @@
 namespace SunamoExceptions;
 public partial class ThrowEx
 {
+    public static bool FolderDoesNotExists(string folder, string additionalInfo = "")
+    {
+        return ThrowIsNotNull(Exceptions.FolderDoesNotExists(FullNameOfExecutedCode(), folder, additionalInfo));
+    }
+
     public static bool KeyAlreadyExists<T, U>(Dictionary<T, U> dictionary, T key, string dictionaryName)
     {
         return ThrowIsNotNull(Exceptions.KeyAlreadyExists(FullNameOfExecutedCode(), dictionary, key, dictionaryName));
