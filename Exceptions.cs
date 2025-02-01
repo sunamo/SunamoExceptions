@@ -498,7 +498,7 @@ Exception ex)
                 notContained.Add(item);
         return notContained.Count == 0
         ? null
-        : CheckBefore(before) + originalText + " dont contains: " + string.Join(",", notContained);
+        : CheckBefore(before) + "Original text dont contains: " + string.Join(",", notContained) + ". Original text: " + originalText;
     }
     public static string? HasNotKeyDictionary<Key, Value>(string before, string nameDict, IDictionary<Key, Value> qsDict,
     Key remains)
