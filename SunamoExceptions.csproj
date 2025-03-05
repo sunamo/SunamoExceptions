@@ -19,6 +19,7 @@
     <Compile Remove="ExceptionsOnlyReturnString.cs" />
     <Compile Remove="ExceptionsOther.cs" />
     <Compile Remove="ThrowExOther.cs" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
