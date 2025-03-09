@@ -8,17 +8,25 @@ public sealed partial class Exceptions
         return string.IsNullOrWhiteSpace(before) ? string.Empty : before + ": ";
     }
 
-    public static string? HasNotIndex<T>(string before, IEnumerable<T> list, string listName, int maxRequiredIndex)
+    public static string? IsNotTheSame<T>(string before, string name1, T value1, string name2, T value2)
     {
-        if (list.Count() <= maxRequiredIndex)
+        if (!EqualityComparer<T>.Default.Equals(value1, value2))
         {
-            return $"{listName} dont have only {list.Count()} items but is required {maxRequiredIndex} indexes";
+            return $"{before}{value1} differs from {value2}";
         }
 
         return null;
     }
 
+    public static string? HasNotIndex<T>(string before, IEnumerable<T> list, string listName, int maxRequiredIndex)
+    {
+        if (list.Count() <= maxRequiredIndex)
+        {
+            return $"{before}{listName} dont have only {list.Count()} items but is required {maxRequiredIndex} indexes";
+        }
 
+        return null;
+    }
 
     public static string TextOfExceptions(Exception ex, bool alsoInner = true)
     {

@@ -1,6 +1,11 @@
 namespace SunamoExceptions;
 public partial class ThrowEx
 {
+    public static bool IsNotTheSame<T>(string before, string name1, T value1, string name2, T value2)
+    {
+        return ThrowIsNotNull(Exceptions.IsNotTheSame(FullNameOfExecutedCode(), name1, value2, name2, value2));
+    }
+
     public static bool FolderDoesNotExists(string folder, string additionalInfo = "")
     {
         return ThrowIsNotNull(Exceptions.FolderDoesNotExists(FullNameOfExecutedCode(), folder, additionalInfo));
