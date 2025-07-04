@@ -12,7 +12,7 @@ public sealed partial class Exceptions
     {
         if (!EqualityComparer<T>.Default.Equals(value1, value2))
         {
-            return $"{before}{value1} differs from {value2}";
+            return $"{before}{name1}({value1}) differs from {name2}({value2})";
         }
 
         return null;
@@ -28,7 +28,7 @@ public sealed partial class Exceptions
         return null;
     }
 
-    public static string TextOfExceptions(Exception ex, bool alsoInner = true)
+    public static string TextOfExceptions(Exception ex)
     {
         return ex.GetAllMessages();
     }
