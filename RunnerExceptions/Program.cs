@@ -1,4 +1,4 @@
-﻿using SunamoExceptions.Tests;
+using SunamoExceptions.Tests;
 
 namespace RunnerExceptions;
 
