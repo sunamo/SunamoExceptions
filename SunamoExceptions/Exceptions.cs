@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoExceptions;
 // © www.sunamo.cz. All Rights Reserved.
 public sealed partial class Exceptions
@@ -37,15 +40,15 @@ public sealed partial class Exceptions
 bool fillAlsoFirstTwo = true)
     {
         StackTrace st = new();
-        var v = st.ToString();
-        var l = v.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
-        l.RemoveAt(0);
+        var value = st.ToString();
+        var lines = value.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        lines.RemoveAt(0);
         var i = 0;
         string type = string.Empty;
         string methodName = string.Empty;
-        for (; i < l.Count; i++)
+        for (; i < lines.Count; i++)
         {
-            var item = l[i];
+            var item = lines[i];
             if (fillAlsoFirstTwo)
                 if (!item.StartsWith("   at ThrowEx"))
                 {
@@ -54,26 +57,26 @@ bool fillAlsoFirstTwo = true)
                 }
             if (item.StartsWith("at System."))
             {
-                l.Add(string.Empty);
-                l.Add(string.Empty);
+                lines.Add(string.Empty);
+                lines.Add(string.Empty);
                 break;
             }
         }
-        return new Tuple<string, string, string>(type, methodName, string.Join(Environment.NewLine, l));
+        return new Tuple<string, string, string>(type, methodName, string.Join(Environment.NewLine, lines));
     }
-    public static void TypeAndMethodName(string l, out string type, out string methodName)
+    public static void TypeAndMethodName(string lines, out string type, out string methodName)
     {
-        var s2 = l.Split("at ")[1].Trim();
-        var s = s2.Split("(")[0];
-        var p = s.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-        methodName = p[^1];
-        p.RemoveAt(p.Count - 1);
-        type = string.Join(".", p);
+        var s2 = lines.Split("at ")[1].Trim();
+        var text = s2.Split("(")[0];
+        var parameter = text.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        methodName = parameter[^1];
+        parameter.RemoveAt(parameter.Count - 1);
+        type = string.Join(".", parameter);
     }
-    internal static string CallingMethod(int v = 1)
+    internal static string CallingMethod(int value = 1)
     {
         StackTrace stackTrace = new();
-        var methodBase = stackTrace.GetFrame(v)?.GetMethod();
+        var methodBase = stackTrace.GetFrame(value)?.GetMethod();
         if (methodBase == null)
         {
             return "Method name cannot be get";
@@ -308,8 +311,8 @@ Exception ex)
     {
         if (IsLockedByBitLocker != null)
         {
-            var p = path[0];
-            if (IsLockedByBitLocker(p))
+            var parameter = path[0];
+            if (IsLockedByBitLocker(parameter))
             {
                 return CheckBefore(before) + $"Drive {p}:\\ is locked by BitLocker";
             }
@@ -334,8 +337,8 @@ Exception ex)
     public static string? WrongNumberOfElements<T>(string before, int requireElements, string nameCollection,
     IEnumerable<T> collection)
     {
-        var c = collection.Count();
-        return c != requireElements ? CheckBefore(before) + $" {nameCollection} has {c}, it's required {requireElements}" : null;
+        var count = collection.Count();
+        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {c}, it's required {requireElements}" : null;
     }
 
     public static string? DirectoryWasntFound(string before, string directory)
@@ -433,9 +436,9 @@ Exception ex)
     {
         return folders.Count == 0 ? CheckBefore(before) + "No passed folder into" : null;
     }
-    public static string? FileSystemException(string v, Exception ex)
+    public static string? FileSystemException(string value, Exception ex)
     {
-        return ex != null ? CheckBefore(v) + " " + TextOfExceptions(ex) : null;
+        return ex != null ? CheckBefore(value) + " " + TextOfExceptions(ex) : null;
     }
     public static string? InvalidParameter(string before, string valueVar, string nameVar)
     {
@@ -549,10 +552,10 @@ Exception ex)
             string.Concat(namesc + "-" + countsc);
         return null;
     }
-    public static string? FirstLetterIsNotUpper(string before, string p)
+    public static string? FirstLetterIsNotUpper(string before, string parameter)
     {
-        return p.Length == 0 ? null :
-        char.IsLower(p[0]) ? CheckBefore(before) + "First letter is not upper: " + p : null;
+        return parameter.Length == 0 ? null :
+        char.IsLower(parameter[0]) ? CheckBefore(before) + "First letter is not upper: " + parameter : null;
     }
     public static string? KeyNotFound<T, U>(string before, IDictionary<T, U> en, string dictName, T key)
     {

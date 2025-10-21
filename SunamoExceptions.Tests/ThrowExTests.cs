@@ -1,4 +1,7 @@
-﻿using System;
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +14,7 @@ public class ThrowExTests
     public void IsNullOrWhitespaceTest()
     {
         string? a = "a";
-        var b = ThrowEx.IsNullOrWhitespace("a", a);
+        var builder = ThrowEx.IsNullOrWhitespace("a", a);
 
         a = null;
         var b2 = ThrowEx.IsNullOrWhitespace("a", a);
@@ -20,7 +23,7 @@ public class ThrowExTests
     [Fact]
     public void HasNotIndexTest()
     {
-        var l = Exceptions.HasNotIndex("", [1, 2, 3], "", 2);
+        var list = Exceptions.HasNotIndex("", [1, 2, 3], "", 2);
         var l2 = Exceptions.HasNotIndex("", [1, 2, 3], "", 3);
     }
 }

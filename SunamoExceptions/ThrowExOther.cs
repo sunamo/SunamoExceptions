@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoExceptions;
 partial class ThrowEx
 {
@@ -31,8 +34,8 @@ partial class ThrowEx
         }
         else
         {
-            var t = type.GetType();
-            typeFullName = t.FullName ?? "Type cannot be get via type.GetType()";
+            var temp = type.GetType();
+            typeFullName = temp.FullName ?? "Type cannot be get via type.GetType()";
         }
         return string.Concat(typeFullName, ".", methodName);
     }
