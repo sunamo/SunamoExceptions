@@ -48,14 +48,14 @@ bool fillAlsoFirstTwo = true)
         string methodName = string.Empty;
         for (; i < lines.Count; i++)
         {
-            var item = lines[i];
+            var stackLine = lines[i];
             if (fillAlsoFirstTwo)
-                if (!item.StartsWith("   at ThrowEx"))
+                if (!stackLine.StartsWith("   at ThrowEx"))
                 {
-                    TypeAndMethodName(item, out type, out methodName);
+                    TypeAndMethodName(stackLine, out type, out methodName);
                     fillAlsoFirstTwo = false;
                 }
-            if (item.StartsWith("at System."))
+            if (stackLine.StartsWith("at System."))
             {
                 lines.Add(string.Empty);
                 lines.Add(string.Empty);
@@ -314,7 +314,7 @@ Exception ex)
             var parameter = path[0];
             if (IsLockedByBitLocker(parameter))
             {
-                return CheckBefore(before) + $"Drive {p}:\\ is locked by BitLocker";
+                return CheckBefore(before) + $"Drive {parameter}:\\ is locked by BitLocker";
             }
         }
         return null;
@@ -338,7 +338,7 @@ Exception ex)
     IEnumerable<T> collection)
     {
         var count = collection.Count();
-        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {c}, it's required {requireElements}" : null;
+        return count != requireElements ? CheckBefore(before) + $" {nameCollection} has {count}, it's required {requireElements}" : null;
     }
 
     public static string? DirectoryWasntFound(string before, string directory)
@@ -495,9 +495,9 @@ Exception ex)
     public static string? NotContains(string before, string originalText, params string[] shouldContains)
     {
         List<string> notContained = [];
-        foreach (var item in shouldContains)
-            if (!originalText.Contains(item))
-                notContained.Add(item);
+        foreach (var requiredText in shouldContains)
+            if (!originalText.Contains(requiredText))
+                notContained.Add(requiredText);
         return notContained.Count == 0
         ? null
         : CheckBefore(before) + "Original text dont contains: " + string.Join(",", notContained) + ". Original text: " + originalText;
