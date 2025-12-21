@@ -1,6 +1,7 @@
+namespace SunamoExceptions;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-﻿namespace SunamoExceptions;
 public static class ExceptionsExtensions
 {
     public static string GetAllMessages(this Exception ex)

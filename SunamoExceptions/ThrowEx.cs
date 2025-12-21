@@ -1,6 +1,7 @@
+namespace SunamoExceptions;
+
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-namespace SunamoExceptions;
 public partial class ThrowEx
 {
     public static bool IsNotTheSame<T>(string name1, T value1, string name2, T value2)
