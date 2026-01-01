@@ -2,13 +2,25 @@
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 
 namespace SunamoExceptions.Tests;
+
+/// <summary>
+/// Tests for ExceptionsExtensions class methods.
+/// </summary>
 public class ExceptionsExtensionsTests
 {
+    /// <summary>
+    /// Tests the GetAllMessages extension method with nested exceptions.
+    /// </summary>
     [Fact]
     public void GetAllMessagesTest()
     {
-        var exc = new Exception("Hlavní výjimka", new Exception("Vnitřní výjimka 1", new Exception("Vnitřní výjimka 2")));
+        var exception = new Exception("Main exception", new Exception("Inner exception 1", new Exception("Inner exception 2")));
 
-        var text = exc.GetAllMessages();
+        var text = exception.GetAllMessages();
+
+        Assert.NotNull(text);
+        Assert.Contains("Main exception", text);
+        Assert.Contains("Inner exception 1", text);
+        Assert.Contains("Inner exception 2", text);
     }
 }

@@ -8,22 +8,32 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SunamoExceptions.Tests;
+
+/// <summary>
+/// Tests for ThrowEx class methods.
+/// </summary>
 public class ThrowExTests
 {
+    /// <summary>
+    /// Tests the IsNullOrWhitespace method with both non-null and null values.
+    /// </summary>
     [Fact]
     public void IsNullOrWhitespaceTest()
     {
-        string? a = "a";
-        var builder = ThrowEx.IsNullOrWhitespace("a", a);
+        string? text = "a";
+        var result = ThrowEx.IsNullOrWhitespace("a", text);
 
-        a = null;
-        var b2 = ThrowEx.IsNullOrWhitespace("a", a);
+        text = null;
+        var secondResult = ThrowEx.IsNullOrWhitespace("a", text!);
     }
 
+    /// <summary>
+    /// Tests the Exceptions.HasNotIndex method with valid and invalid indexes.
+    /// </summary>
     [Fact]
     public void HasNotIndexTest()
     {
-        var list = Exceptions.HasNotIndex("", [1, 2, 3], "", 2);
-        var l2 = Exceptions.HasNotIndex("", [1, 2, 3], "", 3);
+        var result = Exceptions.HasNotIndex("", [1, 2, 3], "", 2);
+        var secondResult = Exceptions.HasNotIndex("", [1, 2, 3], "", 3);
     }
 }
