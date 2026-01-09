@@ -84,17 +84,17 @@ public partial class ThrowEx
     /// <summary>
     /// Throws an exception if a folder cannot be moved.
     /// </summary>
-    public static bool CannotMoveFolder(string item, string destinationPath, Exception ex)
+    public static bool CannotMoveFolder(string sourcePath, string destinationPath, Exception ex)
     {
-        return ThrowIsNotNull(Exceptions.CannotMoveFolder(FullNameOfExecutedCode(), item, destinationPath, ex));
+        return ThrowIsNotNull(Exceptions.CannotMoveFolder(FullNameOfExecutedCode(), sourcePath, destinationPath, ex));
     }
 
     /// <summary>
     /// Throws an exception if a string doesn't end with a backslash.
     /// </summary>
-    public static bool CheckBackslashEnd(string r)
+    public static bool CheckBackslashEnd(string path)
     {
-        return ThrowIsNotNull(Exceptions.CheckBackSlashEnd(FullNameOfExecutedCode(), r));
+        return ThrowIsNotNull(Exceptions.CheckBackSlashEnd(FullNameOfExecutedCode(), path));
     }
 
     /// <summary>
@@ -126,25 +126,25 @@ public partial class ThrowEx
     /// <summary>
     /// Throws an exception if two lists have different element counts.
     /// </summary>
-    public static bool DifferentCountInLists<T>(string namefc, IList<T> countfc, string namesc, IList<T> countsc)
+    public static bool DifferentCountInLists<T>(string firstCollectionName, IList<T> firstCollection, string secondCollectionName, IList<T> secondCollection)
     {
-        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), namefc, countfc.Count, namesc, countsc.Count));
+        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), firstCollectionName, firstCollection.Count, secondCollectionName, secondCollection.Count));
     }
 
     /// <summary>
     /// Throws an exception if two collections have different element counts.
     /// </summary>
-    public static bool DifferentCountInLists(string namefc, int countfc, string namesc, int countsc)
+    public static bool DifferentCountInLists(string firstCollectionName, int firstCollectionCount, string secondCollectionName, int secondCollectionCount)
     {
-        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), namefc, countfc, namesc, countsc));
+        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), firstCollectionName, firstCollectionCount, secondCollectionName, secondCollectionCount));
     }
 
     /// <summary>
     /// Throws an exception if two lists of different types have different element counts.
     /// </summary>
-    public static bool DifferentCountInListsTU<T, U>(string namefc, IList<T> countfc, string namesc, IList<U> countsc)
+    public static bool DifferentCountInListsTU<T, U>(string firstCollectionName, IList<T> firstCollection, string secondCollectionName, IList<U> secondCollection)
     {
-        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), namefc, countfc.Count, namesc, countsc.Count));
+        return ThrowIsNotNull(Exceptions.DifferentCountInLists(FullNameOfExecutedCode(), firstCollectionName, firstCollection.Count, secondCollectionName, secondCollection.Count));
     }
 
     /// <summary>
@@ -198,9 +198,9 @@ public partial class ThrowEx
     /// <summary>
     /// Throws an exception if an element wasn't removed from a collection.
     /// </summary>
-    public static bool ElementWasntRemoved(string detailLocation, int before, int after)
+    public static bool ElementWasntRemoved(string detailLocation, int countBefore, int countAfter)
     {
-        return ThrowIsNotNull(Exceptions.ElementWasntRemoved(FullNameOfExecutedCode(), detailLocation, before, after));
+        return ThrowIsNotNull(Exceptions.ElementWasntRemoved(FullNameOfExecutedCode(), detailLocation, countBefore, countAfter));
     }
 
     /// <summary>
@@ -246,9 +246,9 @@ public partial class ThrowEx
     /// <summary>
     /// Throws an exception if the first letter is not uppercase.
     /// </summary>
-    public static bool FirstLetterIsNotUpper(string selectedFile)
+    public static bool FirstLetterIsNotUpper(string text)
     {
-        return ThrowIsNotNull(Exceptions.FirstLetterIsNotUpper, selectedFile);
+        return ThrowIsNotNull(Exceptions.FirstLetterIsNotUpper, text);
     }
 
     /// <summary>

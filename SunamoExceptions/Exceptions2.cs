@@ -131,11 +131,11 @@ public sealed partial class Exceptions
     /// Checks if the first letter of a string is not uppercase.
     /// </summary>
     /// <param name="before">The prefix for the error message.</param>
-    /// <param name="parameter">The string to check.</param>
+    /// <param name="text">The string to check.</param>
     /// <returns>An error message if the first letter is not uppercase, otherwise null.</returns>
-    public static string? FirstLetterIsNotUpper(string before, string parameter)
+    public static string? FirstLetterIsNotUpper(string before, string text)
     {
-        return parameter.Length == 0 ? null : char.IsLower(parameter[0]) ? CheckBefore(before) + "First letter is not upper: " + parameter : null;
+        return text.Length == 0 ? null : char.IsLower(text[0]) ? CheckBefore(before) + "First letter is not upper: " + text : null;
     }
 
     /// <summary>

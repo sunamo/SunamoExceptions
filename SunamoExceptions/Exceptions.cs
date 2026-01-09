@@ -68,11 +68,11 @@ public sealed partial class Exceptions
         return ex.GetAllMessages();
     }
 
-    internal static Tuple<string, string, string> PlaceOfException(bool fillAlsoFirstTwo = true)
+    internal static Tuple<string, string, string> PlaceOfException(bool isFillAlsoFirstTwo = true)
     {
         StackTrace st = new();
-        var value = st.ToString();
-        var lines = value.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        var stackTraceText = st.ToString();
+        var lines = stackTraceText.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
         lines.RemoveAt(0);
         var i = 0;
         string type = string.Empty;
@@ -80,11 +80,11 @@ public sealed partial class Exceptions
         for (; i < lines.Count; i++)
         {
             var stackLine = lines[i];
-            if (fillAlsoFirstTwo)
+            if (isFillAlsoFirstTwo)
                 if (!stackLine.StartsWith("   at ThrowEx"))
                 {
                     TypeAndMethodName(stackLine, out type, out methodName);
-                    fillAlsoFirstTwo = false;
+                    isFillAlsoFirstTwo = false;
                 }
 
             if (stackLine.StartsWith("at System."))
@@ -101,23 +101,23 @@ public sealed partial class Exceptions
     /// <summary>
     /// Extracts type and method name from a stack trace line.
     /// </summary>
-    /// <param name="lines">The stack trace line to parse.</param>
+    /// <param name="stackTraceLine">The stack trace line to parse.</param>
     /// <param name="type">The extracted type name.</param>
     /// <param name="methodName">The extracted method name.</param>
-    public static void TypeAndMethodName(string lines, out string type, out string methodName)
+    public static void TypeAndMethodName(string stackTraceLine, out string type, out string methodName)
     {
-        var s2 = lines.Split("at ")[1].Trim();
-        var text = s2.Split("(")[0];
-        var parameter = text.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-        methodName = parameter[^1];
-        parameter.RemoveAt(parameter.Count - 1);
-        type = string.Join(".", parameter);
+        var methodFullName = stackTraceLine.Split("at ")[1].Trim();
+        var methodSignature = methodFullName.Split("(")[0];
+        var parts = methodSignature.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        methodName = parts[^1];
+        parts.RemoveAt(parts.Count - 1);
+        type = string.Join(".", parts);
     }
 
-    internal static string CallingMethod(int value = 1)
+    internal static string CallingMethod(int stackFrameDepth = 1)
     {
         StackTrace stackTrace = new();
-        var methodBase = stackTrace.GetFrame(value)?.GetMethod();
+        var methodBase = stackTrace.GetFrame(stackFrameDepth)?.GetMethod();
         if (methodBase == null)
         {
             return "Method name cannot be get";

@@ -26,13 +26,13 @@ public sealed partial class Exceptions
     /// Creates an error message when a folder cannot be moved.
     /// </summary>
     /// <param name="before">The prefix for the error message.</param>
-    /// <param name="item">The source folder path.</param>
+    /// <param name="sourcePath">The source folder path.</param>
     /// <param name="destinationPath">The destination folder path.</param>
     /// <param name="ex">The exception that occurred.</param>
     /// <returns>An error message.</returns>
-    public static string? CannotMoveFolder(string before, string item, string destinationPath, Exception ex)
+    public static string? CannotMoveFolder(string before, string sourcePath, string destinationPath, Exception ex)
     {
-        return CheckBefore(before) + $"Cannot move folder from {item} to {destinationPath} " + TextOfExceptions(ex);
+        return CheckBefore(before) + $"Cannot move folder from {sourcePath} to {destinationPath} " + TextOfExceptions(ex);
     }
 
     /// <summary>
@@ -145,10 +145,10 @@ public sealed partial class Exceptions
     {
         if (IsLockedByBitLocker != null)
         {
-            var parameter = path[0];
-            if (IsLockedByBitLocker(parameter))
+            var driveLetter = path[0];
+            if (IsLockedByBitLocker(driveLetter))
             {
-                return CheckBefore(before) + $"Drive {parameter}:\\ is locked by BitLocker";
+                return CheckBefore(before) + $"Drive {driveLetter}:\\ is locked by BitLocker";
             }
         }
 
@@ -306,12 +306,12 @@ public sealed partial class Exceptions
     /// Checks if a string ends with a backslash.
     /// </summary>
     /// <param name="before">The prefix for the error message.</param>
-    /// <param name="r">The string to check.</param>
+    /// <param name="path">The string to check.</param>
     /// <returns>An error message if the string doesn't end with a backslash, otherwise null.</returns>
-    public static string? CheckBackslashEnd(string before, string r)
+    public static string? CheckBackslashEnd(string before, string path)
     {
-        if (r.Length != 0)
-            if (r[^1] != '\\')
+        if (path.Length != 0)
+            if (path[^1] != '\\')
                 return CheckBefore(before) + " string has not been in path format" + "!";
         return null;
     }
@@ -383,12 +383,12 @@ public sealed partial class Exceptions
     /// </summary>
     /// <param name="before">The prefix for the error message.</param>
     /// <param name="detailLocation">Details about where the removal was attempted.</param>
-    /// <param name="before2">The count before removal.</param>
-    /// <param name="after">The count after removal.</param>
+    /// <param name="countBefore">The count before removal.</param>
+    /// <param name="countAfter">The count after removal.</param>
     /// <returns>An error message if the element wasn't removed, otherwise null.</returns>
-    public static string? ElementWasntRemoved(string before, string detailLocation, int before2, int after)
+    public static string? ElementWasntRemoved(string before, string detailLocation, int countBefore, int countAfter)
     {
-        return before2 == after ? CheckBefore(before) + "Element was not removed during" + ": " + detailLocation : null;
+        return countBefore == countAfter ? CheckBefore(before) + "Element was not removed during" + ": " + detailLocation : null;
     }
 
     /// <summary>
