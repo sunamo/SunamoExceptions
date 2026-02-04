@@ -1,9 +1,5 @@
 namespace SunamoExceptions;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-// © www.sunamo.cz. All Rights Reserved.
-
 /// <summary>
 /// Provides static methods for generating exception messages with consistent formatting.
 /// </summary>

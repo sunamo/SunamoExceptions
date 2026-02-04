@@ -1,8 +1,5 @@
 namespace SunamoExceptions;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-
 /// <summary>
 /// Extension methods for working with exceptions.
 /// </summary>

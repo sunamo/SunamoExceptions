@@ -1,8 +1,5 @@
 namespace SunamoExceptions;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-
 /// <summary>
 /// Provides static methods for throwing exceptions with automatic context information.
 /// Each method validates a condition and throws an exception if the condition fails.
