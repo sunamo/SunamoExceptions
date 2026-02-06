@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.5.1</Version>
-    <PackageReleaseNotes>feat: Enable SourceLink and added debug symbols</PackageReleaseNotes>
+    <Version>26.2.6.1</Version>
+    <PackageReleaseNotes>feat: &lt;DebugType&gt;portable&lt;/DebugType&gt;</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -16,7 +16,7 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <PropertyGroup>
-    <DebugType>embedded</DebugType>
+    <DebugType>portable</DebugType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
