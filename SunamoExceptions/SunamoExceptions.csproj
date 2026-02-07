@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.13</Version>
-    <PackageReleaseNotes>feat: removed PropertyGroup item from csproj</PackageReleaseNotes>
+    <Version>26.2.7.14</Version>
+    <PackageReleaseNotes>feat: added &lt;AllowedOutputExtensionsInPackageBuildOutputFolder&gt;$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb&lt;/AllowedOutputExtensionsInPackageBuildOutputFolder&gt;</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -16,6 +16,8 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
   <PropertyGroup>
+    <!-- including PDB files in NuGet for source link because symbolsource.org does not support portable PDBs -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <EmbedAllSources>true</EmbedAllSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSymbols>true</IncludeSymbols>
