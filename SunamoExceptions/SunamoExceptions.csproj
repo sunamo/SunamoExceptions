@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.3</Version>
+    <Version>26.2.7.4</Version>
     <PackageReleaseNotes>feat: &lt;DebugType&gt;portable&lt;/DebugType&gt;</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
@@ -14,6 +14,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
+    <DebugSymbols>true</DebugSymbols>
+    <EmbedAllSources>true</EmbedAllSources>
   </PropertyGroup>
   <PropertyGroup>
     <DebugType>portable</DebugType>
