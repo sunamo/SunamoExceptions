@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.5</Version>
+    <Version>26.2.7.6</Version>
     <PackageReleaseNotes>feat: &lt;DebugType&gt;portable&lt;/DebugType&gt;</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
