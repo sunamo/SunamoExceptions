@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoExceptions.Tests\\SunamoExceptions.Tests.csproj" />
+  <Project Path="RunnerExceptions\\RunnerExceptions.csproj" />
+  <Project Path="SunamoExceptions\SunamoExceptions.csproj" />
+</Solution>

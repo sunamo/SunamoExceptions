@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.14</Version>
-    <PackageReleaseNotes>feat: added &lt;AllowedOutputExtensionsInPackageBuildOutputFolder&gt;$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb&lt;/AllowedOutputExtensionsInPackageBuildOutputFolder&gt;</PackageReleaseNotes>
+    <Version>26.2.7.15</Version>
+    <PackageReleaseNotes>feat: Enable debug symbols</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -14,9 +14,10 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
   <PropertyGroup>
-    <!-- including PDB files in NuGet for source link because symbolsource.org does not support portable PDBs -->
+    <!-- This is important, don't try to remove it, otherwise the nuggets are not marked as My Code. Was already verified removing it. -->
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <EmbedAllSources>true</EmbedAllSources>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
