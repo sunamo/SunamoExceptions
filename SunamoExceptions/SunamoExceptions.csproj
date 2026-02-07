@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.7</Version>
-    <PackageReleaseNotes>feat: &lt;DebugType&gt;portable&lt;/DebugType&gt;</PackageReleaseNotes>
+    <Version>26.2.7.8</Version>
+    <PackageReleaseNotes>feat: &lt;/Project&gt;</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -18,7 +18,7 @@
     <EmbedAllSources>true</EmbedAllSources>
   </PropertyGroup>
   <PropertyGroup>
-    <DebugType>portable</DebugType>
+    <DebugType>embedded</DebugType>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

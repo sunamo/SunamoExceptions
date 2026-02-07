@@ -1,0 +1,1309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SunamoExceptions</name>
+    </assembly>
+    <members>
+        <member name="T:SunamoExceptions.Exceptions">
+            <summary>
+            Provides static methods for generating exception messages with consistent formatting.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.CheckBefore(System.String)">
+            <summary>
+            Checks and formats the 'before' parameter, adding a colon separator if not empty.
+            </summary>
+            <param name="before">The prefix text to check and format.</param>
+            <returns>Empty string if <paramref name="before"/> is null or whitespace, otherwise <paramref name="before"/> with ": " appended.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNotTheSame``1(System.String,System.String,``0,System.String,``0)">
+            <summary>
+            Checks if two values are not equal and returns an error message if they differ.
+            </summary>
+            <typeparam name="T">The type of values to compare.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="name1">The name of the first value.</param>
+            <param name="value1">The first value to compare.</param>
+            <param name="name2">The name of the second value.</param>
+            <param name="value2">The second value to compare.</param>
+            <returns>An error message if values differ, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.HasNotIndex``1(System.String,System.Collections.Generic.IEnumerable{``0},System.String,System.Int32)">
+            <summary>
+            Checks if a list has enough elements to access the specified index.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="list">The list to check.</param>
+            <param name="listName">The name of the list for the error message.</param>
+            <param name="maxRequiredIndex">The maximum index that must be accessible.</param>
+            <returns>An error message if the list doesn't have enough elements, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.TextOfExceptions(System.Exception)">
+            <summary>
+            Gets all messages from an exception and its inner exceptions.
+            </summary>
+            <param name="ex">The exception to extract messages from.</param>
+            <returns>A string containing all exception messages.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.TypeAndMethodName(System.String,System.String@,System.String@)">
+            <summary>
+            Extracts type and method name from a stack trace line.
+            </summary>
+            <param name="stackTraceLine">The stack trace line to parse.</param>
+            <param name="type">The extracted type name.</param>
+            <param name="methodName">The extracted method name.</param>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNullOrWhitespace(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Checks if a string argument is null, empty, or whitespace.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="argName">The name of the argument.</param>
+            <param name="argValue">The value to check.</param>
+            <param name="notAllowOnlyWhitespace">If true, whitespace-only strings are also considered invalid.</param>
+            <returns>An error message if validation fails, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.AddParams">
+            <summary>
+            Adds additional parameter information to exception messages.
+            </summary>
+            <returns>A formatted string containing additional parameter information.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FolderIsNotEmpty(System.String,System.String,System.String)">
+            <summary>
+            Creates an error message indicating that a folder is not empty.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <param name="path">The path to the folder.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotInRange(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Int32)">
+            <summary>
+            Checks if a variable is within the specified range.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <param name="list">The list of items.</param>
+            <param name="isLt">The lower bound.</param>
+            <param name="isGt">The upper bound.</param>
+            <returns>An error message if out of range, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotSupportedExtension(System.String,System.String)">
+            <summary>
+            Creates an error message for an unsupported file extension.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="extension">The unsupported extension.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.UseRlc(System.String)">
+            <summary>
+            Creates an error message indicating that RLC methods should be used instead.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.RepeatAfterTimeXTimesFailed(System.String,System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            Creates an error message for repeated failed attempts to load a URI.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="times">Number of failed attempts.</param>
+            <param name="timeoutInMs">Timeout in milliseconds.</param>
+            <param name="address">The URI address.</param>
+            <param name="sharedAlgorithmslastError">The last HTTP error code.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotValidXml(System.String,System.String,System.Exception)">
+            <summary>
+            Creates an error message for invalid XML.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The path to the XML file.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNotAllowed(System.String,System.String)">
+            <summary>
+            Creates an error message indicating that something is not allowed.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="what">What is not allowed.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.BadFormatOfElementInList(System.String,System.Object,System.String,System.Func{System.Object,System.String})">
+            <summary>
+            Creates an error message for a badly formatted element in a list.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="elVal">The element value.</param>
+            <param name="listName">The name of the list.</param>
+            <param name="SH_NullToStringOrDefault">Function to convert null to string.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsTheSame(System.String,System.String,System.String)">
+            <summary>
+            Creates an error message when two values are the same but should differ.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="fst">The first value name.</param>
+            <param name="sec">The second value name.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DivideByZero(System.String)">
+            <summary>
+            Creates an error message for division by zero.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.AnyElementIsNullOrEmpty(System.String,System.String,System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Creates an error message when collection elements are null or empty.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameOfCollection">The name of the collection.</param>
+            <param name="nulled">Indexes of null/empty elements.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotEvenNumberOfElements(System.String,System.String)">
+            <summary>
+            Creates an error message when a collection has an odd number of elements.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameOfCollection">The name of the collection.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.InvalidExactlyLength(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Validates that a variable has the exact required length.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <param name="length">The actual length.</param>
+            <param name="requiredLenght">The required length.</param>
+            <returns>An error message if lengths don't match, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FileHasExtensionNotParseAbleToImageFormat(System.String,System.String)">
+            <summary>
+            Creates an error message for files with extensions that cannot be parsed to image format.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="fnOri">The original filename.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.WrongCountInList(System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Creates an error message for wrong element count in a list.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="numberOfElementsWithoutPause">Expected count without pause.</param>
+            <param name="numberOfElementsWithPause">Expected count with pause.</param>
+            <param name="arrLength">Actual array length.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FileExists(System.String,System.String)">
+            <summary>
+            Creates an error message when a file doesn't exist.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="fulLPath">The full path to the file.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FileWasntFoundInDirectory(System.String,System.String)">
+            <summary>
+            Creates an error message when a file wasn't found in a directory.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The path where the file was expected.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotSupported(System.String)">
+            <summary>
+            Creates a generic "not supported" error message.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ToManyElementsInCollection(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Creates an error message when a collection has too many elements.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="max">Maximum allowed elements.</param>
+            <param name="actual">Actual number of elements.</param>
+            <param name="nameCollection">The name of the collection.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FunctionalityDenied(System.String,System.String)">
+            <summary>
+            Creates an error message when functionality is denied.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="functionalityName">The name of the denied functionality.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.MoreCandidates(System.String,System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            Creates an error message when there are multiple candidates.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="list">The list of candidates.</param>
+            <param name="item">The item with multiple candidates.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.BadMappedXaml(System.String,System.String,System.String)">
+            <summary>
+            Creates an error message for badly mapped XAML.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameControl">The name of the control.</param>
+            <param name="additionalInfo">Additional information about the error.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ElementCantBeFound(System.String,System.String,System.String)">
+            <summary>
+            Creates an error message when an element cannot be found in a collection.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameCollection">The name of the collection.</param>
+            <param name="element">The element that cannot be found.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DoesntHaveRequiredType(System.String,System.String)">
+            <summary>
+            Creates an error message when a variable doesn't have the required type.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ArgumentOutOfRangeException(System.String,System.String,System.String)">
+            <summary>
+            Creates an ArgumentOutOfRangeException error message.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="paramName">The name of the parameter.</param>
+            <param name="message">Additional information.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.Custom(System.String,System.String)">
+            <summary>
+            Creates a custom error message.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="message">The custom message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FolderCannotBeDeleted(System.String,System.String,System.Exception)">
+            <summary>
+            Creates an error message when a folder cannot be deleted.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="folder">The folder path.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.CannotCreateDateTime(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Exception)">
+            <summary>
+            Creates an error message when DateTime cannot be created with the specified parameters.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="year">The year value.</param>
+            <param name="month">The month value.</param>
+            <param name="day">The day value.</param>
+            <param name="hour">The hour value.</param>
+            <param name="minute">The minute value.</param>
+            <param name="seconds">The seconds value.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.CannotMoveFolder(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            Creates an error message when a folder cannot be moved.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="sourcePath">The source folder path.</param>
+            <param name="destinationPath">The destination folder path.</param>
+            <param name="ex">The exception that occurred.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ExcAsArg(System.String,System.Exception,System.String)">
+            <summary>
+            Creates an error message from an exception with an additional message.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="ex">The exception.</param>
+            <param name="message">Additional message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotImplementedMethod(System.String)">
+            <summary>
+            Creates an error message for a method that is not implemented.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotExists(System.String,System.String)">
+            <summary>
+            Creates an error message when something does not exist.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="what">What does not exist.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.KeyAlreadyExists``2(System.String,System.Collections.Generic.Dictionary{``0,``1},``0,System.String)">
+            <summary>
+            Checks if a key already exists in a dictionary.
+            </summary>
+            <typeparam name="T">The type of the dictionary key.</typeparam>
+            <typeparam name="U">The type of the dictionary value.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="dictionary">The dictionary to check.</param>
+            <param name="key">The key to check for.</param>
+            <param name="dictionaryName">The name of the dictionary.</param>
+            <returns>An error message if the key exists, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FileAlreadyExists(System.String,System.String)">
+            <summary>
+            Checks if a file already exists.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The file path to check.</param>
+            <returns>An error message if the file exists, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ListNullOrEmpty``1(System.String,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Checks if a list is null or empty.
+            </summary>
+            <typeparam name="T">The type of elements in the list.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <param name="list">The list to check.</param>
+            <returns>An error message if the list is null or empty, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.LockedByBitLocker(System.String,System.String,System.Func{System.Char,System.Boolean})">
+            <summary>
+            Checks if a drive is locked by BitLocker.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The path to check.</param>
+            <param name="IsLockedByBitLocker">Function to check if a drive is locked.</param>
+            <returns>An error message if the drive is locked, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotInt(System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Checks if a value is not a valid integer.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="what">Description of what should be an integer.</param>
+            <param name="value">The value to check.</param>
+            <returns>An error message if the value is not a valid integer, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.HasOddNumberOfElements(System.String,System.String,System.Collections.ICollection)">
+            <summary>
+            Checks if a list has an odd number of elements.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="listName">The name of the list.</param>
+            <param name="list">The list to check.</param>
+            <returns>An error message if the list has an odd number of elements, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.WrongExtension(System.String,System.String,System.String)">
+            <summary>
+            Checks if a file has the wrong extension.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The file path.</param>
+            <param name="requiredExt">The required extension.</param>
+            <returns>An error message if the extension is wrong, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.WrongNumberOfElements``1(System.String,System.Int32,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Checks if a collection has the wrong number of elements.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="requireElements">The required number of elements.</param>
+            <param name="nameCollection">The name of the collection.</param>
+            <param name="collection">The collection to check.</param>
+            <returns>An error message if the count is wrong, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DirectoryWasntFound(System.String,System.String)">
+            <summary>
+            Checks if a directory exists.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="directory">The directory path to check.</param>
+            <returns>An error message if the directory doesn't exist, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.PassedListInsteadOfArray``1(System.String,System.String,System.Collections.Generic.IEnumerable{``0},System.Func{System.Collections.Generic.IEnumerable{``0},System.Boolean})">
+            <summary>
+            Checks if a list was passed instead of an array to a params parameter.
+            </summary>
+            <typeparam name="T">The type of elements.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The name of the variable.</param>
+            <param name="collection">The collection to check.</param>
+            <param name="CA_IsListStringWrappedInArray">Function to check if it's a wrapped list.</param>
+            <returns>An error message if a list was passed instead of an array, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsWhitespaceOrNull(System.String,System.String,System.Object)">
+            <summary>
+            Checks if a value is whitespace or null.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variable">The variable name.</param>
+            <param name="data">The data to check.</param>
+            <returns>An error message if the value is whitespace or null, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.UncommentNextRows(System.String)">
+            <summary>
+            Creates an error message prompting to uncomment next rows.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.OutOfRange(System.String,System.String,System.Collections.ICollection,System.String,System.Int32)">
+            <summary>
+            Checks if an index is out of range for a collection.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="colName">The collection name.</param>
+            <param name="col">The collection.</param>
+            <param name="indexName">The index variable name.</param>
+            <param name="index">The index value.</param>
+            <returns>An error message if the index is out of range, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.HaveAllInnerSameCount(System.String,System.Collections.Generic.List{System.Collections.Generic.List{System.String}})">
+            <summary>
+            Checks if all inner lists have the same count.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="elements">The list of lists to check.</param>
+            <returns>An error message if counts differ, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DirectoryExists(System.String,System.String)">
+            <summary>
+            Checks if a directory exists.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="fulLPath">The full directory path.</param>
+            <returns>Null if directory exists, otherwise an error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.CheckBackslashEnd(System.String,System.String)">
+            <summary>
+            Checks if a string ends with a backslash.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="path">The string to check.</param>
+            <returns>An error message if the string doesn't end with a backslash, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNotNull(System.String,System.String,System.Object)">
+            <summary>
+            Checks if a variable is not null when it should be.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The variable name.</param>
+            <param name="variable">The variable to check.</param>
+            <returns>An error message if the variable is not null, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ArrayElementContainsUnallowedStrings(System.String,System.String,System.Int32,System.String,System.String[])">
+            <summary>
+            Checks if an array element contains unallowed strings.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="arrayName">The array name.</param>
+            <param name="dex">The index of the element.</param>
+            <param name="valueElement">The element value.</param>
+            <param name="unallowedStrings">The unallowed strings to check for.</param>
+            <returns>An error message if unallowed strings are found, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.StartIsHigherThanEnd(System.String,System.Int32,System.Int32)">
+            <summary>
+            Checks if start value is higher than end value.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="start">The start value.</param>
+            <param name="end">The end value.</param>
+            <returns>An error message if start is higher than end, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.WasNotKeysHandler(System.String,System.String,System.Object)">
+            <summary>
+            Checks if an object is not an IKeysHandler.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="name">The name of the object.</param>
+            <param name="keysHandler">The object to check.</param>
+            <returns>An error message if the object is not an IKeysHandler, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FolderCantBeRemoved(System.String,System.String)">
+            <summary>
+            Creates an error message when a folder can't be removed.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="folder">The folder path.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ElementWasntRemoved(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Checks if an element wasn't removed from a collection.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="detailLocation">Details about where the removal was attempted.</param>
+            <param name="countBefore">The count before removal.</param>
+            <param name="countAfter">The count after removal.</param>
+            <returns>An error message if the element wasn't removed, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NoPassedFolders(System.String,System.Collections.ICollection)">
+            <summary>
+            Checks if no folders were passed.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="folders">The folders collection.</param>
+            <returns>An error message if no folders were passed, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FileSystemException(System.String,System.Exception)">
+            <summary>
+            Creates an error message from a file system exception.
+            </summary>
+            <param name="value">The prefix value.</param>
+            <param name="ex">The exception.</param>
+            <returns>An error message if exception is not null, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.InvalidParameter(System.String,System.String,System.String)">
+            <summary>
+            Checks if a parameter is URL encoded when it shouldn't be.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="valueVar">The variable value.</param>
+            <param name="nameVar">The variable name.</param>
+            <returns>An error message if the parameter is URL encoded, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.MoreThanOneElement(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Checks if a list has more than one element.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="listName">The list name.</param>
+            <param name="count">The actual count.</param>
+            <param name="moreInfo">Additional information.</param>
+            <returns>An error message if the list has more than one element, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NameIsNotSetted(System.String,System.String,System.String)">
+            <summary>
+            Checks if a control's name is not set.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameControl">The control name.</param>
+            <param name="nameFromProperty">The name from the property.</param>
+            <returns>An error message if the name is not set, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.OnlyOneElement(System.String,System.String,System.Collections.ICollection)">
+            <summary>
+            Checks if a collection has only one element.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="colName">The collection name.</param>
+            <param name="list">The collection.</param>
+            <returns>An error message if the collection has only one element, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.StringContainsUnallowedSubstrings(System.String,System.String,System.String[])">
+            <summary>
+            Checks if a string contains unallowed substrings.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="input">The input string to check.</param>
+            <param name="unallowedStrings">The unallowed substrings.</param>
+            <returns>An error message if unallowed substrings are found, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNull(System.String,System.String,System.Object)">
+            <summary>
+            Checks if a variable is null.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="variableName">The variable name.</param>
+            <param name="variable">The variable to check.</param>
+            <returns>An error message if the variable is null, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotImplementedCase(System.String,System.Object)">
+            <summary>
+            Creates an error message for a not implemented case.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="notImplementedName">The name or type of the not implemented case.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.NotContains(System.String,System.String,System.String[])">
+            <summary>
+            Checks if a string does not contain required substrings.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="originalText">The original text to check.</param>
+            <param name="shouldContains">The substrings that should be contained.</param>
+            <returns>An error message if any required substring is missing, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.HasNotKeyDictionary``2(System.String,System.String,System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            Checks if a dictionary does not contain a specified key.
+            </summary>
+            <typeparam name="Key">The type of the dictionary key.</typeparam>
+            <typeparam name="Value">The type of the dictionary value.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameDict">The name of the dictionary.</param>
+            <param name="qsDict">The dictionary to check.</param>
+            <param name="remains">The key to check for.</param>
+            <returns>An error message if the key is not found, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsEmpty(System.String,System.Collections.IEnumerable,System.String,System.String)">
+            <summary>
+            Checks if a collection is empty.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="folders">The collection to check.</param>
+            <param name="colName">The name of the collection.</param>
+            <param name="additionalMessage">Additional message to append.</param>
+            <returns>An error message if the collection is empty, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.UriFormat(System.String,System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            Checks if a URL is in valid URI format.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="url">The URL to check.</param>
+            <param name="uhIsUri">Function to validate URI format.</param>
+            <returns>An error message if the URL format is invalid, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsWindowsPathFormat(System.String,System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            Checks if a string is in Windows path format when it shouldn't be.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="input">The input string to check.</param>
+            <param name="isWindowsPathFormat">Function to check Windows path format.</param>
+            <returns>An error message if the input is a path when only a key is expected, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNotWindowsPathFormat(System.String,System.String,System.String,System.Boolean,System.Func{System.String,System.Boolean})">
+            <summary>
+            Checks if a string is not in Windows path format.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="argName">The argument name.</param>
+            <param name="argValue">The argument value to check.</param>
+            <param name="raiseIsNotWindowsPathFormat">Whether to raise the check.</param>
+            <param name="SunamoFileSystem_IsWindowsPathFormat">Function to check Windows path format.</param>
+            <returns>An error message if the format is invalid, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.WasAlreadyInitialized(System.String)">
+            <summary>
+            Creates an error message indicating that something was already initialized.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <returns>An error message.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DifferentCountInLists(System.String,System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Checks if two collections have different element counts.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="namefc">The name of the first collection.</param>
+            <param name="countfc">The count of the first collection.</param>
+            <param name="namesc">The name of the second collection.</param>
+            <param name="countsc">The count of the second collection.</param>
+            <returns>An error message if counts differ, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FirstLetterIsNotUpper(System.String,System.String)">
+            <summary>
+            Checks if the first letter of a string is not uppercase.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="text">The string to check.</param>
+            <returns>An error message if the first letter is not uppercase, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.KeyNotFound``2(System.String,System.Collections.Generic.IDictionary{``0,``1},System.String,``0)">
+            <summary>
+            Checks if a key is not found in a dictionary.
+            </summary>
+            <typeparam name="T">The type of the dictionary key.</typeparam>
+            <typeparam name="U">The type of the dictionary value.</typeparam>
+            <param name="before">The prefix for the error message.</param>
+            <param name="en">The dictionary to check.</param>
+            <param name="dictName">The name of the dictionary.</param>
+            <param name="key">The key to find.</param>
+            <returns>An error message if the key is not found, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.DuplicatedElements(System.String,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Checks if a list contains duplicated elements.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameOfVariable">The variable name.</param>
+            <param name="duplicatedElements">The list of duplicated elements.</param>
+            <param name="message">Additional message.</param>
+            <returns>An error message if duplicates are found, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.ZeroOrMoreThanOne(System.String,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Checks if a list has zero or more than one element.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameOfVariable">The variable name.</param>
+            <param name="list">The list to check.</param>
+            <returns>An error message if the list has zero or more than one element, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.IsNotPositiveNumber(System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Checks if a value is not a positive number.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="nameOfVariable">The variable name.</param>
+            <param name="n">The value to check.</param>
+            <returns>An error message if the value is not a positive number, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.CheckBackSlashEnd(System.String,System.String)">
+            <summary>
+            Checks if a string ends with a backslash.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="r">The string to check.</param>
+            <returns>An error message if the string doesn't end with a backslash, otherwise null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.Exceptions.FolderDoesNotExists(System.String,System.String,System.String)">
+            <summary>
+            Checks if a folder does not exist.
+            </summary>
+            <param name="before">The prefix for the error message.</param>
+            <param name="folder">The folder path to check.</param>
+            <param name="additionalInfo">Additional information.</param>
+            <returns>An error message if the folder doesn't exist, otherwise null.</returns>
+        </member>
+        <member name="T:SunamoExceptions.ExceptionsExtensions">
+            <summary>
+            Extension methods for working with exceptions.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ExceptionsExtensions.GetAllMessages(System.Exception)">
+            <summary>
+            Gets all messages from an exception including all inner exceptions.
+            </summary>
+            <param name="ex">The exception to extract messages from.</param>
+            <returns>A string containing all exception messages concatenated with inner exception messages.</returns>
+        </member>
+        <member name="T:SunamoExceptions.ThrowEx">
+            <summary>
+            Provides static methods for throwing exceptions with automatic context information.
+            Each method validates a condition and throws an exception if the condition fails.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNotTheSame``1(System.String,``0,System.String,``0)">
+            <summary>
+            Throws an exception if two values are not the same.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FolderDoesNotExists(System.String,System.String)">
+            <summary>
+            Throws an exception if a folder does not exist.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.KeyAlreadyExists``2(System.Collections.Generic.Dictionary{``0,``1},``0,System.String)">
+            <summary>
+            Throws an exception if a key already exists in a dictionary.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.HasNotIndex``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Int32)">
+            <summary>
+            Throws an exception if a list doesn't have the required index.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ArgumentOutOfRangeException(System.String,System.String)">
+            <summary>
+            Throws an ArgumentOutOfRangeException with the specified parameters.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ArrayElementContainsUnAllowedStrings(System.String,System.Int32,System.String,System.String[])">
+            <summary>
+            Throws an exception if an array element contains unallowed strings.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.BadFormatOfElementInList(System.Object,System.String,System.Func{System.Object,System.String})">
+            <summary>
+            Throws an exception if a list element has a bad format.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.BadMappedXaml(System.String,System.String)">
+            <summary>
+            Throws an exception if XAML is badly mapped.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.CannotCreateDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Exception)">
+            <summary>
+            Throws an exception if a DateTime cannot be created with the specified parameters.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.CannotMoveFolder(System.String,System.String,System.Exception)">
+            <summary>
+            Throws an exception if a folder cannot be moved.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.CheckBackslashEnd(System.String)">
+            <summary>
+            Throws an exception if a string doesn't end with a backslash.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.Custom(System.Exception,System.Boolean)">
+            <summary>
+            Throws a custom exception from an Exception object.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.Custom(System.String,System.Boolean,System.String)">
+            <summary>
+            Throws a custom exception with the specified message.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.CustomWithStackTrace(System.Exception)">
+            <summary>
+            Throws a custom exception with stack trace from an Exception object.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DifferentCountInLists``1(System.String,System.Collections.Generic.IList{``0},System.String,System.Collections.Generic.IList{``0})">
+            <summary>
+            Throws an exception if two lists have different element counts.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DifferentCountInLists(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            Throws an exception if two collections have different element counts.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DifferentCountInListsTU``2(System.String,System.Collections.Generic.IList{``0},System.String,System.Collections.Generic.IList{``1})">
+            <summary>
+            Throws an exception if two lists of different types have different element counts.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DirectoryExists(System.String)">
+            <summary>
+            Throws an exception if a directory doesn't exist.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DirectoryWasntFound(System.String)">
+            <summary>
+            Throws an exception if a directory wasn't found.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DivideByZero">
+            <summary>
+            Throws an exception for division by zero.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DoesntHaveRequiredType(System.String)">
+            <summary>
+            Throws an exception if a variable doesn't have the required type.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.DuplicatedElements(System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Throws an exception if a list contains duplicated elements.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ElementCantBeFound(System.String,System.String)">
+            <summary>
+            Throws an exception if an element can't be found in a collection.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ElementWasntRemoved(System.String,System.Int32,System.Int32)">
+            <summary>
+            Throws an exception if an element wasn't removed from a collection.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ExcAsArg(System.Exception,System.String)">
+            <summary>
+            Throws an exception with exception information as argument.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FileAlreadyExists(System.String)">
+            <summary>
+            Throws an exception if a file already exists.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FileDoesntExists(System.String)">
+            <summary>
+            Throws an exception if a file doesn't exist.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FileHasExtensionNotParseAbleToImageFormat(System.String)">
+            <summary>
+            Throws an exception if a file has an extension that cannot be parsed to image format.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FileSystemException(System.Exception)">
+            <summary>
+            Throws a file system exception.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FirstLetterIsNotUpper(System.String)">
+            <summary>
+            Throws an exception if the first letter is not uppercase.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FolderCannotBeDeleted(System.String,System.Exception)">
+            <summary>
+            Throws an exception if a folder cannot be deleted.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FolderCantBeRemoved(System.String)">
+            <summary>
+            Throws an exception if a folder can't be removed.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FolderIsNotEmpty(System.String,System.String)">
+            <summary>
+            Throws an exception if a folder is not empty.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FunctionalityDenied(System.String)">
+            <summary>
+            Throws an exception if functionality is denied.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.HasNotKeyDictionary``2(System.String,System.Collections.Generic.IDictionary{``0,``1},``0)">
+            <summary>
+            Throws an exception if a dictionary doesn't have the specified key.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.HasOddNumberOfElements(System.String,System.Collections.ICollection)">
+            <summary>
+            Throws an exception if a list has an odd number of elements.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.HaveAllInnerSameCount(System.Collections.Generic.List{System.Collections.Generic.List{System.String}})">
+            <summary>
+            Throws an exception if all inner lists don't have the same count.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.InvalidExactlyLength(System.String,System.Int32,System.Int32)">
+            <summary>
+            Throws an exception if a variable doesn't have the exact required length.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.InvalidParameter(System.String,System.String)">
+            <summary>
+            Throws an exception if a parameter is invalid (URL encoded).
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsEmpty(System.Collections.IEnumerable,System.String,System.String)">
+            <summary>
+            Throws an exception if a collection is empty.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNotAllowed(System.String)">
+            <summary>
+            Throws an exception if something is not allowed.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNotNull(System.String,System.Object)">
+            <summary>
+            Throws an exception if a variable is not null when it should be.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNotPositiveNumber(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Throws an exception if a value is not a positive number.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNotWindowsPathFormat(System.String,System.String,System.Boolean,System.Func{System.String,System.Boolean})">
+            <summary>
+            Throws an exception if a string is not in Windows path format.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNull(System.String,System.Object)">
+            <summary>
+            Throws an exception if a variable is null.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNullOrEmpty(System.String,System.String)">
+            <summary>
+            Throws an exception if a string argument is null or empty.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsNullOrWhitespace(System.String,System.String)">
+            <summary>
+            Throws an exception if a string argument is null or whitespace.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsTheSame(System.String,System.String)">
+            <summary>
+            Throws an exception if two values are the same when they should differ.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsWhitespaceOrNull(System.String,System.Object)">
+            <summary>
+            Throws an exception if a value is whitespace or null.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.IsWindowsPathFormat(System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            Throws an exception if a string is in Windows path format when it shouldn't be.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.KeyNotFound``2(System.Collections.Generic.IDictionary{``0,``1},System.String,``0)">
+            <summary>
+            Throws an exception if a key is not found in a dictionary.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ListNullOrEmpty``1(System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Throws an exception if a list is null or empty.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.LockedByBitLocker(System.String,System.Func{System.Char,System.Boolean})">
+            <summary>
+            Throws an exception if a drive is locked by BitLocker.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.MoreThanOneElement(System.String,System.Int32,System.String)">
+            <summary>
+            Throws an exception if a list has more than one element.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NameIsNotSetted(System.String,System.String)">
+            <summary>
+            Throws an exception if a control's name is not set.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NoPassedFolders(System.Collections.ICollection)">
+            <summary>
+            Throws an exception if no folders were passed.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotContains(System.String,System.String[])">
+            <summary>
+            Throws an exception if a string doesn't contain required substrings.
+            </summary>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotExists(System.String)">
+            <summary>
+            Throws an exception if something does not exist.
+            </summary>
+            <param name="what">Description of what does not exist.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotImplementedCase(System.Object)">
+            <summary>
+            Throws an exception for a not implemented case.
+            </summary>
+            <param name="notImplementedName">Name or description of the not implemented case.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotImplementedMethod">
+            <summary>
+            Throws an exception for a not implemented method.
+            </summary>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotInRange(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Int32)">
+            <summary>
+            Throws an exception if a variable is not in the expected range.
+            </summary>
+            <param name="variableName">Name of the variable being checked.</param>
+            <param name="list">List of string values for context.</param>
+            <param name="isLt">Lower bound threshold.</param>
+            <param name="isGt">Upper bound threshold.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotInt(System.String,System.Nullable{System.Int32})">
+            <summary>
+            Throws an exception if a value is not a valid integer.
+            </summary>
+            <param name="what">Description of what was expected to be an integer.</param>
+            <param name="value">The value that failed integer validation.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotSupported">
+            <summary>
+            Throws an exception for a not supported operation.
+            </summary>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.NotSupportedExtension(System.String)">
+            <summary>
+            Throws an exception for a not supported file extension.
+            </summary>
+            <param name="extension">The unsupported file extension.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.OnlyOneElement(System.String,System.Collections.ICollection)">
+            <summary>
+            Throws an exception if a collection contains only one element when more were expected.
+            </summary>
+            <param name="colName">Name of the collection.</param>
+            <param name="list">The collection being checked.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.OutOfRange(System.String,System.Collections.ICollection,System.String,System.Int32)">
+            <summary>
+            Throws an exception if an index is out of range for a collection.
+            </summary>
+            <param name="colName">Name of the collection.</param>
+            <param name="col">The collection being accessed.</param>
+            <param name="indexName">Name of the index variable.</param>
+            <param name="index">The index that is out of range.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.PassedListInsteadOfArray``1(System.String,``0[],System.Func{System.Collections.Generic.IEnumerable{``0},System.Boolean})">
+            <summary>
+            Throws an exception if a list was passed instead of an array.
+            </summary>
+            <typeparam name="T">The type of elements in the array.</typeparam>
+            <param name="variableName">Name of the variable.</param>
+            <param name="array">The array to check.</param>
+            <param name="CA_IsListStringWrappedInArray">Function to check if the array wraps a list.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.RepeatAfterTimeXTimesFailed(System.Int32,System.Int32,System.String,System.Int32)">
+            <summary>
+            Throws an exception if a retry operation failed after multiple attempts.
+            </summary>
+            <param name="times">Number of retry attempts.</param>
+            <param name="timeoutInMs">Timeout between retries in milliseconds.</param>
+            <param name="address">Address or identifier of the operation that failed.</param>
+            <param name="sharedAlgorithmSlastError">Last error code from the shared algorithm.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.StartIsHigherThanEnd(System.Int32,System.Int32)">
+            <summary>
+            Throws an exception if start index is higher than end index.
+            </summary>
+            <param name="start">The start index.</param>
+            <param name="end">The end index.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.StringContainsUnAllowedSubstrings(System.String,System.String[])">
+            <summary>
+            Throws an exception if a string contains unallowed substrings.
+            </summary>
+            <param name="input">The input string to check.</param>
+            <param name="unallowedStrings">Array of unallowed substrings.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.UncommentAfterNugetsFinished">
+            <summary>
+            Throws an exception prompting to uncomment code after NuGet packages are finished.
+            </summary>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.UriFormat(System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            Throws an exception if a URL has invalid URI format.
+            </summary>
+            <param name="url">The URL to validate.</param>
+            <param name="uhIsUri">Function to check if the URL is a valid URI.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.UseRlc">
+            <summary>
+            Throws an exception prompting to use RLC (Runtime Location Cache).
+            </summary>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.WasAlreadyInitialized">
+            <summary>
+            Throws an exception if something was already initialized.
+            </summary>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.WasNotKeysHandler(System.String,System.Object)">
+            <summary>
+            Throws an exception if a keys handler is invalid.
+            </summary>
+            <param name="name">Name of the handler.</param>
+            <param name="keysHandler">The keys handler object.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.WrongExtension(System.String,System.String)">
+            <summary>
+            Throws an exception if a file has the wrong extension.
+            </summary>
+            <param name="path">Path to the file.</param>
+            <param name="requiredExt">The required file extension.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.WrongNumberOfElements``1(System.Int32,System.String,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Throws an exception if a collection has the wrong number of elements.
+            </summary>
+            <typeparam name="T">The type of elements in the collection.</typeparam>
+            <param name="requireElements">Required number of elements.</param>
+            <param name="nameCollection">Name of the collection.</param>
+            <param name="collection">The collection to check.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ZeroOrMoreThanOne(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Throws an exception if a list has zero or more than one element.
+            </summary>
+            <param name="nameOfVariable">Name of the variable containing the list.</param>
+            <param name="list">The list to check.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FullNameOfExecutedCode">
+            <summary>
+            Gets the full name of the currently executing code (type and method name).
+            </summary>
+            <returns>A string in the format "FullTypeName.MethodName".</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.FullNameOfExecutedCode(System.Object,System.String,System.Boolean)">
+            <summary>
+            Gets the full name of the executing code from type and method name.
+            </summary>
+            <param name="type">The type object (can be Type, MethodBase, string, or any object).</param>
+            <param name="methodName">Name of the method. If null, will be determined from call stack.</param>
+            <param name="fromThrowEx">Indicates if called from ThrowEx (affects call stack depth).</param>
+            <returns>A string in the format "FullTypeName.MethodName".</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ThrowIsNotNull(System.String,System.Boolean)">
+            <summary>
+            Throws an exception if the exception string is not null.
+            </summary>
+            <param name="exception">The exception message string. If not null, throws an exception.</param>
+            <param name="reallyThrow">Whether to actually throw the exception (true) or just break in debugger (false).</param>
+            <returns>True if exception was detected, false if exception is null.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ThrowIsNotNull(System.Exception,System.Boolean)">
+            <summary>
+            Throws an exception if the exception object is not null.
+            </summary>
+            <param name="exception">The exception object. If not null, throws an exception with its message.</param>
+            <param name="reallyThrow">Whether to actually throw the exception (true) or just break in debugger (false).</param>
+            <returns>True if no exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ThrowIsNotNull``2(System.Func{System.String,``0,``1,System.String},``0,``1)">
+            <summary>
+            Throws an exception using a factory function with two arguments.
+            </summary>
+            <typeparam name="A">Type of the first argument.</typeparam>
+            <typeparam name="B">Type of the second argument.</typeparam>
+            <param name="f">Factory function that generates the exception message.</param>
+            <param name="ex">First argument to the factory function.</param>
+            <param name="message">Second argument to the factory function.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ThrowIsNotNull``1(System.Func{System.String,``0,System.String},``0)">
+            <summary>
+            Throws an exception using a factory function with one argument.
+            </summary>
+            <typeparam name="A">Type of the argument.</typeparam>
+            <param name="f">Factory function that generates the exception message.</param>
+            <param name="ex">Argument to the factory function.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoExceptions.ThrowEx.ThrowIsNotNull(System.Func{System.String,System.String})">
+            <summary>
+            Throws an exception using a factory function with no arguments.
+            </summary>
+            <param name="f">Factory function that generates the exception message.</param>
+            <returns>True if exception was thrown, false otherwise.</returns>
+        </member>
+    </members>
+</doc>
