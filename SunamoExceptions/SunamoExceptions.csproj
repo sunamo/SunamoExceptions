@@ -4,8 +4,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.2.7.10</Version>
-    <PackageReleaseNotes>feat: &lt;DebugType&gt;embedded&lt;/DebugType&gt;</PackageReleaseNotes>
+    <Version>26.2.7.11</Version>
+    <PackageReleaseNotes>feat: another approach to debug symbols</PackageReleaseNotes>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.cz/</PackageProjectUrl>
@@ -14,11 +14,12 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
-    <DebugSymbols>true</DebugSymbols>
-    <EmbedAllSources>true</EmbedAllSources>
   </PropertyGroup>
   <PropertyGroup>
-    <DebugType>embedded</DebugType>
+    <EmbedAllSources>true</EmbedAllSources>
+    <!-- including PDB files in NuGet for source link because symbolsource.org does not support portable PDBs -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <IncludeSymbols>true</IncludeSymbols>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
