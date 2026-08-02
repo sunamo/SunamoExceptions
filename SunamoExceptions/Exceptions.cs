@@ -102,8 +102,8 @@ public sealed partial class Exceptions
     /// <param name="methodName">The extracted method name.</param>
     public static void TypeAndMethodName(string stackTraceLine, out string type, out string methodName)
     {
-        var methodFullName = stackTraceLine.Split("at ")[1].Trim();
-        var methodSignature = methodFullName.Split("(")[0];
+        var methodFullName = stackTraceLine.Split(new[] { "at " }, StringSplitOptions.None)[1].Trim();
+        var methodSignature = methodFullName.Split(new[] { "(" }, StringSplitOptions.None)[0];
         var parts = methodSignature.Split(new char[] { '.' }, StringSplitOptions.RemoveEmptyEntries).ToList();
         methodName = parts[^1];
         parts.RemoveAt(parts.Count - 1);
