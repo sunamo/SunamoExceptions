@@ -11,7 +11,7 @@ internal class Program
         ////t.IsNullOrWhitespaceTest();
         //t.HasNotIndexTest();
 
-        ExceptionsExtensionsTests s = new ExceptionsExtensionsTests();
+        ExceptionsExtensionsTests s = new();
         s.GetAllMessagesTest();
 
         //Console.WriteLine("Finished");
