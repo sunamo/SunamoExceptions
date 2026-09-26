@@ -163,7 +163,7 @@ public sealed partial class Exceptions
     /// <returns>An error message if duplicates are found, otherwise null.</returns>
     public static string? DuplicatedElements(string before, string nameOfVariable, List<string> duplicatedElements, string message = "")
     {
-        return duplicatedElements.Count != 0 ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(',', [..duplicatedElements]) + " " + message : null;
+        return duplicatedElements.Count != 0 ? CheckBefore(before) + $"Duplicated elements in {nameOfVariable} list: " + string.Join(",", duplicatedElements) + " " + message : null;
     }
 
     /// <summary>
@@ -198,7 +198,7 @@ public sealed partial class Exceptions
     /// <returns>An error message if the string doesn't end with a backslash, otherwise null.</returns>
     public static string? CheckBackSlashEnd(string before, string r)
     {
-        if (!r.EndsWith('\\'))
+        if (!r.EndsWith("\\"))
             return CheckBefore(before) + " " + r + " don't end with \\";
         return null;
     }

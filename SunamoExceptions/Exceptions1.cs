@@ -288,7 +288,7 @@ public sealed partial class Exceptions
         for (var i = 1; i < elements.Count; i++)
             if (first != elements[i].Count)
                 wrongCount.Add(i);
-        return wrongCount.Count > 0 ? CheckBefore(before) + $"Elements {string.Join(',', wrongCount)} have different count than 0 (first)" : null;
+        return wrongCount.Count > 0 ? CheckBefore(before) + $"Elements {string.Join(",", wrongCount)} have different count than 0 (first)" : null;
     }
 
     /// <summary>
@@ -340,7 +340,7 @@ public sealed partial class Exceptions
     public static string? ArrayElementContainsUnallowedStrings(string before, string arrayName, int dex, string valueElement, params string[] unallowedStrings)
     {
         var foundedUnallowed = unallowedStrings.Where(d => valueElement.Contains(d)).ToList();
-        return foundedUnallowed.Count != 0 ? CheckBefore(before) + "Element of" + " " + arrayName + " on index " + dex + " with value " + valueElement + " contains unallowed string(" + foundedUnallowed.Count + "): " + string.Join(',', unallowedStrings) : null;
+        return foundedUnallowed.Count != 0 ? CheckBefore(before) + "Element of" + " " + arrayName + " on index " + dex + " with value " + valueElement + " contains unallowed string(" + foundedUnallowed.Count + "): " + string.Join(",", unallowedStrings) : null;
     }
 
     /// <summary>
