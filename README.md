@@ -1,5 +1,10 @@
 # SunamoExceptions
 
+## Short description
+
+Knihovna šablon pro vyhazování výjimek.
+
+
 Library with templates for throwing exceptions
 
 ## Overview
