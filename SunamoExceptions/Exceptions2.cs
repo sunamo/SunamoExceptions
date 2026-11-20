@@ -1,6 +1,5 @@
 namespace SunamoExceptions;
 
-// Variable names have been checked and replaced with self-descriptive names
 // © www.sunamo.cz. All Rights Reserved.
 public sealed partial class Exceptions
 {

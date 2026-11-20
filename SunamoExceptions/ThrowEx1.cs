@@ -1,6 +1,5 @@
 namespace SunamoExceptions;
 
-// Variable names have been checked and replaced with self-descriptive names
 public partial class ThrowEx
 {
     public static bool NotExists(string what)

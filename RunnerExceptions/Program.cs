@@ -1,4 +1,3 @@
-// variables names: ok
 using SunamoExceptions.Tests;
 
 namespace RunnerExceptions;
