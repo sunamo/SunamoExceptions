@@ -110,7 +110,12 @@ public sealed partial class Exceptions
         type = string.Join(".", parts);
     }
 
-    internal static string CallingMethod(int stackFrameDepth = 1)
+    /// <summary>
+    /// Returns the name of the method at the given depth of the current call stack (1 = the caller of the method that calls this).
+    /// </summary>
+    /// <param name="stackFrameDepth">Depth in the call stack; 1 is the caller of the calling method.</param>
+    /// <returns>The method name, or a fixed message when it cannot be determined.</returns>
+    public static string CallingMethod(int stackFrameDepth = 1)
     {
         StackTrace stackTrace = new();
         var methodBase = stackTrace.GetFrame(stackFrameDepth)?.GetMethod();
