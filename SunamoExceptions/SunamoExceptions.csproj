@@ -5,8 +5,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <Description>Library with templates for throwing exceptions</Description>
-    <Version>26.5.18.17</Version>
-    <PackageReleaseNotes>y</PackageReleaseNotes>
+    <Version>26.11.22.1</Version>
     <Authors>www.sunamo.cz</Authors>
     <Copyright>www.sunamo.cz</Copyright>
     <PackageProjectUrl>https://sunamo.github.io/PlatformIndependentNuGetPackages/SunamoExceptions/</PackageProjectUrl>
@@ -15,7 +14,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
+    <EnablePackageValidation>true</EnablePackageValidation>
     <DebugType>portable</DebugType>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>sunamo;dotnet;exceptions</PackageTags>
   </PropertyGroup>
   <PropertyGroup>
     <!-- This is important, don't try to remove it, otherwise the nuggets are not marked as My Code. Was already verified removing it. -->
@@ -26,7 +29,6 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-    <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="ExceptionsIsNullOrWhitespace.cs" />
@@ -34,7 +36,7 @@
     <Compile Remove="ExceptionsOther.cs" />
     <Compile Remove="ThrowExOther.cs" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.2" Pack="True" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="11.0.100" PrivateAssets="all" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
@@ -44,4 +46,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="PolySharp" Version="1.15.0" PrivateAssets="all" />
-  </ItemGroup></Project>
+  </ItemGroup>  <ItemGroup>
+    <None Include="readme.md" Pack="True" PackagePath="." />
+    <None Include="icon.png" Pack="True" PackagePath="." />
+  </ItemGroup>
+</Project>
